@@ -15,6 +15,8 @@
 
 Cache-to-Cache (C2C) enables Large Language Models to communicate directly through their KV-Caches, bypassing text generation. By projecting and fusing KV-Caches between models, C2C achieves 8.5–10.5% higher accuracy than individual models and 3.0–5.0% better performance than text-based communication, with 2.0× speedup in latency.
 
+> **This fork additionally provides [`t2i/`](t2i/README.md)** — a complete toolchain applying C2C to **text-to-image prompt generation** (ComfyUI): the prompt-generation bridge, per-run workflows, a custom ComfyUI node, CLIP/aesthetic/human blind-eval harness, and an anonymized research report (latency, quality, degeneration analysis). Upstream content is unchanged.
+
 Feel free to star the repo or cite the paper if you find it interesting.
 
 ```bibtex

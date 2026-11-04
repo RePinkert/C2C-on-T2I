@@ -1,0 +1,3 @@
+comparison,q,n,raw_wins,c2c_wins,tie,winrate_excl_tie,winrate_tie_half,binomial_p,mean_kappa,n_evaluators
+raw_vs_c2c,faith,60,41,7,12,0.8542,0.7833,1e-06,0.2078,3
+raw_vs_c2c,look,60,36,14,10,0.72,0.6833,0.002602,0.0612,3

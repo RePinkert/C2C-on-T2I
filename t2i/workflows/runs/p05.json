@@ -1,0 +1,216 @@
+{
+  "1": {
+    "class_type": "C2CCompare",
+    "inputs": {
+      "user_prompt": "一只戴红色围巾的柴犬坐在秋天的银杏树下，落叶纷飞，温暖的午后阳光",
+      "max_new_tokens": 96,
+      "mode": "both"
+    }
+  },
+  "2": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "moodyMossMixFreeDownload_v1025STEPSCFG3_fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3.5_9b_uncensored_int8_convrot.safetensors",
+      "type": "moss_image",
+      "device": "cpu"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "text": [
+        "1",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "text": [
+        "1",
+        1
+      ]
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "7": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ],
+      "seed": 4042,
+      "steps": 25,
+      "cfg": 3.0,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "9": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ],
+      "seed": 4042,
+      "steps": 25,
+      "cfg": 3.0,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "10": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ]
+    }
+  },
+  "12": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "AddLabel",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "text_x": 10,
+      "text_y": 2,
+      "height": 64,
+      "font_size": 40,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMonoBoldOblique.otf",
+      "text": "T2T",
+      "direction": "up"
+    }
+  },
+  "14": {
+    "class_type": "AddLabel",
+    "inputs": {
+      "image": [
+        "12",
+        0
+      ],
+      "text_x": 10,
+      "text_y": 2,
+      "height": 64,
+      "font_size": 40,
+      "font_color": "white",
+      "label_color": "black",
+      "font": "FreeMonoBoldOblique.otf",
+      "text": "C2C",
+      "direction": "up"
+    }
+  },
+  "15": {
+    "class_type": "ImageConcanate",
+    "inputs": {
+      "image1": [
+        "13",
+        0
+      ],
+      "image2": [
+        "14",
+        0
+      ],
+      "direction": "right",
+      "match_image_size": true
+    }
+  },
+  "16": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ],
+      "filename_prefix": "c2c_exp/p05"
+    }
+  }
+}

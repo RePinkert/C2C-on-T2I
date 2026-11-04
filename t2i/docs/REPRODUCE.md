@@ -107,5 +107,5 @@ cd t2i
 
 - 文本稳态延迟：pairA **1.74×**（5.94s→3.42s），pairB **9.05×**（34.19s→3.78s）；
 - C2C 退化率 **3/16 = 18.75%**（pairA: p04/p07/p15；pairB: p04/p13/p15），T2T 0/16；
-- 人评 raw > C2C（忠实度 85%，观感 72%）；LAION aesthetic 则 C2C 胜（与人评矛盾，见报告 §5.4）；
+- 人评 raw > C2C（忠实度 85%，观感 72%）；LAION aesthetic 则 C2C 胜（与人评矛盾，见报告（人评一节））；
 - 全部原始数字：`t2i/report/report_final.md`；图：`t2i/report/figures/`。

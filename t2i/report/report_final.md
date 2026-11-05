@@ -55,19 +55,22 @@ c2c（Sharer 前向一次出 KV-Cache → 预训练 fuser 融进 Receiver → �
 rep-4gram / distinct-1/2/3 退化率、稳态/冷启动延迟、token 数。统计按 (prompt, seed) 配对，
 Wilcoxon signed-rank 双尾 + bootstrap 2000 次 95% CI + matched-pairs rank-biserial，显著性 p<0.05。
 
-人工盲评：单页 21 对（`results/blind/blind_compare_all.html`），三个 pairwise 比较各 7 对
-（raw_vs_c2c、raw_vs_t2t、t2t_vs_c2c），21 个 prompt 互不重复；左右随机、隐藏映射；每对两问
-（忠实度/观感）三选一。详见「人评」一节。
+人工盲评：动态单页（`https://repinkert.github.io/C2C-on-T2I/`，每次打开随机重抽），三个 pairwise
+比较各 7 对（raw_vs_c2c、raw_vs_t2t、t2t_vs_c2c），21 个 prompt 互不重复；左右随机、隐藏
+映射；每对两问（忠实度/观感）三选一。详见「人评」一节。
 
 ## 先把结论说在前头
 
 文本环节快 2.2×（pairA）到 3.4×（pairB）。图像质量上 raw 略优于两个增强臂（clip_user，边缘
 显著），两个增强臂彼此分不出；aesthetic 上谁都没出线。C2C 有 7/56 的文本解码塌缩
 （pairA 5/28、pairB 2/28，中文提示为主），T2T 为 0。泛化矩阵里 pairB@moss 上
-clip_enhanced 方向翻转，C2C 显著更自洽（p=0.034）。人评第二轮重收中。
+clip_enhanced 方向翻转，C2C 显著更自洽（p=0.034）。**盲评第二轮（n=4）raw 显著优于 c2c：
+忠实度 15:2（排相当胜率 .88，p=.002）、观感 17:4（.81，p=.007）；raw vs t2t、t2t vs c2c 均分不出。**
 
-一起看：加速是真的（这次小一些，因为新 prompt 本身更长、T2T 的分析也更长）；质量上 C2C 没有
-一致劣于 T2T，但也看不出有人眼可见的增益；中文输入仍是解码塌缩的重灾区。
+一起看：加速是真的（这次小一些，因为新 prompt 本身更长、T2T 的分析也更长）；自动指标没看出
+C2C 的人眼增益，盲评（n=4）更直接——受访者显著偏好 raw 原图而非 c2c 增强图（faith/look
+双双 p<.01，任删一人结论仍稳）；中文输入仍是解码塌缩的重灾区。两组证据（clip_user 方向 +
+人评）指向同一件事：增强没有带来人眼可感知的收益，反而在本样本里明显拖累。
 
 ## 延迟
 
@@ -131,16 +134,48 @@ clip_user t2t vs c2c 为 -0.009（p=0.056，c2c 反向边缘）。退化模式�
 
 ## 人评
 
-**状态：第二轮已发布（动态随机抽样页），等回收。**第一轮盲评（n=3，仅 raw_vs_c2c）已全部
+**状态：第二轮已回收，n=4，数据并入本报告。**第一轮盲评（n=3，仅 raw_vs_c2c）已全部
 作废、数据已删除。
 
-第二轮协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/。每位受访者打开页面时，
+协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/。每位受访者打开页面时，
 页面用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个
 prompt 互不重复，每场顺序与左右全随机）。所有作答只存于当前标签页内存，**刷新/关闭即清空**，
 无 localStorage；答完 21/21 点"提交结果"即自动 POST 到 Google Apps Script，追加进私密
-Google Sheet（仅表主可见，只收昵称/时间/42 票）；网络异常时仍可"导出 CSV"兜底。**分析口径**：aggregate
-臂胜率按汇总票数做 binomial 检验；κ（跨受访者同 item 一致性）不可计算（每人仅评 21 对且
-各不同），报告中如实说明。防刷/去重：无任何手段，匿名自愿，解读以 aggregate 趋势为限。
+Google Sheet（仅表主可见，只收昵称/时间/42 票）；网络异常时仍可"导出 CSV"兜底。
+
+**回收情况**：4 份完整问卷（seq 1–4，2026-11-05，昵称全空），每人 42/42 票，合计 168 票，
+三种 pairwise 各 56 票；结构校验通过（无重复 pair、无缺问项）。原始导出留存在
+`results/blind/`（私密，不公开），匿名汇总见 `results/metrics/votes_summary.md|csv`，
+分受访者明细同在该文件。
+
+三比较 × 两问（胜率排除"相当"；"相当"计半见 votes_summary.csv）：
+
+| 比较 | 问题 | A 胜 | B 胜 | 相当 | 胜率A(排相当) | binomial p |
+|---|---|---|---|---|---|---|
+| raw_vs_c2c | 忠实度 | 15 | 2 | 11 | .882 | **.002** |
+| raw_vs_c2c | 观感 | 17 | 4 | 7 | .810 | **.007** |
+| raw_vs_t2t | 忠实度 | 10 | 4 | 14 | .714 | .180 |
+| raw_vs_t2t | 观感 | 11 | 8 | 9 | .579 | .648 |
+| t2t_vs_c2c | 忠实度 | 8 | 9 | 11 | .471 | 1.000 |
+| t2t_vs_c2c | 观感 | 9 | 12 | 7 | .429 | .664 |
+
+![blind](figures/fig_blind.png)
+
+- **raw 显著优于 c2c**：faith（p=.002）与 look（p=.007）双双 p<.01，胜率 .81–.88。任删一位
+  受访者重算仍显著或边缘（p ≤ .057）；逐受访者看方向也一致——4 人在 raw_vs_c2c 上都给 raw
+  更多票（faith 4/4 人 raw>c2c；look 亦然）。
+- raw vs t2t、t2t vs c2c：均无显著差异（p ≥ .18、p ≥ .66）。三臂两两分不出高下，唯独
+  raw 对 c2c 拉开了差距。
+- **Tie 率偏高**：168 票中 59 票"相当"（35%）；seq3 一人 21/42 全 tie，是主要来源。
+- **κ（跨受访者同 item 一致性）不可评估**：每个 comparison×q 组里受访者两两共评的 item
+  只有 0–2 个（随机重抽所致），κ 无意义——协议"κ 不可算"的判断在本数据上成立。
+- 解读边界：n=4、匿名自选、无去重/防刷，**只能当 aggregate 趋势，不能当总体估计**。
+  raw>c2c 的偏好对本样本成立、且对删人稳健，但是否外推到更广人群，需更大样本复核。
+
+**与自动指标的关系**：clip_user 三个比较同样 all raw ≥ 两臂、t2t ≥ c2c（p 在边缘区
+.054/.058），方向一致；aesthetic 无显著差异。也就是说，自动指标没看出 c2c 的人眼增益，
+人评则直接给出显著的 raw 偏好——两组证据方向一致、强度不同。
+
 
 ## 失败模式
 
@@ -177,7 +212,7 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 3. 主矩阵 n=84、泛化 n=24；新 prompt 集全部风格化/长描述，和 v2 的"fox in snow"不是一个
    分布，跨版本结论不能直接对拍。
 4. 长度混杂只用 clip_user/clip_enhanced 粗部分离，等 token 截断消融没做。
-5. 人评第二轮重收中，现在没有可用的人评数据支撑。
+5. 人评 n=4（匿名自选、无去重），只能当 aggregate 趋势；raw>c2c 的偏好需更大样本复核才能外推。
 6. 文本环节在扩散管线里不是瓶颈。落地场景是交互式预览 / 批量管线。
 7. 新 prompt 集整体"更难"，raw 臂已很强。增强臂的增量空间被压缩；v2 的 aesthetic 结论
    在这批上没复现，也可能是这一原因。
@@ -197,7 +232,8 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 | `results/metrics/image_metrics.csv` | clip_user / clip_enhanced / aesthetic |
 | `results/metrics/text_stats.csv` | 延迟/token/退化统计（56 行文本臂） |
 | `results/metrics/stats_pairs.csv` + `stats_summary.md` | 配对 Wilcoxon 全表 |
-| `results/blind/blind_compare_all.html` | 盲评第二轮单页（21 对；回收后更新） |
+| `results/blind/votes_*.csv` + `results/metrics/votes_summary.md` | 第二轮盲评原始票（匿名，4 份 × 42 行）与汇总（胜率/binomial/κ 说明） |
+| `https://repinkert.github.io/C2C-on-T2I/` | 盲评第二轮单页（动态随机抽样；页面本身随机重抽，数据已回收并入报告） |
 | `results/prompts_generated/pairA|B.json` | 三臂原始 prompt + 延迟明细 |
 | `results/batch_log.txt` | 132 run 批跑日志 |
 | `report/figures/gallery/` | 退化案例图（带标签拼接） |

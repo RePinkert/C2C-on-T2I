@@ -13,9 +13,16 @@ body{font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;background
 .btn{background:#21304a;border:0;color:#cfe0ff;border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer}
 .btn:hover{background:#2a3f5f}
 .btn.warn{background:#3d2a1a;color:#ffd9a0}
+.btn.submit{background:#123a22;border:1px solid #22c55e;color:#7ee2a8;font-weight:700;opacity:.4;cursor:not-allowed}
+.btn.submit.ready{opacity:1;cursor:pointer;background:#14532d}
+.btn.submit.ready:hover{background:#166534}
+.btn:disabled{opacity:.45;cursor:not-allowed}
 .bar{height:5px;background:#222a35;border-radius:3px;overflow:hidden;margin:10px 16px 0}
 .bar>div{height:100%;background:var(--acc);width:0%;transition:width .25s}
 #loading{color:var(--dim);text-align:center;padding:80px 20px;font-size:15px}
+.err{color:#fca5a5;font-size:13px;margin-top:6px;width:100%}
+.done-banner{display:none;margin:14px 16px 0;padding:14px 16px;border:1px solid #14532d;background:#0f2419;
+  border-radius:12px;color:#86efac;font-size:14px}
 #root{max-width:1080px;margin:0 auto;padding:16px}
 .item{background:var(--card);border:1px solid #242b36;border-radius:14px;padding:16px 18px;margin-bottom:18px}
 .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:12px}
@@ -41,20 +48,24 @@ body{font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;background
 </style></head><body>
 <div class="top">
   <b>盲评：raw / t2t / c2c</b>
-  <input id="who" placeholder="昵称（仅用于区分问卷）">
+  <input id="who" placeholder="昵称（仅用于区分问卷）" maxlength="30">
+  <button id="submitBtn" class="btn submit" onclick="submitSurvey()" disabled>提交结果</button>
   <button class="btn" onclick="exportCSV()">导出 CSV</button>
   <button class="btn warn" onclick="reloadAll()">换一批（重新抽取）</button>
   <span id="prog"></span>
-  <div class="hint">每对图回答两个问题（忠实度 / 观感），三选一。左右顺序与题目集合随机化，每次打开都不同。所有作答仅存于当前标签页，刷新或关闭即清空。</div>
+  <div class="hint">每对图回答两个问题（忠实度 / 观感），三选一。左右顺序与题目集合随机化，每次打开都不同。所有作答仅存于当前标签页，刷新或关闭即清空。答完 21/21 后点“提交结果”即自动回传。</div>
+  <div class="err" id="errline" style="display:none"></div>
 </div>
+<div id="doneBanner" class="done-banner">✓ 已收到，感谢反馈！<span id="doneSeq"></span><br>需要自己的备份可再点上方“导出 CSV”。</div>
 <div class="bar"><div id="barfill"></div></div>
 <div id="loading">正在加载图池并随机抽取 21 对…</div>
 <div id="root"></div>
 <script>
+const SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbyFsi0LGGeQI-mDsBzHc0XjsC3aUF4dpeFurZHAUSgYuo480B0vrbsyuI7EbxLhcorZeg/exec';
 const COMPARISONS = ['raw_vs_c2c','raw_vs_t2t','t2t_vs_c2c'];
 const PER_COMP = 7;
 const ZH = new Set(['p08','p09','p10','p11','p12','p13','p14','p22','p23','p24','p25','p27']);
-let items = [], votes = {}, exported = false;
+let items = [], votes = {}, exported = false, submitted = false, submitting = false;
 
 function shuffle(a){ for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
@@ -142,8 +153,59 @@ function refresh(){
     }
   });
   const n = doneCount();
-  document.getElementById('prog').textContent = n === items.length ? `已完成 ${n}/${items.length}，可以导出了 ✓` : `已完成 ${n}/${items.length}`;
+  document.getElementById('prog').textContent = n === items.length ? `已完成 ${n}/${items.length}，可以提交了 ✓` : `已完成 ${n}/${items.length}`;
   document.getElementById('barfill').style.width = (items.length ? 100*n/items.length : 0)+'%';
+  const btn = document.getElementById('submitBtn');
+  if (submitted) { btn.style.display = 'none'; }
+  else {
+    btn.disabled = n !== items.length;
+    btn.textContent = n === items.length ? '提交结果 ✓' : `提交结果（还差 ${items.length - n} 对）`;
+    btn.classList.toggle('ready', n === items.length);
+  }
+}
+function submitSurvey(){
+  if (doneCount() !== items.length || submitting || submitted) return;
+  if (!confirm('确认提交？提交后不可修改。')) return;
+  submitting = true;
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = '提交中…';
+  document.getElementById('errline').style.display = 'none';
+  const answers = [];
+  items.forEach(it => {
+    const v = votes[it.id] || {};
+    ['faith','look'].forEach(q => {
+      answers.push({ id: it.id, q, answer: v[q], truth_left: it.truth.left, truth_right: it.truth.right });
+    });
+  });
+  const payload = { nickname: (document.getElementById('who').value || '').slice(0, 30), answers };
+  fetch(SUBMIT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(res => {
+    submitting = false;
+    if (res && res.ok) {
+      submitted = true; exported = true;
+      document.getElementById('doneBanner').style.display = 'block';
+      document.getElementById('doneSeq').textContent = res.seq ? `你是第 ${res.seq} 位受访者。` : '';
+      btn.style.display = 'none';
+      document.getElementById('prog').textContent = '已全部提交 ✓';
+    } else {
+      btn.disabled = false; btn.textContent = '提交结果 ✓'; btn.classList.add('ready');
+      showErr('提交失败：' + ((res && res.error) || '未知错误') + '。可重试，或点“导出 CSV”手动回传。');
+    }
+  })
+  .catch(err => {
+    submitting = false;
+    btn.disabled = false; btn.textContent = '提交结果 ✓'; btn.classList.add('ready');
+    showErr('网络错误，提交未成功：' + err.message + '。可重试，或点“导出 CSV”手动回传。');
+  });
+}
+function showErr(msg){
+  const e = document.getElementById('errline');
+  e.textContent = msg; e.style.display = 'block';
 }
 function exportCSV(){
   let csv = 'id,prompt,q,answer,truth_left,truth_right\n';

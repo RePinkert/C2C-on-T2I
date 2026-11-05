@@ -44,7 +44,7 @@ t2i/
 | Image quality? | Raw beats both enhancement arms on clip_user (marginal, p=0.054/0.058); LAION aesthetic shows **no significant effect anywhere** this round; on pairB@moss c2c is significantly more self-consistent than t2t (clip_enhanced p=0.034) |
 | User-intent alignment? | Both enhancement arms drift from the raw user prompt; C2C not worse than T2T (n.s.) |
 | Failure modes? | C2C decode collapse **7/56 texts (12.5%)** — pairA 5/28, pairB 2/28, T2T 0; repetition loops, meta-language self-reference, structured-format leaks. Chinese inputs are the hot zone (5/12); **requires distinct-2/rep-4gram guard + T2T fallback** |
-| Human blind eval? | Round 2 live: dynamic single page, fresh random 21-pair draw on every visit (7 per arm-pair comparison, unique prompts); ephemeral votes (no storage, aggregate binomials only). First-round votes (n=3) voided and removed. See [`results/blind/README.md`](results/blind/README.md) |
+| Human blind eval? | Round 2 live: dynamic single page, fresh random 21-pair draw per visit; ephemeral votes (no storage); **auto-collected** via Google Apps Script → private Google Sheet. First-round votes (n=3) voided and removed. See [`results/blind/README.md`](results/blind/README.md) |
 | Generalization? | Latency win replicates across fuser pairs and T2I backends; pairB@moss clip_enhanced flips in c2c favor (p=0.034); krea2 all n.s.; p24 degeneration reproduces on both pairs |
 
 Details, statistics and honest negative results: **[report/report_final.md](report/report_final.md)**.
@@ -72,7 +72,8 @@ Image stage is ~4 min/image (CPU TE encoding dominates); the text stage decouple
 - fuser is **zero-shot** for the T2I domain (trained on QA); no fine-tuning was applied.
 - 0.5B–4B-class models; conclusions do not extrapolate to frontier models.
 - Blind eval: round 2 live — fresh random 21-pair draw per visit (all three arm pairs);
-  ephemeral votes by design (no storage, aggregate binomials only, κ not computable).
+  ephemeral in-memory votes (no storage, κ not computable); submissions auto-collected to a
+  private Google Sheet via Apps Script (anon: nickname/time/42 votes only, no IP/UA).
   Round 1 (n=3) voided and removed from the repo.
   See [`results/blind/README.md`](results/blind/README.md).
 

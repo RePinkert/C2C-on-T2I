@@ -137,7 +137,8 @@ clip_user t2t vs c2c 为 -0.009（p=0.056，c2c 反向边缘）。退化模式�
 第二轮协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/。每位受访者打开页面时，
 页面用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个
 prompt 互不重复，每场顺序与左右全随机）。所有作答只存于当前标签页内存，**刷新/关闭即清空**，
-无 localStorage；完成后导出 CSV（格式与 eval/analyze_votes.py 兼容）。**分析口径**：aggregate
+无 localStorage；答完 21/21 点"提交结果"即自动 POST 到 Google Apps Script，追加进私密
+Google Sheet（仅表主可见，只收昵称/时间/42 票）；网络异常时仍可"导出 CSV"兜底。**分析口径**：aggregate
 臂胜率按汇总票数做 binomial 检验；κ（跨受访者同 item 一致性）不可计算（每人仅评 21 对且
 各不同），报告中如实说明。防刷/去重：无任何手段，匿名自愿，解读以 aggregate 趋势为限。
 

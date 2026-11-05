@@ -23,13 +23,13 @@ import numpy as np
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "Arial"]
 plt.rcParams["axes.unicode_minus"] = False
 
-PLAYGROUND = os.environ.get("PLAYGROUND", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+PLAYGROUND = r"C:\Yet\Playground"
 METRICS = os.path.join(PLAYGROUND, "results", "metrics")
 FIGS = os.path.join(PLAYGROUND, "report", "figures")
-COMFY_OUT = os.environ.get("COMFY_OUT", os.path.join(PLAYGROUND, "results", "exp_v2"))
+COMFY_OUT = r"C:\cc\ComfyUI_windows_portable\ComfyUI\output\exp_v2"
 
 MATRIX_LABEL = {
-    ("qwen3_0.6b+qwen2.5_0.5b", "moss"): "主矩阵 pairA@moss (n=48)",
+    ("qwen3_0.6b+qwen2.5_0.5b", "moss"): "主矩阵 pairA@moss (n=84)",
     ("qwen3_0.6b+qwen3_4b_base", "moss"): "泛化A pairB@moss (n=24)",
     ("qwen3_0.6b+qwen2.5_0.5b", "krea2"): "泛化B pairA@krea2 (n=24)",
 }
@@ -121,13 +121,15 @@ def fig_quality(img_rows, stat_rows):
             for patch, color in zip(bp["boxes"], ["#8c8c8c", "#4c72b0", "#dd8452"]):
                 patch.set_facecolor(color)
                 patch.set_alpha(0.7)
+            # 顶部留白放置三行显著性注释，避免压在箱线上
+            lo, hi = ax.get_ylim()
+            ax.set_ylim(lo, hi + (hi - lo) * 0.42)
             for k, (a, b) in enumerate([("raw", "t2t"), ("raw", "c2c"), ("t2t", "c2c")]):
                 r = stat.get((matrix, m, a, b))
                 if r:
-                    y = max(max(vals[x]) for x in (a, b) if vals[x]) if any(vals[x] for x in (a, b)) else 1
-                    y = ax.get_ylim()[1] * (0.97 - 0.09 * k)
-                    ax.text(0.5, y, f"{a} vs {b}: {stars(float(r['wilcoxon_p']))}",
-                            transform=ax.transAxes, ha="center", fontsize=8)
+                    ax.text(0.5, 0.985 - 0.088 * k,
+                            f"{a} vs {b}: {stars(float(r['wilcoxon_p']))}",
+                            transform=ax.transAxes, ha="center", va="top", fontsize=8)
             if i == 0:
                 ax.set_title(METRIC_LABEL[m], fontsize=10)
             if j == 0:

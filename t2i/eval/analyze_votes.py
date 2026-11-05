@@ -75,7 +75,7 @@ def main():
     paths = [p for p in paths if os.path.exists(p)]
     assert paths, "no votes files found"
     out_dir = args.out_dir or os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results", "metrics")
+        r"C:\Yet\Playground", "results", "metrics")
     os.makedirs(out_dir, exist_ok=True)
 
     rows = load_votes(paths)
@@ -111,15 +111,16 @@ def main():
             if pairs:
                 kappas.append(cohens_kappa(pairs))
         mk = (sum(kappas) / len(kappas)) if kappas else float("nan")
-        out_rows.append({
-            "comparison": comp, "q": q, "n": len(g),
-            f"{a}_wins": na, f"{b}_wins": nb, "tie": nt,
-            "winrate_excl_tie": round(wr_excl, 4),
-            "winrate_tie_half": round(wr_half, 4),
-            "binomial_p": round(float(p), 6),
-            "mean_kappa": "" if mk != mk else round(mk, 4),
-            "n_evaluators": len(evaluators),
-        })
+        row = {"comparison": comp, "q": q, "n": len(g),
+               "raw_wins": 0, "t2t_wins": 0, "c2c_wins": 0, "tie": nt,
+               "winrate_excl_tie": round(wr_excl, 4),
+               "winrate_tie_half": round(wr_half, 4),
+               "binomial_p": round(float(p), 6),
+               "mean_kappa": "" if mk != mk else round(mk, 4),
+               "n_evaluators": len(evaluators)}
+        row[f"{a}_wins"] = na
+        row[f"{b}_wins"] = nb
+        out_rows.append(row)
         lines.append(
             f"| {comp} | {q} | {len(g)} | {na} | {nb} | {nt} | "
             f"{wr_excl:.3f} | {wr_half:.3f} | {p:.4f} | "
@@ -144,8 +145,12 @@ def main():
         lines.append(f"| {comp} | {q} | {who} | {na} | {nb} | {nt} |")
 
     out_csv = os.path.join(out_dir, "votes_summary.csv")
+    fieldnames = ["comparison", "q", "n",
+                  "raw_wins", "t2t_wins", "c2c_wins", "tie",
+                  "winrate_excl_tie", "winrate_tie_half",
+                  "binomial_p", "mean_kappa", "n_evaluators"]
     with open(out_csv, "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(out_rows[0].keys()))
+        w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(out_rows)
     out_md = os.path.join(out_dir, "votes_summary.md")

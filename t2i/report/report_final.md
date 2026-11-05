@@ -1,7 +1,7 @@
-# C2C × 文生图 实验报告（v2）
+# C2C × 文生图 实验报告（v3）
 
 > 把 Cache-to-Cache（KV-Cache 直传，arXiv 2510.03215 / ICLR'26）接进 ComfyUI 文生图 prompt
-> 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-04。
+> 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-05。
 > 环境：RTX 5070 Ti Laptop (12GB) / Windows / ComfyUI 0.43.2，推理零训练（官方预训练 fuser）。
 > 数据在 `results/metrics/`，图在 `report/figures/`。
 
@@ -12,11 +12,12 @@ Receiver 再读"的文本中转。论文自己的数字是通信延迟平均快 
 管线里还成不成立，以及要不要为它支付图像质量的代价。论文 A.4.6 提过 Sharer 语义误导 Receiver
 的失败模式，但没人在生成式视觉任务上实测过。
 
-第一版只跑了 8 个 prompt，跑完发现两个问题。T2T 那条路上，Sharer 的分析写到 96 个 token
-就被截断在半句，T2T 吃亏；另外量太小了，n=8、单 seed，也没做统计，这样的数当不了结论。
-第二版就把这些全补上了：三条臂的 token 预算统一成 256，prompt 扩到 16 条、每条配 3 个 seed，
-再加 raw 基线、第二个 Sharer 对、第二个 T2I 后端和人工盲评。统计按 prompt 和 seed 配对，
-Wilcoxon 检验加 bootstrap。
+这份 v3 是全量重跑的结果。第一版 v1 只跑了 8 个 prompt，发现 T2T 的 Sharer 分析被 96 token 截断、
+n 也撑不起结论；v2 把预算统一到 256、扩成 16 条手配 prompt、补了 raw 基线和人工盲评。v2 之后我们
+把全部图和指标删了，换成一套手工设计的 28 条 prompt 重新跑。旧集太短、太"自然句"（fox in snow），
+看不出增强臂在复杂风格化输入上的行为。现在 28 条分成四组：7 条基准（电影海报式夜市、雨后水墨梯田、
+像素立面、铜壶包装、复古雨伞海报、夜林兽眼、工笔年夜饭），7 条中文直译，7 条媒介/风格切换，
+7 条短句版。中文占比 12/28。
 
 ## 我们做了什么
 
@@ -28,7 +29,7 @@ c2c（Sharer 前向一次出 KV-Cache → 预训练 fuser 融进 Receiver → �
 | Receiver | Qwen3-0.6B | Qwen3-0.6B |
 | Sharer | Qwen2.5-0.5B-Instruct | Qwen3-4B-Base |
 | Fuser | `qwen3_0.6b+qwen2.5_0.5b_Fuser` | `qwen3_0.6b+qwen3_4b_base_Fuser` |
-| 三臂 token 预算 | 统一 256（v1 的 96 截断对 T2T 不公平，已修） | 同左 |
+| 三臂 token 预算 | 统一 256 | 同左 |
 
 | T2I 后端 | 配置 |
 |---|---|
@@ -42,31 +43,31 @@ c2c（Sharer 前向一次出 KV-Cache → 预训练 fuser 融进 Receiver → �
 
 | 矩阵 | 覆盖 | run 数 | 图数 | 用途 |
 |---|---|---|---|---|
-| 主矩阵 | pairA × moss × 16 prompt × 3 seed | 48 | 144 | RQ1–RQ3（n=48 配对） |
+| 主矩阵 | pairA × moss × 28 prompt × 3 seed | 84 | 252 | RQ1–RQ3（n=84 配对） |
 | 泛化 A | pairB × moss × p01–p08 × 3 seed | 24 | 72 | 跨 Sharer 对 |
 | 泛化 B | pairA × krea2 × p01–p08 × 3 seed | 24 | 72 | 跨 T2I 后端 |
 
-16 条 prompt（中英各半；简单单体 / 多物体空间 / 抽象情绪 / 材质光影 / 中文场景 / 风格复合），
-seed 42/1042/2042，三臂同 seed 成对。96 个 run 全部完成，0 缺失，共 288 张图。
+28 条 prompt（中英 16/12；7 条基准 + 7 中文直译 + 7 换媒介 + 7 短句），seed 42/1042/2042，
+三臂同 seed 成对。132 个 run 全部完成，0 缺失，共 396 张无标签图。
 
 指标三个：clip_user（图 vs 用户原始 prompt，主指标，防增强后偏离意图）、clip_enhanced（图 vs
 增强后 prompt，用来暴露 C2C 长文本带来的长度混杂）、aesthetic（LAION V2）。文本侧统计
 rep-4gram / distinct-1/2/3 退化率、稳态/冷启动延迟、token 数。统计按 (prompt, seed) 配对，
 Wilcoxon signed-rank 双尾 + bootstrap 2000 次 95% CI + matched-pairs rank-biserial，显著性 p<0.05。
 
-人工盲评原定两个比较（t2t_vs_c2c、raw_vs_c2c）。两份问卷发出去之前我们自己先看了一眼无标签
-单图对。c2c 和 t2t 画出来的图几乎分不出，就只挑了 raw_vs_c2c 一份送群组，t2t 臂因此没有
-人评数据。每对两问（忠实度/观感）三选一，多评估者独立投票，导出 CSV 后用
-`eval/analyze_votes.py` 汇总。
+人工盲评：单页 21 对（`results/blind/blind_compare_all.html`），三个 pairwise 比较各 7 对
+（raw_vs_c2c、raw_vs_t2t、t2t_vs_c2c），21 个 prompt 互不重复；左右随机、隐藏映射；每对两问
+（忠实度/观感）三选一。详见「人评」一节。
 
 ## 先把结论说在前头
 
-文本环节快 1.74×（pairA）到 9.05×（pairB），Sharer 越强越快。图像质量上，raw 显著优于两个
-增强臂（clip_user），两个增强臂彼此分不出；aesthetic 是唯一往 C2C 方向倒的指标。C2C 有
-3/16 的 prompt 解码塌缩（T2T 为 0），p04/p15 跨 pair 复现。人评 raw 占优。
+文本环节快 2.2×（pairA）到 3.4×（pairB）。图像质量上 raw 略优于两个增强臂（clip_user，边缘
+显著），两个增强臂彼此分不出；aesthetic 上谁都没出线。C2C 有 7/56 的文本解码塌缩
+（pairA 5/28、pairB 2/28，中文提示为主），T2T 为 0。泛化矩阵里 pairB@moss 上
+clip_enhanced 方向翻转，C2C 显著更自洽（p=0.034）。人评第二轮重收中。
 
-放在一起看：加速是真的，质量代价主要是"增强偏离意图"（两增强臂共同的问题），C2C 独有的坑是
-解码塌缩。下面逐项说。
+一起看：加速是真的（这次小一些，因为新 prompt 本身更长、T2T 的分析也更长）；质量上 C2C 没有
+一致劣于 T2T，但也看不出有人眼可见的增益；中文输入仍是解码塌缩的重灾区。
 
 ## 延迟
 
@@ -74,106 +75,106 @@ Wilcoxon signed-rank 双尾 + bootstrap 2000 次 95% CI + matched-pairs rank-bis
 
 | | 冷启动 load | T2T 稳态 | C2C 稳态 | 加速 |
 |---|---|---|---|---|
-| pairA（Sharer 0.5B） | 5.84s | 5.94s ± 1.75 | 3.42s ± 2.17 | 1.74× |
-| pairB（Sharer 4B-Base） | 16.07s | 34.19s ± 9.69 | 3.78s ± 2.55 | 9.05× |
+| pairA（Sharer 0.5B） | 7.21s | 8.02s ± 3.57 | 3.70s ± 1.93 | 2.17× |
+| pairB（Sharer 4B-Base） | 11.15s | 11.89s ± 3.93 | 3.46s ± 1.67 | 3.44× |
 
-口径：文本批全 16 prompt 的稳态均值 ± std；冷启动为模型加载耗时，一次性。
+口径：文本批全 28 prompt 的稳态均值 ± std；冷启动为模型加载耗时，一次性。
 
-T2T 的成本随 Sharer 变大而暴涨。pairB 的 Sharer 分析要 ~32s；C2C 的融合成本几乎不随 Sharer
-变大，稳态 3.42s（pairA） / 3.78s（pairB）。Sharer 越强，文本中转越是瓶颈，C2C 的收益越大。
-这和论文报的 2.5× 同向，在强 Sharer 下还放大了。
+T2T 的成本随 prompt 难度涨得很快。这些风格化长 prompt 让分析阶段变长（pairA 平均 8.02s，
+对比 v2 的 5.94s）。C2C 的融合成本几乎不变（3.70s）。token 数：C2C 平均 91（pairA）/ 90（pairB），
+T2T 平均 72（两 pair 相近）。延迟优势不是靠少说话换来的，C2C 说的还是更多。
 
-token 数也顺便看了一下：C2C 的 prompt 更长（pairA 84 vs 47，pairB 68 vs 37，预算同为 256），
-延迟优势不是靠少说话换来的。
-
-端到端我们得诚实说一句：单张扩散图 ~4min，文本环节省下的 2.5–30s 在一次性出图场景占比不到
-8%。C2C 的价值在交互式 prompt 预览、多候选筛选（文本环节在关键路径上）和批量管线上，不在
-单次出图上。
+端到端我们得诚实说一句：单张扩散图 ~4min，文本环节省下的 4–8s 在一次性出图场景占比很小。
+（这两个 prompt 集分布完全不同，v2→v3 的数字不能直接对拍，但方向一致：Sharer 越强，文本中转越是瓶颈，C2C 越省。）C2C 的价值在交互式 prompt 预览、多候选筛选（文本环节在关键路径上）和
+批量管线上。
 
 ## 图像质量
 
 ![quality](figures/fig_quality.png)
 
-主矩阵（pairA@moss，n=48 配对）：
+主矩阵（pairA@moss，n=84 配对）：
 
 | metric | 对比 | diff | 95% CI | p | 结论 |
 |---|---|---|---|---|---|
-| clip_user | raw vs t2t | +0.0072 | [0.002, 0.012] | 0.004 | raw 更贴用户意图 |
-| clip_user | raw vs c2c | +0.0172 | [0.008, 0.029] | 0.002 | raw 更贴用户意图 |
-| clip_user | t2t vs c2c | +0.0099 | [-0.001, 0.023] | 0.332 | 两增强臂无显著差异 |
-| clip_enhanced | t2t vs c2c | +0.0281 | [0.017, 0.039] | <0.001 | t2t 与自身文本更自洽 |
-| aesthetic | t2t vs c2c | -0.1966 | [-0.368, -0.021] | 0.012 | c2c 观感更优 |
-| aesthetic | raw vs c2c | -0.2509 | [-0.481, -0.035] | 0.013 | c2c 观感更优 |
+| clip_user | raw vs t2t | +0.0053 | [-0.002, 0.013] | 0.276 | 无显著差异 |
+| clip_user | raw vs c2c | +0.0142 | [0.003, 0.027] | 0.054 | 边缘显著，raw 更贴意图 |
+| clip_user | t2t vs c2c | +0.0089 | [~0, 0.018] | 0.058 | 边缘显著 |
+| clip_enhanced | raw vs t2t | +0.0482 | [0.036, 0.061] | <0.001 | t2t 与自身文本更自洽 |
+| clip_enhanced | raw vs c2c | +0.0384 | [0.023, 0.054] | <0.001 | t2t 与自身文本更自洽 |
+| clip_enhanced | t2t vs c2c | +0.0098 | [0.002, 0.019] | 0.243 | 无显著差异 |
+| aesthetic | t2t vs c2c | -0.0446 | [-0.18, 0.08] | 0.593 | 无显著差异 |
+| aesthetic | raw vs c2c | +0.0846 | [-0.04, 0.22] | 0.229 | 无显著差异 |
 
 逐项说：
 
-- clip_user 三行：raw > t2t（p=0.004）、raw > c2c（p=0.002）、t2t ≈ c2c（p=0.332）。两个增强臂
-  都把图拉离了用户意图，没看出谁拉得更多。clip_enhanced 上 t2t 显著更优（p<0.001）。同样的
-  内容，t2t 和自己写的文本更合拍。aesthetic 上 c2c 显著更优（p=0.012），raw 也输了（p=0.013）。
-- 长度混杂确实存在：C2C prompt 长 ~1.8×，只看 clip_enhanced 会误判 t2t 胜出；把 clip_user 设为
-  主指标就是为了分开"语义增益"和"长度增益"。不过反过来也不成立，把 C2C 的低 clip_enhanced 全
-  算到长度头上说不过去，它的 clip_user 也确实偏低。
-- 「增强即漂移」是两个臂共同的问题，和通信方式无关。clip_user 两臂都显著差于 raw。
-- aesthetic 这一格（c2c 更优）是三个矩阵里唯一自动指标往 c2c 方向倒的地方，而在人评里方向
-  刚好反过来（见下），不要拿它吹"更好看"。
+- 没有哪项在 0.05 上翻车到需要"C2C 劣于 T2T"的地步，但也没有 v2 那种"aesthetic 显著偏向 c2c"。
+  这次 aesthetic 三项全部不显著。v2 的主结论（C2C 观感更优，p=0.012）在更难的 prompt 上没复现。
+- clip_user 仍然三个比较都是 t2t ≥ c2c、raw ≥ 两臂，但 p 值都在边缘区（0.054 / 0.058），
+  效应量也小。可以说"方向一致、强度存疑"，说不出显著。
+- clip_enhanced 两行 <0.001 是预期内现象（t2t 与自身文本天然更自洽；长度混杂）。
+- 「增强即漂移」仍然站得住：两个增强臂都把图拉离了用户意图，和通信方式无关。
 
 ## 泛化
 
 | 指标 | 主矩阵 pairA@moss | 泛化A pairB@moss | 泛化B pairA@krea2 |
 |---|---|---|---|
-| clip_user t2t vs c2c | +0.010 n.s. | +0.020 p=0.095 | +0.020 n.s. |
-| clip_enhanced t2t vs c2c | +0.028 p<0.001 | +0.004 n.s. | +0.038 p<0.001 |
-| aesthetic t2t vs c2c | -0.20 p=0.012（c2c 胜） | +0.10 p=0.079 | -0.05 n.s. |
-| C2C 退化率 | 3/16 | 3/16 | （复用 pairA 文本） |
+| clip_user t2t vs c2c | +0.009 n.s. | -0.010 p=0.053 | -0.009 p=0.056 |
+| clip_enhanced t2t vs c2c | +0.010 n.s. | **-0.011 p=0.034** | -0.005 n.s. |
+| aesthetic t2t vs c2c | -0.045 n.s. | -0.275 p=0.152 | -0.146 p=0.095 |
+| C2C 退化率 | 5/28 | 2/28 | （复用 pairA 文本） |
 
-延迟收益两个 pair、两个后端都成立。质量这边不稳：pairB 上美学优势没了（甚至反转 +0.10，
-p=0.079），krea2 上打平（-0.05，n.s.）。主矩阵那个 p=0.012 是 moss × pairA 的现象，
-n=24 的泛化矩阵下不该外推。clip_user 三个矩阵都是 t2t ≥ c2c，方向一致，但均不显著或仅边缘，
-这个指标至少没变坏。退化模式 pairA/pairB 都复现了。
+pairB（4B Sharer）上 clip_enhanced 的方向整体翻转：raw vs c2c -0.023（p=0.027）、t2t vs c2c
+-0.011（p=0.034），也就是 c2c 图与增强后文本更合拍。这和 v2 的"Sharer 越强 C2C 越吃香"方向
+一致（当然，这项指标有长度混杂：c2c prompt 平均 90 token、t2t 72）。krea2 全部 n.s.，仅
+clip_user t2t vs c2c 为 -0.009（p=0.056，c2c 反向边缘）。退化模式：p24 跨 pair 复现，
+其余各自独立。
 
 ## 人评
 
-**状态：第二轮重收中**——第一轮盲评（n=3，仅 raw_vs_c2c，两问卷图像输出几乎不可区分）已全部
-作废，其汇总表与图均已从仓库删除。
-
-第二轮：单页 21 对（seed 42/1042/2042 各 7 对），三个 pairwise 比较各 7 对
-（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c），21 个 prompt 互不重复；左右随机、隐藏映射；
-每对两问（忠实度/观感）三选一。页面 `t2i/blind/blind_compare_all.html` 已在仓库公开，
-回收 votes CSV 后按 `eval/analyze_votes.py` 汇总并更新本节。协议见 `t2i/results/blind/README.md`。
+**状态：第二轮重收中**。第一轮盲评（n=3，仅 raw_vs_c2c）已全部作废、数据已删除；本轮协议：
+单页 21 对（`results/blind/blind_compare_all.html`），三比较各 7 对，seed 42/1042/2042 各出现
+7 次，21 个 prompt 互不重复；左右随机、隐藏映射；每对两问（忠实度/观感）三选一。
+回收 votes CSV 后按 `eval/analyze_votes.py` 汇总并更新本节。
 
 ## 失败模式
 
 ![degenerate](figures/fig_degenerate.png)
 
-C2C 解码塌缩 3/16 = 18.75%（pairA: p04/p07/p15；pairB: p04/p13/p15），T2T 为 0。有图的退化样本
-全收在 `report/figures/gallery/`（seed 42，带标签拼接图）；pairB 的 p13/p15 属文本批独有，没有
-对应图。四个案例：
+C2C 解码塌缩：pairA 5/28（p08、p10、p14、p21、p24），pairB 2/28（p09、p24），T2T 0/28。
+按塌缩形态归类：
 
-| 案例 | 类型 | rep-4gram | 表现 | 跨 pair |
-|---|---|---|---|---|
-| p04 玻璃茶壶 | 循环塌缩 | 0.984 | "A serene, serene, …"×25 → 出图完全跑题（落日海景） | ✅ 两 pair 同输出 |
-| p15 场景插画 | 元语言自指 | 0.056/0.102 | "A detailed English image generation prompt: 'A detailed…'" 递归嵌套 | ✅ 两 pair 均触发 |
-| p07 宇航员（中文） | 结构化泄漏+局部重复 | 0.564 | "Subject:/Action:/Setting:" 格式泄漏 + "flowing robes and flowing robes" | 仅 pairA |
-| p13 早市（中文） | 局部短语重复 | 0.436 | "steaming/steamed" 同义反复 | 仅 pairB |
+| 案例 | 类型 | distinct-2 | rep-4gram | 表现 | 跨 pair |
+|---|---|---|---|---|---|
+| p21 儿童绘本（en） | 循环塌缩 | 0.024 | 0.988 | "A whimsical, whimsical, whimsical…" 原地踏步 | 仅 pairA |
+| p10 像素晾衣（zh） | 循环塌缩 | 0.055 | 0.493 | "16-bit pixelated, 16-bit pixelated…" 重复同一短语 | 仅 pairA |
+| p14 工笔年夜饭（zh） | 元语言自指+弱重复 | 0.314 | 0.029 | "A detailed English image generation prompt: '…'" 递归嵌套 | 仅 pairA |
+| p24 晾衣短句（zh） | 元语言自指+局部重复 | 0.146 | 0.082 | 同上 + "the laundry being caught in the wind…" 循环 | ✅ 两 pair |
+| p08 夜市海报（zh） | 弱重复 | 0.271 | 0.082 | 句式高度雷同，被 distinct-2 捕获 | 仅 pairA |
+| p09 水墨梯田（zh） | 弱重复 | 0.248 | 0.032 | "hills are arranged… The hills are covered…" | 仅 pairB |
 
-p04/p15 稳定复现在同一批 prompt 上，说明这不是随机噪声，是 prompt 触发的。p04 是"材质光影+
-静物"类，p15 是"风格复合长描述"。它们和论文 A.4.6 的"Sharer 语义误导 Receiver"同源（融合表征
-偶发把 Receiver 解码带进死循环），但复现位置固定这件事论文没展开。
+p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Quality tags:"结构化
+格式泄漏，distinct-2 = 0.985、rep-4gram = 0.016，检测器完全抓不住，靠人工发现——v1/v2 的 p07
+同族案例。跨 pair 复现的只有 p24。
 
-中文 prompt 是重灾区（p07/p13/p15 均中文）：0.6B 级 Receiver 在融合表征下容易中英混杂、漂移出
-元语言。T2T 中文也有语义漂移，但不塌缩。
+12 条中文输入里有 5 条至少一个 pair 塌了（p08/p09/p10/p14/p24），16 条英文里只有 p21 塌了。
+按 prompt 计：中文 5/12 = 42%，英文 1/16 ≈ 6%。中文不是唯一凶手，但明显是放大器；
+两条活蹦乱跳的塌缩（p10、p21）都是**单一形容词/形容词短语原地踏步**，p14/p24 则是
+**把系统指令当成要抄录的目标**（元语言自指）。
 
-工程兜底的方向：C2C 输出必须挂退化检测（rep-4gram > 0.5 或 distinct-1 < 0.5 时回退 T2T）。
-当前检测器能吃下全部 6 个退化样本，误伤率还没查。
+工程兜底：检测器实际判据是 distinct-2 < 0.35（n>20）或 rep-4gram > 0.25。本批 7 个退化样本
+全部满足（p10/p21 双双超标，p08/p09/p14/p24 走 distinct-2 判据）；p06 全程漏检。
 
 ## 局限
 
 1. 0.5B–4B 级 LLM + 5B 级 DiT，结论不能外推到 GPT 级 Sharer 或大型 T2I。
-2. fuser 在 QA 数据上训练，文生图域完全 zero-shot，没做微调。
-3. 主矩阵 n=48、泛化 n=24，单机单 seed。美学预测器（LAION 线性头）本身有偏好。
-4. 长度混杂只用 clip_user/clip_enhanced 粗部分离，等 token 截断消融没做（P1 可选项，未做）。
-5. 人评只测了 raw_vs_c2c，3 名群组志愿者、每比较 20 对；t2t 臂没有人评证据；κ 弱、相当率偏高。
-6. 文本环节在扩散管线里不是瓶颈。这套方案的落地场景是交互式预览 / 批量管线，不是单次出图。
+2. fuser 在 QA 数据上训练，文生图域完全 zero-shot，没做微调；中文提示没在 fuser 训练分布里。
+3. 主矩阵 n=84、泛化 n=24；新 prompt 集全部风格化/长描述，和 v2 的"fox in snow"不是一个
+   分布，跨版本结论不能直接对拍。
+4. 长度混杂只用 clip_user/clip_enhanced 粗部分离，等 token 截断消融没做。
+5. 人评第二轮重收中，现在没有可用的人评数据支撑。
+6. 文本环节在扩散管线里不是瓶颈。落地场景是交互式预览 / 批量管线。
+7. 新 prompt 集整体"更难"，raw 臂已很强。增强臂的增量空间被压缩；v2 的 aesthetic 结论
+   在这批上没复现，也可能是这一原因。
 
 ## 接下来想做的
 
@@ -186,13 +187,13 @@ p04/p15 稳定复现在同一批 prompt 上，说明这不是随机噪声，是 
 
 | 文件 | 内容 |
 |---|---|
-| `results/metrics/manifest.csv` | 288 图 × 路径/prompt/arm/矩阵 |
+| `results/metrics/manifest.csv` | 396 图 × 路径/prompt/arm/矩阵 |
 | `results/metrics/image_metrics.csv` | clip_user / clip_enhanced / aesthetic |
-| `results/metrics/text_stats.csv` | 延迟/token/退化统计（64 行文本臂） |
+| `results/metrics/text_stats.csv` | 延迟/token/退化统计（56 行文本臂） |
 | `results/metrics/stats_pairs.csv` + `stats_summary.md` | 配对 Wilcoxon 全表 |
-| `t2i/blind/blind_compare_all.html` | 盲评第二轮单页（21 对，三比较各 7 对；回收后汇总） |
+| `results/blind/blind_compare_all.html` | 盲评第二轮单页（21 对；回收后更新） |
 | `results/prompts_generated/pairA|B.json` | 三臂原始 prompt + 延迟明细 |
-| `results/batch_log.txt` | 96 run 批跑日志（含补跑记录） |
+| `results/batch_log.txt` | 132 run 批跑日志 |
 | `report/figures/gallery/` | 退化案例图（带标签拼接） |
 
 复现手册见 `docs/HANDOFF.md`（公开版见 fork 仓库的 `t2i/docs/REPRODUCE.md`）。

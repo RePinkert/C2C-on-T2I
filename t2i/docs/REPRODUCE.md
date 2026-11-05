@@ -82,8 +82,8 @@ cd t2i
 ..\venv\Scripts\python.exe eval\run_eval.py --manifest results\metrics\manifest.csv
 # 3) Wilcoxon + bootstrap CI
 ..\venv\Scripts\python.exe eval\stats.py --metrics results\metrics\image_metrics.csv
-# 4) 盲评页（无标签单图 + 左右随机；导出 CSV）
-..\venv\Scripts\python.exe eval\make_blind_html.py --manifest results\metrics\manifest.csv --comparison raw_vs_c2c --pair "qwen3_0.6b+qwen2.5_0.5b" --backend moss
+# 4) 盲评页（无标签单图 + 左右随机；导出 CSV；单页含三比较各 7 对）
+..\venv\Scripts\python.exe eval\make_blind_html.py --manifest results\metrics\manifest.csv --mixed 7,7,7 --out results\blind\blind_compare_all.html
 # 5) 汇总盲评（胜率 + 二项检验 + Cohen's κ）
 ..\venv\Scripts\python.exe eval\analyze_votes.py --votes results\blind\votes_*.csv
 # 6) 全部图表
@@ -97,15 +97,15 @@ cd t2i
 3. 生成的对比图带 T2T/C2C 标签（展示用）；**盲评必须用无标签原图**。
 4. JSON 保存为 **UTF-8 无 BOM**（BOM 曾导致 A_moss_p01_s1042 首跑失败，已补跑）。
 5. 断点续跑的文件名匹配已修（DONE 行带耗时后缀）；重跑前先看 `results/batch_log.txt`。
-6. 中文 prompt 是 C2C 退化重灾区（p07/p13/p15 均中文）：0.6B 级 Receiver 在融合表征下中英漂移出元语言。
-7. **退化兜底**（上线前必需）：rep-4gram > 0.5 或 distinct-1 < 0.5 → 回退 T2T；18.75% 触发率不可裸奔上线。
+6. 中文 prompt 是 C2C 退化重灾区（v3：p08/p10/p14/p24 等中文提示塌缩，p09 弱重复；另有 p21 英文儿童绘本塌缩）：0.6B 级 Receiver 在融合表征下中英漂移出元语言。
+7. **退化兜底**（上线前必需）：distinct-2 < 0.35（n>20）或 rep-4gram > 0.25 → 回退 T2T；v3 退化率 7/56 = 12.5%，不可裸奔上线。p06（结构化泄漏 Subject:/Action:/Setting:）可被该阈值完全漏检，需人工抽查。
 8. HF 直连可用（无需镜像）；git clone 的 stderr 进度条会让 PowerShell 报 NativeCommandError，无害。
 9. 图像批跑与文本批跑解耦后，改 prompt 不必重跑图；改种子/后端才需要重跑对应矩阵。
-10. 盲评只能回答"raw vs c2c"（t2t_vs_c2c 问卷因两臂图像输出几乎不可区分而未送审）——别把本报告的人评结论外推到 t2t 臂。
+10. 盲评第二轮：单页 21 对，覆盖 raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 三个 pairwise 各 7 对；第一轮（n=3，仅 raw_vs_c2c）已作废。不要把本报告的人评结论外推到未测批次。
 
 ## 8. 期望结果
 
-- 文本稳态延迟：pairA **1.74×**（5.94s→3.42s），pairB **9.05×**（34.19s→3.78s）；
-- C2C 退化率 **3/16 = 18.75%**（pairA: p04/p07/p15；pairB: p04/p13/p15），T2T 0/16；
+- 文本稳态延迟：pairA **2.17×**（8.02s→3.70s），pairB **3.44×**（11.89s→3.46s）；
+- C2C 退化率 **7/56 = 12.5%**（pairA: p08/p10/p14/p21/p24；pairB: p09/p24），T2T 0；
 - 人评 raw > C2C（忠实度 85%，观感 72%）；LAION aesthetic 则 C2C 胜（与人评矛盾，见报告（人评一节））；
 - 全部原始数字：`t2i/report/report_final.md`；图：`t2i/report/figures/`。

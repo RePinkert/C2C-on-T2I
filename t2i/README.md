@@ -33,19 +33,19 @@ t2i/
 ├── results/               # manifest / metrics / per-arm prompts (small CSVs & JSONs)
 └── report/
     ├── report_final.md    # ★ full experiment report (中文)
-    └── figures/           # fig_latency / fig_quality / fig_blind / fig_degenerate + gallery
+    └── figures/           # fig_latency / fig_quality / fig_degenerate + gallery
 ```
 
-## Headline results (v2, 96 runs / 288 images, zero failures)
+## Headline results (v3, 132 runs / 396 images, zero failures)
 
 | Question | Answer |
 |---|---|
-| Latency? | C2C text stage **1.74×** faster (pairA, Sharer 0.5B) and **9.05×** (pairB, Sharer 4B); scales with Sharer size |
-| Image quality? | No consistent degradation. LAION aesthetic favors C2C on moss×pairA (p=0.012) but does **not** replicate on pairB/krea2; T2T wins self-consistency (clip_enhanced, p<0.001) |
-| User-intent alignment? | Both enhancement arms drift from the raw user prompt equally (clip_user); C2C is **not** worse than T2T (n.s.) |
-| Failure modes? | C2C decode collapse **3/16 (18.75%)** on both pairs (T2T: 0/16) — repetition loops, meta-language self-reference, phrase duplication; **requires rep-4gram / distinct-n guard + T2T fallback** |
+| Latency? | C2C text stage **2.17x** faster (pairA, Sharer 0.5B) and **3.44x** (pairB, Sharer 4B); C2C cost roughly constant vs Sharer size |
+| Image quality? | Raw beats both enhancement arms on clip_user (marginal, p=0.054/0.058); LAION aesthetic shows **no significant effect anywhere** this round; on pairB@moss c2c is significantly more self-consistent than t2t (clip_enhanced p=0.034) |
+| User-intent alignment? | Both enhancement arms drift from the raw user prompt; C2C not worse than T2T (n.s.) |
+| Failure modes? | C2C decode collapse **7/56 texts (12.5%)** — pairA 5/28, pairB 2/28, T2T 0; repetition loops, meta-language self-reference, structured-format leaks. Chinese inputs are the hot zone (5/12); **requires distinct-2/rep-4gram guard + T2T fallback** |
 | Human blind eval? | First-round votes (n=3, single comparison) voided; a full second round (single page, 21 pairs — 7 per comparison, all unique prompts) is in progress — see [`t2i/blind/README.md`](results/blind/README.md) |
-| Generalization? | Latency win replicates across fuser pairs and T2I backends; quality conclusions only partially replicate; degeneration reproduces on both pairs |
+| Generalization? | Latency win replicates across fuser pairs and T2I backends; pairB@moss clip_enhanced flips in c2c favor (p=0.034); krea2 all n.s.; p24 degeneration reproduces on both pairs |
 
 Details, statistics and honest negative results: **[report/report_final.md](report/report_final.md)**.
 
@@ -67,14 +67,13 @@ Image stage is ~4 min/image (CPU TE encoding dominates); the text stage decouple
 
 ## Known limitations
 
-- **18.75% degeneration rate** in C2C outputs (T2T: 0). Always gate on rep-4gram > 0.5 /
-  distinct-1 < 0.5 and fall back to T2T in production.
+- **12.5% degeneration rate** in C2C outputs (7/56, T2T: 0). Always gate on distinct-2 < 0.35 /
+  rep-4gram > 0.25 and fall back to T2T in production.
 - fuser is **zero-shot** for the T2I domain (trained on QA); no fine-tuning was applied.
 - 0.5B–4B-class models; conclusions do not extrapolate to frontier models.
-- Blind eval: one comparison (raw_vs_c2c), 3 volunteer evaluators; κ weak (0.06–0.21).
-  Evaluator identities are anonymized in this public copy.
-- The t2t_vs_c2c blind page was never sent out (the two pages were near-indistinguishable);
-  no human judgment exists for that pair.
+- Blind eval: round 2 in progress — a single 21-pair page covering all three arm-pair comparisons
+  (raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c); round 1 (n=3) voided and removed from the repo.
+  See [`results/blind/README.md`](results/blind/README.md).
 
 ## License & attribution
 

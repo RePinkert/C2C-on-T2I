@@ -26,7 +26,7 @@ plt.rcParams["axes.unicode_minus"] = False
 PLAYGROUND = r"C:\Yet\Playground"
 METRICS = os.path.join(PLAYGROUND, "results", "metrics")
 FIGS = os.path.join(PLAYGROUND, "report", "figures")
-COMFY_OUT = r"C:\cc\ComfyUI_windows_portable\ComfyUI\output\exp_v2"
+COMFY_OUT = r"C:\Yet\Playground\exp_v2"
 
 MATRIX_LABEL = {
     ("qwen3_0.6b+qwen2.5_0.5b", "moss"): "主矩阵 pairA@moss (n=84)",

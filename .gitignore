@@ -29,3 +29,7 @@ package-lock.json
 !t2i/**/*.png
 !t2i/results/
 !t2i/results/**
+
+# GitHub Pages blind-eval pool (original PNGs)
+!docs/pool/
+!docs/pool/*.png

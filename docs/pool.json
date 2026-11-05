@@ -1,0 +1,760 @@
+{
+ "cells": [
+  {
+   "id": "p01_s42",
+   "pid": "p01",
+   "prompt": "cinematic film-poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p01_s42_raw.png",
+   "t2t": "pool/A_moss_p01_s42_t2t.png",
+   "c2c": "pool/A_moss_p01_s42_c2c.png"
+  },
+  {
+   "id": "p01_s1042",
+   "pid": "p01",
+   "prompt": "cinematic film-poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p01_s1042_raw.png",
+   "t2t": "pool/A_moss_p01_s1042_t2t.png",
+   "c2c": "pool/A_moss_p01_s1042_c2c.png"
+  },
+  {
+   "id": "p01_s2042",
+   "pid": "p01",
+   "prompt": "cinematic film-poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p01_s2042_raw.png",
+   "t2t": "pool/A_moss_p01_s2042_t2t.png",
+   "c2c": "pool/A_moss_p01_s2042_c2c.png"
+  },
+  {
+   "id": "p02_s42",
+   "pid": "p02",
+   "prompt": "monochrome ink wash landscape of terraced rice fields just after rain, viewed from a high overlook, the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p02_s42_raw.png",
+   "t2t": "pool/A_moss_p02_s42_t2t.png",
+   "c2c": "pool/A_moss_p02_s42_c2c.png"
+  },
+  {
+   "id": "p02_s1042",
+   "pid": "p02",
+   "prompt": "monochrome ink wash landscape of terraced rice fields just after rain, viewed from a high overlook, the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p02_s1042_raw.png",
+   "t2t": "pool/A_moss_p02_s1042_t2t.png",
+   "c2c": "pool/A_moss_p02_s1042_c2c.png"
+  },
+  {
+   "id": "p02_s2042",
+   "pid": "p02",
+   "prompt": "monochrome ink wash landscape of terraced rice fields just after rain, viewed from a high overlook, the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p02_s2042_raw.png",
+   "t2t": "pool/A_moss_p02_s2042_t2t.png",
+   "c2c": "pool/A_moss_p02_s2042_c2c.png"
+  },
+  {
+   "id": "p03_s42",
+   "pid": "p03",
+   "prompt": "16-bit pixel art platformer level background, side-on orthographic view of an old residential apartment block facade, sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, even flat lighting. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p03_s42_raw.png",
+   "t2t": "pool/A_moss_p03_s42_t2t.png",
+   "c2c": "pool/A_moss_p03_s42_c2c.png"
+  },
+  {
+   "id": "p03_s1042",
+   "pid": "p03",
+   "prompt": "16-bit pixel art platformer level background, side-on orthographic view of an old residential apartment block facade, sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, even flat lighting. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p03_s1042_raw.png",
+   "t2t": "pool/A_moss_p03_s1042_t2t.png",
+   "c2c": "pool/A_moss_p03_s1042_c2c.png"
+  },
+  {
+   "id": "p03_s2042",
+   "pid": "p03",
+   "prompt": "16-bit pixel art platformer level background, side-on orthographic view of an old residential apartment block facade, sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, even flat lighting. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p03_s2042_raw.png",
+   "t2t": "pool/A_moss_p03_s2042_t2t.png",
+   "c2c": "pool/A_moss_p03_s2042_c2c.png"
+  },
+  {
+   "id": "p04_s42",
+   "pid": "p04",
+   "prompt": "premium packaging design photograph of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p04_s42_raw.png",
+   "t2t": "pool/A_moss_p04_s42_t2t.png",
+   "c2c": "pool/A_moss_p04_s42_c2c.png"
+  },
+  {
+   "id": "p04_s1042",
+   "pid": "p04",
+   "prompt": "premium packaging design photograph of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p04_s1042_raw.png",
+   "t2t": "pool/A_moss_p04_s1042_t2t.png",
+   "c2c": "pool/A_moss_p04_s1042_c2c.png"
+  },
+  {
+   "id": "p04_s2042",
+   "pid": "p04",
+   "prompt": "premium packaging design photograph of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p04_s2042_raw.png",
+   "t2t": "pool/A_moss_p04_s2042_t2t.png",
+   "c2c": "pool/A_moss_p04_s2042_c2c.png"
+  },
+  {
+   "id": "p05_s42",
+   "pid": "p05",
+   "prompt": "retro flat-vector travel poster, a lone student in a dark coat seen from behind, holding a translucent dome umbrella on a wet stone alley at night, one streetlamp reflected as a long streak across the rain-slick pavement, rain drawn as sparse diagonal lines, simplified geometric silhouette shapes, bold flat blocks of colour with no gradients, restricted palette of mustard yellow, deep teal, warm cream and charcoal, a broad flat sky band above and a narrow ground band below, screen-printed grain and slight misregistration. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p05_s42_raw.png",
+   "t2t": "pool/A_moss_p05_s42_t2t.png",
+   "c2c": "pool/A_moss_p05_s42_c2c.png"
+  },
+  {
+   "id": "p05_s1042",
+   "pid": "p05",
+   "prompt": "retro flat-vector travel poster, a lone student in a dark coat seen from behind, holding a translucent dome umbrella on a wet stone alley at night, one streetlamp reflected as a long streak across the rain-slick pavement, rain drawn as sparse diagonal lines, simplified geometric silhouette shapes, bold flat blocks of colour with no gradients, restricted palette of mustard yellow, deep teal, warm cream and charcoal, a broad flat sky band above and a narrow ground band below, screen-printed grain and slight misregistration. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p05_s1042_raw.png",
+   "t2t": "pool/A_moss_p05_s1042_t2t.png",
+   "c2c": "pool/A_moss_p05_s1042_c2c.png"
+  },
+  {
+   "id": "p05_s2042",
+   "pid": "p05",
+   "prompt": "retro flat-vector travel poster, a lone student in a dark coat seen from behind, holding a translucent dome umbrella on a wet stone alley at night, one streetlamp reflected as a long streak across the rain-slick pavement, rain drawn as sparse diagonal lines, simplified geometric silhouette shapes, bold flat blocks of colour with no gradients, restricted palette of mustard yellow, deep teal, warm cream and charcoal, a broad flat sky band above and a narrow ground band below, screen-printed grain and slight misregistration. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p05_s2042_raw.png",
+   "t2t": "pool/A_moss_p05_s2042_t2t.png",
+   "c2c": "pool/A_moss_p05_s2042_c2c.png"
+  },
+  {
+   "id": "p06_s42",
+   "pid": "p06",
+   "prompt": "creature concept art of a large unseen forest predator at night, only a pair of narrow reflective eyes visible in the darkness, warm amber glint with vertical needle pupils catching a sliver of moonlight, dense conifer forest drowned in cold fog, wet moss and fern fronds in the near foreground rendered in crisp detail, low camera angle looking slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light, cinematic matte painting with loose painterly brushwork in the environment and tighter detail on the eyes, volumetric shafts through the mist, unsettling stillness. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p06_s42_raw.png",
+   "t2t": "pool/A_moss_p06_s42_t2t.png",
+   "c2c": "pool/A_moss_p06_s42_c2c.png"
+  },
+  {
+   "id": "p06_s1042",
+   "pid": "p06",
+   "prompt": "creature concept art of a large unseen forest predator at night, only a pair of narrow reflective eyes visible in the darkness, warm amber glint with vertical needle pupils catching a sliver of moonlight, dense conifer forest drowned in cold fog, wet moss and fern fronds in the near foreground rendered in crisp detail, low camera angle looking slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light, cinematic matte painting with loose painterly brushwork in the environment and tighter detail on the eyes, volumetric shafts through the mist, unsettling stillness. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p06_s1042_raw.png",
+   "t2t": "pool/A_moss_p06_s1042_t2t.png",
+   "c2c": "pool/A_moss_p06_s1042_c2c.png"
+  },
+  {
+   "id": "p06_s2042",
+   "pid": "p06",
+   "prompt": "creature concept art of a large unseen forest predator at night, only a pair of narrow reflective eyes visible in the darkness, warm amber glint with vertical needle pupils catching a sliver of moonlight, dense conifer forest drowned in cold fog, wet moss and fern fronds in the near foreground rendered in crisp detail, low camera angle looking slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light, cinematic matte painting with loose painterly brushwork in the environment and tighter detail on the eyes, volumetric shafts through the mist, unsettling stillness. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p06_s2042_raw.png",
+   "t2t": "pool/A_moss_p06_s2042_t2t.png",
+   "c2c": "pool/A_moss_p06_s2042_c2c.png"
+  },
+  {
+   "id": "p07_s42",
+   "pid": "p07",
+   "prompt": "traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment colour with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p07_s42_raw.png",
+   "t2t": "pool/A_moss_p07_s42_t2t.png",
+   "c2c": "pool/A_moss_p07_s42_c2c.png"
+  },
+  {
+   "id": "p07_s1042",
+   "pid": "p07",
+   "prompt": "traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment colour with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p07_s1042_raw.png",
+   "t2t": "pool/A_moss_p07_s1042_t2t.png",
+   "c2c": "pool/A_moss_p07_s1042_c2c.png"
+  },
+  {
+   "id": "p07_s2042",
+   "pid": "p07",
+   "prompt": "traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment colour with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p07_s2042_raw.png",
+   "t2t": "pool/A_moss_p07_s2042_t2t.png",
+   "c2c": "pool/A_moss_p07_s2042_c2c.png"
+  },
+  {
+   "id": "p08_s42",
+   "pid": "p08",
+   "prompt": "电影海报定格：夜市摊贩在摊前掌勺，热气蒸腾，围裙浸满油渍，浓烟穿过灯光，低角度仰拍，摊位柜台在前景形成深色压条，暖色与品红灯笼光在背景化为散景，变形镜头光晕，青橙调色，体积雾，单光源硬光扫过面部，浅景深，35mm 胶片颗粒。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p08_s42_raw.png",
+   "t2t": "pool/A_moss_p08_s42_t2t.png",
+   "c2c": "pool/A_moss_p08_s42_c2c.png"
+  },
+  {
+   "id": "p08_s1042",
+   "pid": "p08",
+   "prompt": "电影海报定格：夜市摊贩在摊前掌勺，热气蒸腾，围裙浸满油渍，浓烟穿过灯光，低角度仰拍，摊位柜台在前景形成深色压条，暖色与品红灯笼光在背景化为散景，变形镜头光晕，青橙调色，体积雾，单光源硬光扫过面部，浅景深，35mm 胶片颗粒。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p08_s1042_raw.png",
+   "t2t": "pool/A_moss_p08_s1042_t2t.png",
+   "c2c": "pool/A_moss_p08_s1042_c2c.png"
+  },
+  {
+   "id": "p08_s2042",
+   "pid": "p08",
+   "prompt": "电影海报定格：夜市摊贩在摊前掌勺，热气蒸腾，围裙浸满油渍，浓烟穿过灯光，低角度仰拍，摊位柜台在前景形成深色压条，暖色与品红灯笼光在背景化为散景，变形镜头光晕，青橙调色，体积雾，单光源硬光扫过面部，浅景深，35mm 胶片颗粒。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p08_s2042_raw.png",
+   "t2t": "pool/A_moss_p08_s2042_t2t.png",
+   "c2c": "pool/A_moss_p08_s2042_c2c.png"
+  },
+  {
+   "id": "p09_s42",
+   "pid": "p09",
+   "prompt": "单色山水：雨后梯田，从高处俯瞰，水面镜面般映着苍灰天空，一道道平滑水带；秧苗以细笔干擦排列成行；层层弯曲的田埂没入流动雾气；远处一个戴斗笠的身影给出尺度；湿润笔墨渗入纸面，黑与淡靛的渐次晕染，其间一点低饱和绿色点缀；大面积留白，宣纸纤维肌理，立轴式纵向构图。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p09_s42_raw.png",
+   "t2t": "pool/A_moss_p09_s42_t2t.png",
+   "c2c": "pool/A_moss_p09_s42_c2c.png"
+  },
+  {
+   "id": "p09_s1042",
+   "pid": "p09",
+   "prompt": "单色山水：雨后梯田，从高处俯瞰，水面镜面般映着苍灰天空，一道道平滑水带；秧苗以细笔干擦排列成行；层层弯曲的田埂没入流动雾气；远处一个戴斗笠的身影给出尺度；湿润笔墨渗入纸面，黑与淡靛的渐次晕染，其间一点低饱和绿色点缀；大面积留白，宣纸纤维肌理，立轴式纵向构图。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p09_s1042_raw.png",
+   "t2t": "pool/A_moss_p09_s1042_t2t.png",
+   "c2c": "pool/A_moss_p09_s1042_c2c.png"
+  },
+  {
+   "id": "p09_s2042",
+   "pid": "p09",
+   "prompt": "单色山水：雨后梯田，从高处俯瞰，水面镜面般映着苍灰天空，一道道平滑水带；秧苗以细笔干擦排列成行；层层弯曲的田埂没入流动雾气；远处一个戴斗笠的身影给出尺度；湿润笔墨渗入纸面，黑与淡靛的渐次晕染，其间一点低饱和绿色点缀；大面积留白，宣纸纤维肌理，立轴式纵向构图。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p09_s2042_raw.png",
+   "t2t": "pool/A_moss_p09_s2042_t2t.png",
+   "c2c": "pool/A_moss_p09_s2042_c2c.png"
+  },
+  {
+   "id": "p10_s42",
+   "pid": "p10",
+   "prompt": "16 位像素风关卡背景图：正侧交视老居民楼外墙立面，阳台间晾衣绳下垂，衣物随风鼓起，竹竿与挂壁空调外机，窗台凌乱、瓷砖剥落锈迹，低饱和青、赭、灰粉色调，清晰抖色明暗，有限色板，粗像素、无抗锯齿，前景一条空步道，均匀平光。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p10_s42_raw.png",
+   "t2t": "pool/A_moss_p10_s42_t2t.png",
+   "c2c": "pool/A_moss_p10_s42_c2c.png"
+  },
+  {
+   "id": "p10_s1042",
+   "pid": "p10",
+   "prompt": "16 位像素风关卡背景图：正侧交视老居民楼外墙立面，阳台间晾衣绳下垂，衣物随风鼓起，竹竿与挂壁空调外机，窗台凌乱、瓷砖剥落锈迹，低饱和青、赭、灰粉色调，清晰抖色明暗，有限色板，粗像素、无抗锯齿，前景一条空步道，均匀平光。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p10_s1042_raw.png",
+   "t2t": "pool/A_moss_p10_s1042_t2t.png",
+   "c2c": "pool/A_moss_p10_s1042_c2c.png"
+  },
+  {
+   "id": "p10_s2042",
+   "pid": "p10",
+   "prompt": "16 位像素风关卡背景图：正侧交视老居民楼外墙立面，阳台间晾衣绳下垂，衣物随风鼓起，竹竿与挂壁空调外机，窗台凌乱、瓷砖剥落锈迹，低饱和青、赭、灰粉色调，清晰抖色明暗，有限色板，粗像素、无抗锯齿，前景一条空步道，均匀平光。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p10_s2042_raw.png",
+   "t2t": "pool/A_moss_p10_s2042_t2t.png",
+   "c2c": "pool/A_moss_p10_s2042_c2c.png"
+  },
+  {
+   "id": "p11_s42",
+   "pid": "p11",
+   "prompt": "高级礼盒包装摄影：一只手工锤纹紫铜茶壶（橙褐色老旧包浆、可见手工窝痕）置于深胡桃木托盘，旁立一只透明公道杯，壶嘴细薄热气升腾；居中英雄位构图，深青到炭灰渐变背景，左上方大型柔光箱勾出金属质感，手柄边缘冷冽轮廓光，底部阴影沉积，主体四周大面积留白，暖铜对冷底，超锐商业静物。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p11_s42_raw.png",
+   "t2t": "pool/A_moss_p11_s42_t2t.png",
+   "c2c": "pool/A_moss_p11_s42_c2c.png"
+  },
+  {
+   "id": "p11_s1042",
+   "pid": "p11",
+   "prompt": "高级礼盒包装摄影：一只手工锤纹紫铜茶壶（橙褐色老旧包浆、可见手工窝痕）置于深胡桃木托盘，旁立一只透明公道杯，壶嘴细薄热气升腾；居中英雄位构图，深青到炭灰渐变背景，左上方大型柔光箱勾出金属质感，手柄边缘冷冽轮廓光，底部阴影沉积，主体四周大面积留白，暖铜对冷底，超锐商业静物。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p11_s1042_raw.png",
+   "t2t": "pool/A_moss_p11_s1042_t2t.png",
+   "c2c": "pool/A_moss_p11_s1042_c2c.png"
+  },
+  {
+   "id": "p11_s2042",
+   "pid": "p11",
+   "prompt": "高级礼盒包装摄影：一只手工锤纹紫铜茶壶（橙褐色老旧包浆、可见手工窝痕）置于深胡桃木托盘，旁立一只透明公道杯，壶嘴细薄热气升腾；居中英雄位构图，深青到炭灰渐变背景，左上方大型柔光箱勾出金属质感，手柄边缘冷冽轮廓光，底部阴影沉积，主体四周大面积留白，暖铜对冷底，超锐商业静物。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p11_s2042_raw.png",
+   "t2t": "pool/A_moss_p11_s2042_t2t.png",
+   "c2c": "pool/A_moss_p11_s2042_c2c.png"
+  },
+  {
+   "id": "p12_s42",
+   "pid": "p12",
+   "prompt": "复古几何平涂旅行海报：孤身学生背影，暗色大衣，雨夜湿石板小巷，手持透明伞面；一盏路灯在雨滑路面拉出长光带；雨以稀疏斜线表示；几何化剪影形状，大色块无渐变；姜黄、深青、暖奶油、炭灰的受限色板；上方大色块天带、下方窄地带，丝网印刷颗粒与轻微错版。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p12_s42_raw.png",
+   "t2t": "pool/A_moss_p12_s42_t2t.png",
+   "c2c": "pool/A_moss_p12_s42_c2c.png"
+  },
+  {
+   "id": "p12_s1042",
+   "pid": "p12",
+   "prompt": "复古几何平涂旅行海报：孤身学生背影，暗色大衣，雨夜湿石板小巷，手持透明伞面；一盏路灯在雨滑路面拉出长光带；雨以稀疏斜线表示；几何化剪影形状，大色块无渐变；姜黄、深青、暖奶油、炭灰的受限色板；上方大色块天带、下方窄地带，丝网印刷颗粒与轻微错版。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p12_s1042_raw.png",
+   "t2t": "pool/A_moss_p12_s1042_t2t.png",
+   "c2c": "pool/A_moss_p12_s1042_c2c.png"
+  },
+  {
+   "id": "p12_s2042",
+   "pid": "p12",
+   "prompt": "复古几何平涂旅行海报：孤身学生背影，暗色大衣，雨夜湿石板小巷，手持透明伞面；一盏路灯在雨滑路面拉出长光带；雨以稀疏斜线表示；几何化剪影形状，大色块无渐变；姜黄、深青、暖奶油、炭灰的受限色板；上方大色块天带、下方窄地带，丝网印刷颗粒与轻微错版。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p12_s2042_raw.png",
+   "t2t": "pool/A_moss_p12_s2042_t2t.png",
+   "c2c": "pool/A_moss_p12_s2042_c2c.png"
+  },
+  {
+   "id": "p13_s42",
+   "pid": "p13",
+   "prompt": "夜兽概念设定图：庞大而不可见的林中掠食者，夜色中只余一对狭长反光眼睛，竖直针状瞳孔里一丝月光折作暖琥珀色微光；密林沉没在冷雾里；前景湿苔与蕨叶精细刻画；低角度仰拍；深重氛围透视；深青与近黑阴影只被一束冷轮廓光撕开；哑光绘景风格，环境松扫、双眼收紧；雾中体积光，令人不安的静默。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p13_s42_raw.png",
+   "t2t": "pool/A_moss_p13_s42_t2t.png",
+   "c2c": "pool/A_moss_p13_s42_c2c.png"
+  },
+  {
+   "id": "p13_s1042",
+   "pid": "p13",
+   "prompt": "夜兽概念设定图：庞大而不可见的林中掠食者，夜色中只余一对狭长反光眼睛，竖直针状瞳孔里一丝月光折作暖琥珀色微光；密林沉没在冷雾里；前景湿苔与蕨叶精细刻画；低角度仰拍；深重氛围透视；深青与近黑阴影只被一束冷轮廓光撕开；哑光绘景风格，环境松扫、双眼收紧；雾中体积光，令人不安的静默。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p13_s1042_raw.png",
+   "t2t": "pool/A_moss_p13_s1042_t2t.png",
+   "c2c": "pool/A_moss_p13_s1042_c2c.png"
+  },
+  {
+   "id": "p13_s2042",
+   "pid": "p13",
+   "prompt": "夜兽概念设定图：庞大而不可见的林中掠食者，夜色中只余一对狭长反光眼睛，竖直针状瞳孔里一丝月光折作暖琥珀色微光；密林沉没在冷雾里；前景湿苔与蕨叶精细刻画；低角度仰拍；深重氛围透视；深青与近黑阴影只被一束冷轮廓光撕开；哑光绘景风格，环境松扫、双眼收紧；雾中体积光，令人不安的静默。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p13_s2042_raw.png",
+   "t2t": "pool/A_moss_p13_s2042_t2t.png",
+   "c2c": "pool/A_moss_p13_s2042_c2c.png"
+  },
+  {
+   "id": "p14_s42",
+   "pid": "p14",
+   "prompt": "工笔重彩：年夜饭俯视圆桌，竹蒸笼盛满饺子、热气缕缕，一盘整蟹、小碗茶盏、筷子置筷架；一旁红灯笼余光洒在桌布上，暖朱砂色漫染；细笔工描每一枚饺子褶纹，矿物颜料配少量金饰，朱砂、赭黄、玉绿、米白，绢本肌理，向心环形构图。画面严禁出现任何文字与符号。",
+   "seed": "42",
+   "raw": "pool/A_moss_p14_s42_raw.png",
+   "t2t": "pool/A_moss_p14_s42_t2t.png",
+   "c2c": "pool/A_moss_p14_s42_c2c.png"
+  },
+  {
+   "id": "p14_s1042",
+   "pid": "p14",
+   "prompt": "工笔重彩：年夜饭俯视圆桌，竹蒸笼盛满饺子、热气缕缕，一盘整蟹、小碗茶盏、筷子置筷架；一旁红灯笼余光洒在桌布上，暖朱砂色漫染；细笔工描每一枚饺子褶纹，矿物颜料配少量金饰，朱砂、赭黄、玉绿、米白，绢本肌理，向心环形构图。画面严禁出现任何文字与符号。",
+   "seed": "1042",
+   "raw": "pool/A_moss_p14_s1042_raw.png",
+   "t2t": "pool/A_moss_p14_s1042_t2t.png",
+   "c2c": "pool/A_moss_p14_s1042_c2c.png"
+  },
+  {
+   "id": "p14_s2042",
+   "pid": "p14",
+   "prompt": "工笔重彩：年夜饭俯视圆桌，竹蒸笼盛满饺子、热气缕缕，一盘整蟹、小碗茶盏、筷子置筷架；一旁红灯笼余光洒在桌布上，暖朱砂色漫染；细笔工描每一枚饺子褶纹，矿物颜料配少量金饰，朱砂、赭黄、玉绿、米白，绢本肌理，向心环形构图。画面严禁出现任何文字与符号。",
+   "seed": "2042",
+   "raw": "pool/A_moss_p14_s2042_raw.png",
+   "t2t": "pool/A_moss_p14_s2042_t2t.png",
+   "c2c": "pool/A_moss_p14_s2042_c2c.png"
+  },
+  {
+   "id": "p15_s42",
+   "pid": "p15",
+   "prompt": "loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p15_s42_raw.png",
+   "t2t": "pool/A_moss_p15_s42_t2t.png",
+   "c2c": "pool/A_moss_p15_s42_c2c.png"
+  },
+  {
+   "id": "p15_s1042",
+   "pid": "p15",
+   "prompt": "loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p15_s1042_raw.png",
+   "t2t": "pool/A_moss_p15_s1042_t2t.png",
+   "c2c": "pool/A_moss_p15_s1042_c2c.png"
+  },
+  {
+   "id": "p15_s2042",
+   "pid": "p15",
+   "prompt": "loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p15_s2042_raw.png",
+   "t2t": "pool/A_moss_p15_s2042_t2t.png",
+   "c2c": "pool/A_moss_p15_s2042_c2c.png"
+  },
+  {
+   "id": "p16_s42",
+   "pid": "p16",
+   "prompt": "flat vector travel poster illustration of terraced rice fields after rain seen from above, the flooded terraces as smooth bands of pale sky reflection, young shoots rows as tiny chevrons, stamp-like border, limited palette of celadon, ink blue, mist grey and one muted red accent, crisp shapes, screen-print grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p16_s42_raw.png",
+   "t2t": "pool/A_moss_p16_s42_t2t.png",
+   "c2c": "pool/A_moss_p16_s42_c2c.png"
+  },
+  {
+   "id": "p16_s1042",
+   "pid": "p16",
+   "prompt": "flat vector travel poster illustration of terraced rice fields after rain seen from above, the flooded terraces as smooth bands of pale sky reflection, young shoots rows as tiny chevrons, stamp-like border, limited palette of celadon, ink blue, mist grey and one muted red accent, crisp shapes, screen-print grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p16_s1042_raw.png",
+   "t2t": "pool/A_moss_p16_s1042_t2t.png",
+   "c2c": "pool/A_moss_p16_s1042_c2c.png"
+  },
+  {
+   "id": "p16_s2042",
+   "pid": "p16",
+   "prompt": "flat vector travel poster illustration of terraced rice fields after rain seen from above, the flooded terraces as smooth bands of pale sky reflection, young shoots rows as tiny chevrons, stamp-like border, limited palette of celadon, ink blue, mist grey and one muted red accent, crisp shapes, screen-print grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p16_s2042_raw.png",
+   "t2t": "pool/A_moss_p16_s2042_t2t.png",
+   "c2c": "pool/A_moss_p16_s2042_c2c.png"
+  },
+  {
+   "id": "p17_s42",
+   "pid": "p17",
+   "prompt": "pencil sketch with ink hatching of an old apartment facade, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p17_s42_raw.png",
+   "t2t": "pool/A_moss_p17_s42_t2t.png",
+   "c2c": "pool/A_moss_p17_s42_c2c.png"
+  },
+  {
+   "id": "p17_s1042",
+   "pid": "p17",
+   "prompt": "pencil sketch with ink hatching of an old apartment facade, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p17_s1042_raw.png",
+   "t2t": "pool/A_moss_p17_s1042_t2t.png",
+   "c2c": "pool/A_moss_p17_s1042_c2c.png"
+  },
+  {
+   "id": "p17_s2042",
+   "pid": "p17",
+   "prompt": "pencil sketch with ink hatching of an old apartment facade, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p17_s2042_raw.png",
+   "t2t": "pool/A_moss_p17_s2042_t2t.png",
+   "c2c": "pool/A_moss_p17_s2042_c2c.png"
+  },
+  {
+   "id": "p18_s42",
+   "pid": "p18",
+   "prompt": "minimal continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p18_s42_raw.png",
+   "t2t": "pool/A_moss_p18_s42_t2t.png",
+   "c2c": "pool/A_moss_p18_s42_c2c.png"
+  },
+  {
+   "id": "p18_s1042",
+   "pid": "p18",
+   "prompt": "minimal continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p18_s1042_raw.png",
+   "t2t": "pool/A_moss_p18_s1042_t2t.png",
+   "c2c": "pool/A_moss_p18_s1042_c2c.png"
+  },
+  {
+   "id": "p18_s2042",
+   "pid": "p18",
+   "prompt": "minimal continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p18_s2042_raw.png",
+   "t2t": "pool/A_moss_p18_s2042_t2t.png",
+   "c2c": "pool/A_moss_p18_s2042_c2c.png"
+  },
+  {
+   "id": "p19_s42",
+   "pid": "p19",
+   "prompt": "impressionist oil painting of a student seen from behind under a translucent umbrella on a rain-slick stone alley at night, one streetlamp dissolving into broken brushwork, reflections in wet stone, rain suggested by flickering vertical strokes, thick impasto highlights, moody blues with a single warm yellow lamp. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p19_s42_raw.png",
+   "t2t": "pool/A_moss_p19_s42_t2t.png",
+   "c2c": "pool/A_moss_p19_s42_c2c.png"
+  },
+  {
+   "id": "p19_s1042",
+   "pid": "p19",
+   "prompt": "impressionist oil painting of a student seen from behind under a translucent umbrella on a rain-slick stone alley at night, one streetlamp dissolving into broken brushwork, reflections in wet stone, rain suggested by flickering vertical strokes, thick impasto highlights, moody blues with a single warm yellow lamp. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p19_s1042_raw.png",
+   "t2t": "pool/A_moss_p19_s1042_t2t.png",
+   "c2c": "pool/A_moss_p19_s1042_c2c.png"
+  },
+  {
+   "id": "p19_s2042",
+   "pid": "p19",
+   "prompt": "impressionist oil painting of a student seen from behind under a translucent umbrella on a rain-slick stone alley at night, one streetlamp dissolving into broken brushwork, reflections in wet stone, rain suggested by flickering vertical strokes, thick impasto highlights, moody blues with a single warm yellow lamp. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p19_s2042_raw.png",
+   "t2t": "pool/A_moss_p19_s2042_t2t.png",
+   "c2c": "pool/A_moss_p19_s2042_c2c.png"
+  },
+  {
+   "id": "p20_s42",
+   "pid": "p20",
+   "prompt": "minimalist sumi-e ink scene, in near-total darkness a pair of narrow amber eyes glinting, concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p20_s42_raw.png",
+   "t2t": "pool/A_moss_p20_s42_t2t.png",
+   "c2c": "pool/A_moss_p20_s42_c2c.png"
+  },
+  {
+   "id": "p20_s1042",
+   "pid": "p20",
+   "prompt": "minimalist sumi-e ink scene, in near-total darkness a pair of narrow amber eyes glinting, concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p20_s1042_raw.png",
+   "t2t": "pool/A_moss_p20_s1042_t2t.png",
+   "c2c": "pool/A_moss_p20_s1042_c2c.png"
+  },
+  {
+   "id": "p20_s2042",
+   "pid": "p20",
+   "prompt": "minimalist sumi-e ink scene, in near-total darkness a pair of narrow amber eyes glinting, concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p20_s2042_raw.png",
+   "t2t": "pool/A_moss_p20_s2042_t2t.png",
+   "c2c": "pool/A_moss_p20_s2042_c2c.png"
+  },
+  {
+   "id": "p21_s42",
+   "pid": "p21",
+   "prompt": "children's picture book illustration of a reunion dinner seen from above a round table, bamboo steamers with dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "42",
+   "raw": "pool/A_moss_p21_s42_raw.png",
+   "t2t": "pool/A_moss_p21_s42_t2t.png",
+   "c2c": "pool/A_moss_p21_s42_c2c.png"
+  },
+  {
+   "id": "p21_s1042",
+   "pid": "p21",
+   "prompt": "children's picture book illustration of a reunion dinner seen from above a round table, bamboo steamers with dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "1042",
+   "raw": "pool/A_moss_p21_s1042_raw.png",
+   "t2t": "pool/A_moss_p21_s1042_t2t.png",
+   "c2c": "pool/A_moss_p21_s1042_c2c.png"
+  },
+  {
+   "id": "p21_s2042",
+   "pid": "p21",
+   "prompt": "children's picture book illustration of a reunion dinner seen from above a round table, bamboo steamers with dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+   "seed": "2042",
+   "raw": "pool/A_moss_p21_s2042_raw.png",
+   "t2t": "pool/A_moss_p21_s2042_t2t.png",
+   "c2c": "pool/A_moss_p21_s2042_c2c.png"
+  },
+  {
+   "id": "p22_s42",
+   "pid": "p22",
+   "prompt": "夜市摊贩在摊前掌勺，热气升腾，油烟里灯笼晃，围裙浸透油渍",
+   "seed": "42",
+   "raw": "pool/A_moss_p22_s42_raw.png",
+   "t2t": "pool/A_moss_p22_s42_t2t.png",
+   "c2c": "pool/A_moss_p22_s42_c2c.png"
+  },
+  {
+   "id": "p22_s1042",
+   "pid": "p22",
+   "prompt": "夜市摊贩在摊前掌勺，热气升腾，油烟里灯笼晃，围裙浸透油渍",
+   "seed": "1042",
+   "raw": "pool/A_moss_p22_s1042_raw.png",
+   "t2t": "pool/A_moss_p22_s1042_t2t.png",
+   "c2c": "pool/A_moss_p22_s1042_c2c.png"
+  },
+  {
+   "id": "p22_s2042",
+   "pid": "p22",
+   "prompt": "夜市摊贩在摊前掌勺，热气升腾，油烟里灯笼晃，围裙浸透油渍",
+   "seed": "2042",
+   "raw": "pool/A_moss_p22_s2042_raw.png",
+   "t2t": "pool/A_moss_p22_s2042_t2t.png",
+   "c2c": "pool/A_moss_p22_s2042_c2c.png"
+  },
+  {
+   "id": "p23_s42",
+   "pid": "p23",
+   "prompt": "雨后梯田从高处俯瞰，水面倒映灰白天空，秧苗排成细线，远处一个戴斗笠的身影",
+   "seed": "42",
+   "raw": "pool/A_moss_p23_s42_raw.png",
+   "t2t": "pool/A_moss_p23_s42_t2t.png",
+   "c2c": "pool/A_moss_p23_s42_c2c.png"
+  },
+  {
+   "id": "p23_s1042",
+   "pid": "p23",
+   "prompt": "雨后梯田从高处俯瞰，水面倒映灰白天空，秧苗排成细线，远处一个戴斗笠的身影",
+   "seed": "1042",
+   "raw": "pool/A_moss_p23_s1042_raw.png",
+   "t2t": "pool/A_moss_p23_s1042_t2t.png",
+   "c2c": "pool/A_moss_p23_s1042_c2c.png"
+  },
+  {
+   "id": "p23_s2042",
+   "pid": "p23",
+   "prompt": "雨后梯田从高处俯瞰，水面倒映灰白天空，秧苗排成细线，远处一个戴斗笠的身影",
+   "seed": "2042",
+   "raw": "pool/A_moss_p23_s2042_raw.png",
+   "t2t": "pool/A_moss_p23_s2042_t2t.png",
+   "c2c": "pool/A_moss_p23_s2042_c2c.png"
+  },
+  {
+   "id": "p24_s42",
+   "pid": "p24",
+   "prompt": "老居民楼外墙的晾衣场，晾衣绳垂弯，衣物被风鼓起，窗台凌乱，挂壁空调结着锈",
+   "seed": "42",
+   "raw": "pool/A_moss_p24_s42_raw.png",
+   "t2t": "pool/A_moss_p24_s42_t2t.png",
+   "c2c": "pool/A_moss_p24_s42_c2c.png"
+  },
+  {
+   "id": "p24_s1042",
+   "pid": "p24",
+   "prompt": "老居民楼外墙的晾衣场，晾衣绳垂弯，衣物被风鼓起，窗台凌乱，挂壁空调结着锈",
+   "seed": "1042",
+   "raw": "pool/A_moss_p24_s1042_raw.png",
+   "t2t": "pool/A_moss_p24_s1042_t2t.png",
+   "c2c": "pool/A_moss_p24_s1042_c2c.png"
+  },
+  {
+   "id": "p24_s2042",
+   "pid": "p24",
+   "prompt": "老居民楼外墙的晾衣场，晾衣绳垂弯，衣物被风鼓起，窗台凌乱，挂壁空调结着锈",
+   "seed": "2042",
+   "raw": "pool/A_moss_p24_s2042_raw.png",
+   "t2t": "pool/A_moss_p24_s2042_t2t.png",
+   "c2c": "pool/A_moss_p24_s2042_c2c.png"
+  },
+  {
+   "id": "p25_s42",
+   "pid": "p25",
+   "prompt": "锤纹紫铜茶壶与透明公道杯摆在深胡桃木托盘上，暖铜对冷底，礼盒包装摄影",
+   "seed": "42",
+   "raw": "pool/A_moss_p25_s42_raw.png",
+   "t2t": "pool/A_moss_p25_s42_t2t.png",
+   "c2c": "pool/A_moss_p25_s42_c2c.png"
+  },
+  {
+   "id": "p25_s1042",
+   "pid": "p25",
+   "prompt": "锤纹紫铜茶壶与透明公道杯摆在深胡桃木托盘上，暖铜对冷底，礼盒包装摄影",
+   "seed": "1042",
+   "raw": "pool/A_moss_p25_s1042_raw.png",
+   "t2t": "pool/A_moss_p25_s1042_t2t.png",
+   "c2c": "pool/A_moss_p25_s1042_c2c.png"
+  },
+  {
+   "id": "p25_s2042",
+   "pid": "p25",
+   "prompt": "锤纹紫铜茶壶与透明公道杯摆在深胡桃木托盘上，暖铜对冷底，礼盒包装摄影",
+   "seed": "2042",
+   "raw": "pool/A_moss_p25_s2042_raw.png",
+   "t2t": "pool/A_moss_p25_s2042_t2t.png",
+   "c2c": "pool/A_moss_p25_s2042_c2c.png"
+  },
+  {
+   "id": "p26_s42",
+   "pid": "p26",
+   "prompt": "a lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight",
+   "seed": "42",
+   "raw": "pool/A_moss_p26_s42_raw.png",
+   "t2t": "pool/A_moss_p26_s42_t2t.png",
+   "c2c": "pool/A_moss_p26_s42_c2c.png"
+  },
+  {
+   "id": "p26_s1042",
+   "pid": "p26",
+   "prompt": "a lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight",
+   "seed": "1042",
+   "raw": "pool/A_moss_p26_s1042_raw.png",
+   "t2t": "pool/A_moss_p26_s1042_t2t.png",
+   "c2c": "pool/A_moss_p26_s1042_c2c.png"
+  },
+  {
+   "id": "p26_s2042",
+   "pid": "p26",
+   "prompt": "a lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight",
+   "seed": "2042",
+   "raw": "pool/A_moss_p26_s2042_raw.png",
+   "t2t": "pool/A_moss_p26_s2042_t2t.png",
+   "c2c": "pool/A_moss_p26_s2042_c2c.png"
+  },
+  {
+   "id": "p27_s42",
+   "pid": "p27",
+   "prompt": "浓雾的夜林深处，一对狭长的琥珀色眼睛在黑暗里微微发光",
+   "seed": "42",
+   "raw": "pool/A_moss_p27_s42_raw.png",
+   "t2t": "pool/A_moss_p27_s42_t2t.png",
+   "c2c": "pool/A_moss_p27_s42_c2c.png"
+  },
+  {
+   "id": "p27_s1042",
+   "pid": "p27",
+   "prompt": "浓雾的夜林深处，一对狭长的琥珀色眼睛在黑暗里微微发光",
+   "seed": "1042",
+   "raw": "pool/A_moss_p27_s1042_raw.png",
+   "t2t": "pool/A_moss_p27_s1042_t2t.png",
+   "c2c": "pool/A_moss_p27_s1042_c2c.png"
+  },
+  {
+   "id": "p27_s2042",
+   "pid": "p27",
+   "prompt": "浓雾的夜林深处，一对狭长的琥珀色眼睛在黑暗里微微发光",
+   "seed": "2042",
+   "raw": "pool/A_moss_p27_s2042_raw.png",
+   "t2t": "pool/A_moss_p27_s2042_t2t.png",
+   "c2c": "pool/A_moss_p27_s2042_c2c.png"
+  },
+  {
+   "id": "p28_s42",
+   "pid": "p28",
+   "prompt": "a family reunion dinner seen directly from above, bamboo dumpling steamers and teacups on a round table",
+   "seed": "42",
+   "raw": "pool/A_moss_p28_s42_raw.png",
+   "t2t": "pool/A_moss_p28_s42_t2t.png",
+   "c2c": "pool/A_moss_p28_s42_c2c.png"
+  },
+  {
+   "id": "p28_s1042",
+   "pid": "p28",
+   "prompt": "a family reunion dinner seen directly from above, bamboo dumpling steamers and teacups on a round table",
+   "seed": "1042",
+   "raw": "pool/A_moss_p28_s1042_raw.png",
+   "t2t": "pool/A_moss_p28_s1042_t2t.png",
+   "c2c": "pool/A_moss_p28_s1042_c2c.png"
+  },
+  {
+   "id": "p28_s2042",
+   "pid": "p28",
+   "prompt": "a family reunion dinner seen directly from above, bamboo dumpling steamers and teacups on a round table",
+   "seed": "2042",
+   "raw": "pool/A_moss_p28_s2042_raw.png",
+   "t2t": "pool/A_moss_p28_s2042_t2t.png",
+   "c2c": "pool/A_moss_p28_s2042_c2c.png"
+  }
+ ]
+}

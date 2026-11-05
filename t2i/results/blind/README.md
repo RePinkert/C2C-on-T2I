@@ -1,3 +1,5 @@
+页面公开链接：https://repinkert.github.io/C2C-on-T2I/ （GitHub Pages 从 /docs 发布；docs/index.html 即本页面）
+
 # 盲评（第二轮 / round 2）
 
 > 第一轮（n=3，仅 raw_vs_c2c，两问卷图像输出几乎不可区分）的全部数据已作废并删除，

@@ -133,33 +133,13 @@ n=24 的泛化矩阵下不该外推。clip_user 三个矩阵都是 t2t ≥ c2c�
 
 ## 人评
 
-只送审了 **raw_vs_c2c** 一份问卷（`results/blind/blind_raw_vs_c2c.html`，20 对，单文件自包含）；
-t2t_vs_c2c 未送审，t2t 臂没有人评数据。评估者 3 人（A、B、C，群组志愿者），
-每人 20 对 × 2 问 = 40 票，共 120 票，无缺失。汇总见 `results/metrics/votes_summary.md|csv`。
+**状态：第二轮重收中**——第一轮盲评（n=3，仅 raw_vs_c2c，两问卷图像输出几乎不可区分）已全部
+作废，其汇总表与图均已从仓库删除。
 
-| 问题 | raw 胜 | c2c 胜 | 相当 | 胜率 raw（排相当） | 胜率 raw（相当计半） | binomial p | mean κ |
-|---|---|---|---|---|---|---|---|
-| 忠实度 faith | 41 | 7 | 12 | 0.854 | 0.783 | <0.001 | 0.208 |
-| 观感 look | 36 | 14 | 10 | 0.720 | 0.683 | 0.0026 | 0.061 |
-
-![blind](figures/fig_blind.png)
-
-三个人的票：faith — A 15/3/2、B 11/1/8、C 15/3/2；look — A 12/7/1、
-B 9/4/7、C 15/3/2。方向一致。B 相当票明显偏多（faith 8/20），和"两臂图像输出几乎
-分不出"这个体感一致。
-
-忠实度人评 raw 占优（85%，p<0.001），和 clip_user（raw > c2c，p=0.002）一个方向。C2C 增强后
-确实更偏离用户原始意图。观感 raw 也占优（72%，p=0.003），和 LAION aesthetic 反了方向。自动
-美学头给出的"c2c 更好看"和人眼不是一回事，LAION 分数不能单独当"好看"的证据。
-
-κ 只有 0.06–0.21，相当率偏高（faith 20%、look 17%）。这组人评证据只能支持到"raw 不劣于
-c2c、大概率更优"这个程度，给不出更精确的胜率估计。
-
-对"质量有没有代价"的结论：C2C 相对 T2T 没有显示出任何一致的质量劣化，但也看不出人眼可见的
-增益。"aesthetic 更优"是那个自动指标自己的偏好。
-
-复现：见 `docs/REPRODUCE.md`（公开版为 fork 仓库的 `t2i/docs/REPRODUCE.md`）；
-相关脚本是 `eval/analyze_votes.py` 和 `eval/make_figs.py`。
+第二轮：单页 21 对（seed 42/1042/2042 各 7 对），三个 pairwise 比较各 7 对
+（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c），21 个 prompt 互不重复；左右随机、隐藏映射；
+每对两问（忠实度/观感）三选一。页面 `t2i/blind/blind_compare_all.html` 已在仓库公开，
+回收 votes CSV 后按 `eval/analyze_votes.py` 汇总并更新本节。协议见 `t2i/results/blind/README.md`。
 
 ## 失败模式
 
@@ -210,7 +190,7 @@ p04/p15 稳定复现在同一批 prompt 上，说明这不是随机噪声，是 
 | `results/metrics/image_metrics.csv` | clip_user / clip_enhanced / aesthetic |
 | `results/metrics/text_stats.csv` | 延迟/token/退化统计（64 行文本臂） |
 | `results/metrics/stats_pairs.csv` + `stats_summary.md` | 配对 Wilcoxon 全表 |
-| `results/metrics/votes_summary.csv` | 盲评汇总（raw_vs_c2c × 忠实度/观感，3 人） |
+| `t2i/blind/blind_compare_all.html` | 盲评第二轮单页（21 对，三比较各 7 对；回收后汇总） |
 | `results/prompts_generated/pairA|B.json` | 三臂原始 prompt + 延迟明细 |
 | `results/batch_log.txt` | 96 run 批跑日志（含补跑记录） |
 | `report/figures/gallery/` | 退化案例图（带标签拼接） |

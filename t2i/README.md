@@ -44,7 +44,7 @@ t2i/
 | Image quality? | No consistent degradation. LAION aesthetic favors C2C on moss×pairA (p=0.012) but does **not** replicate on pairB/krea2; T2T wins self-consistency (clip_enhanced, p<0.001) |
 | User-intent alignment? | Both enhancement arms drift from the raw user prompt equally (clip_user); C2C is **not** worse than T2T (n.s.) |
 | Failure modes? | C2C decode collapse **3/16 (18.75%)** on both pairs (T2T: 0/16) — repetition loops, meta-language self-reference, phrase duplication; **requires rep-4gram / distinct-n guard + T2T fallback** |
-| Human blind eval? | raw beats C2C on faithfulness (85%, p<0.001) and looks (72%, p=0.003); LAION aesthetic head disagrees with humans — see the report's blind-eval section |
+| Human blind eval? | First-round votes (n=3, single comparison) voided; a full second round (single page, 21 pairs — 7 per comparison, all unique prompts) is in progress — see [`t2i/blind/README.md`](results/blind/README.md) |
 | Generalization? | Latency win replicates across fuser pairs and T2I backends; quality conclusions only partially replicate; degeneration reproduces on both pairs |
 
 Details, statistics and honest negative results: **[report/report_final.md](report/report_final.md)**.

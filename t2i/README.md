@@ -44,7 +44,7 @@ t2i/
 | Image quality? | Raw beats both enhancement arms on clip_user (marginal, p=0.054/0.058); LAION aesthetic shows **no significant effect anywhere** this round; on pairB@moss c2c is significantly more self-consistent than t2t (clip_enhanced p=0.034) |
 | User-intent alignment? | Both enhancement arms drift from the raw user prompt; C2C not worse than T2T (n.s.) |
 | Failure modes? | C2C decode collapse **7/56 texts (12.5%)** — pairA 5/28, pairB 2/28, T2T 0; repetition loops, meta-language self-reference, structured-format leaks. Chinese inputs are the hot zone (5/12); **requires distinct-2/rep-4gram guard + T2T fallback** |
-| Human blind eval? | First-round votes (n=3, single comparison) voided; a full second round (single page, 21 pairs — 7 per comparison, all unique prompts) is in progress — see [`t2i/blind/README.md`](results/blind/README.md) |
+| Human blind eval? | Round 2 live: dynamic single page, fresh random 21-pair draw on every visit (7 per arm-pair comparison, unique prompts); ephemeral votes (no storage, aggregate binomials only). First-round votes (n=3) voided and removed. See [`results/blind/README.md`](results/blind/README.md) |
 | Generalization? | Latency win replicates across fuser pairs and T2I backends; pairB@moss clip_enhanced flips in c2c favor (p=0.034); krea2 all n.s.; p24 degeneration reproduces on both pairs |
 
 Details, statistics and honest negative results: **[report/report_final.md](report/report_final.md)**.
@@ -71,8 +71,9 @@ Image stage is ~4 min/image (CPU TE encoding dominates); the text stage decouple
   rep-4gram > 0.25 and fall back to T2T in production.
 - fuser is **zero-shot** for the T2I domain (trained on QA); no fine-tuning was applied.
 - 0.5B–4B-class models; conclusions do not extrapolate to frontier models.
-- Blind eval: round 2 in progress — a single 21-pair page covering all three arm-pair comparisons
-  (raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c); round 1 (n=3) voided and removed from the repo.
+- Blind eval: round 2 live — fresh random 21-pair draw per visit (all three arm pairs);
+  ephemeral votes by design (no storage, aggregate binomials only, κ not computable).
+  Round 1 (n=3) voided and removed from the repo.
   See [`results/blind/README.md`](results/blind/README.md).
 
 ## License & attribution

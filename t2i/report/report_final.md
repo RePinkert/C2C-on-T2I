@@ -131,10 +131,15 @@ clip_user t2t vs c2c 为 -0.009（p=0.056，c2c 反向边缘）。退化模式�
 
 ## 人评
 
-**状态：第二轮重收中**。第一轮盲评（n=3，仅 raw_vs_c2c）已全部作废、数据已删除；本轮协议：
-单页 21 对（`results/blind/blind_compare_all.html`），三比较各 7 对，seed 42/1042/2042 各出现
-7 次，21 个 prompt 互不重复；左右随机、隐藏映射；每对两问（忠实度/观感）三选一。
-回收 votes CSV 后按 `eval/analyze_votes.py` 汇总并更新本节。
+**状态：第二轮已发布（动态随机抽样页），等回收。**第一轮盲评（n=3，仅 raw_vs_c2c）已全部
+作废、数据已删除。
+
+第二轮协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/。每位受访者打开页面时，
+页面用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个
+prompt 互不重复，每场顺序与左右全随机）。所有作答只存于当前标签页内存，**刷新/关闭即清空**，
+无 localStorage；完成后导出 CSV（格式与 eval/analyze_votes.py 兼容）。**分析口径**：aggregate
+臂胜率按汇总票数做 binomial 检验；κ（跨受访者同 item 一致性）不可计算（每人仅评 21 对且
+各不同），报告中如实说明。防刷/去重：无任何手段，匿名自愿，解读以 aggregate 趋势为限。
 
 ## 失败模式
 

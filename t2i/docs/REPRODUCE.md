@@ -63,7 +63,7 @@ MOSS 架构是 `layers.*`（不是 Krea2 的 `blocks.*`），CLIPLoader type 用
 
 ```powershell
 cd t2i
-..\venv\Scripts\python.exe workflows\build_workflow.py   # 生成 workflows/runs_v2/*.json（3 臂 × 2 后端 × 双输出）
+..\venv\Scripts\python.exe workflows\build_workflow.py   # 生成 workflows/runs_v2/*.json（3 种处理 × 2 后端 × 双输出）
 ```
 
 - **文本/图像已解耦**：`runs_v2/*.json` 把 t2t/c2c 文本作为**字面量**嵌入，图像批跑零 LLM；

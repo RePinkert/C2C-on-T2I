@@ -7,28 +7,28 @@
 
 | 因子 | 取值 | 角色 |
 |---|---|---|
-| 通信臂 arm | `raw`（原始 prompt 直出）/ `t2t`（Sharer 文本中转）/ `c2c`（KV-cache 融合） | 组内因子 |
+| 处理方式（condition） | `raw`（原始 prompt 直出）/ `t2t`（Sharer 文本中转）/ `c2c`（KV-cache 融合） | 组内因子 |
 | 模型对 pair | ① `qwen3_0.6b+qwen2.5_0.5b`（主）② `qwen3_0.6b+qwen3_4b_base`（强 base Sharer） | 泛化因子 A |
 | T2I 后端 backend | ① `moss`（moodyMossMix fp8）② `krea2`（moodyKrea2MixUncensoredV8 nvfp4） | 泛化因子 B |
 | prompt | 16 条（中英各半；类型：简单/多物体空间/抽象情绪/材质光影/中文场景/风格复合） | 样本 |
-| seed | 3 个 / prompt（三臂同 seed 成对） | 重复 |
+| seed | 3 个 / prompt（三种处理同 seed 成对） | 重复 |
 
 **运行量（图像生成）**
 | 矩阵 | 覆盖 | 图数 | run 数 | 估时 |
 |---|---|---|---|---|
-| 主 | pair① × moss × 3臂 × 16 prompt × 3 seed | 144 | 48 | ~3.2h |
-| 泛化 A | pair② × moss × 3臂 × 8 prompt(子集) × 3 seed | 72 | 24 | ~1.6h |
-| 泛化 B | pair① × krea2 × 3臂 × 8 prompt(子集) × 3 seed | 72 | 24 | ~1.6h |
+| 主 | pair① × moss × 3 种处理 × 16 prompt × 3 seed | 144 | 48 | ~3.2h |
+| 泛化 A | pair② × moss × 3 种处理 × 8 prompt(子集) × 3 seed | 72 | 24 | ~1.6h |
+| 泛化 B | pair① × krea2 × 3 种处理 × 8 prompt(子集) × 3 seed | 72 | 24 | ~1.6h |
 | 合计 | | 288 | 96 | **~6.5h** |
 
 子集选择：p01–p08（v1 已有图的 prompt，便于纵向对比）。
 
-**prompt 生成**（便宜，先跑）：2 pair × 2 臂(t2t/c2c) × 16 prompt = 64 次 bridge 生成，
-用 `--batch` 一次加载跑完，估 <30min。raw 臂无 LLM。
+**prompt 生成**（便宜，先跑）：2 pair × 2 种处理(t2t/c2c) × 16 prompt = 64 次 bridge 生成，
+用 `--batch` 一次加载跑完，估 <30min。raw 不用 LLM。
 
 ## 2. 公平性修复（相对 v1）
 
-1. **修 T2T 截断**：Sharer 分析预算 96→256 tokens；三臂最终 prompt 输出预算统一 256
+1. **修 T2T 截断**：Sharer 分析预算 96→256 tokens；三种处理最终 prompt 输出预算统一 256
 2. **延迟口径**：`--batch` 稳态延迟（纯生成）为主指标；冷启动（含模型加载 ~7s）单列
 3. **退化样本保留**：单列 `degenerate` 类别；指标报"含/不含退化"两套
 4. **成本记录**：每次批跑记录 GPU 时数
@@ -47,7 +47,7 @@
 **统计**：每比较 n=48（16 prompt × 3 seed）配对；Wilcoxon signed-rank + bootstrap 95% CI +
 effect size（Cliff's delta 或 matched-pairs rank-biserial）。显著性阈值 p<0.05 双尾。
 
-**可选消融（P1）**：把三臂 prompt 截断到等 token 数重比一次 → 分离"语义增益 vs 长度增益"。
+**可选消融（P1）**：把三种处理 prompt 截断到等 token 数重比一次 → 分离"语义增益 vs 长度增益"。
 
 ## 4. 人工盲评协议
 
@@ -61,7 +61,7 @@ effect size（Cliff's delta 或 matched-pairs rank-biserial）。显著性阈值
 
 ## 5. 失败分析（RQ3）
 
-- 退化样本全收录（不修不删），统计：退化率（按臂/按 pair）、触发特征（prompt 类型？长度？）
+- 退化样本全收录（不修不删），统计：退化率（按处理/按 pair）、触发特征（prompt 类型？长度？）
 - 案例 gallery：v1 的 p04 + v2 新增
 - 对照论文 A.4.6（Sharer 语义误导）与解码退化两类失败的异同
 

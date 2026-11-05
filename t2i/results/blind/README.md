@@ -19,7 +19,7 @@
 
 - 答完 **21/21** 后 "提交结果" 按钮变绿；点击 → 确认框（提交后不可修改）→ 自动 POST 到
   Google Apps Script → **追加进私密 Google Sheet `blind_votes`**（只有表主可见）
-- 脚本只写不读：校验必须正好 42 行、字段白名单（`id` 形如 `p##_s####`、`q`、`answer`、`left/right` 臂），
+- 脚本只写不读：校验必须正好 42 行、字段白名单（`id` 形如 `p##_s####`、`q`、`answer`、`left/right` 对应的处理），
   不匹配的请求一律拒收；Sheet 行按 `submission_id | seq | submitted_at | nickname | pair_id | q | answer | truth_left | truth_right` 排列（长表）
 - 只收：昵称（可空，≤30 字）、提交时间、42 票；**不收 IP / UA / 任何指纹**
 - Sheet URL 公开（静态页内嵌），**无法根治垃圾行**；对策：脚本白名单 + 表主人眼ball 出 `submitted_at` 前后的脏行删掉即可
@@ -31,9 +31,9 @@
 
 因**每位受访者看到的 21 对都是随机抽取、互不相同**：
 
-- aggregate 臂胜率按**汇总票数**做 binomial 检验（faith / look 分开报）
+- aggregate 胜率按**汇总票数**做 binomial 检验（faith / look 分开报）
 - **κ（Cohen's kappa，跨受访者同 item 一致性）不可计算**——人均仅评 21 对且各不同
-- per-item 统计因样本稀疏也不做；只报三比较 × 两问的臂胜率与相当比例
+- per-item 统计因样本稀疏也不做；只报三比较 × 两问的胜率与相当比例
 
 ## 回收后
 

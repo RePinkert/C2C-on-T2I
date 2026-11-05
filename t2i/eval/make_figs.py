@@ -200,7 +200,7 @@ def fig_blind():
     ax.set_xticks(xs, comps)
     ax.set_ylim(0, 1)
     ax.set_ylabel("胜率（排除相当）")
-    ax.set_title("人工盲评胜率（A 臂 vs B 臂）")
+    ax.set_title("人工盲评胜率（排除“相当”）")
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_blind.png"), dpi=150)
     plt.close(fig)

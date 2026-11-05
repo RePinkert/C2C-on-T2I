@@ -1,12 +1,12 @@
 # C2C × 文生图 实验报告
 
-> 把 Cache-to-Cache（KV-Cache 直传，arXiv:2510.03215 / ICLR'26）接进 ComfyUI 文生图prompt 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-05。环境：RTX 5070 Ti Laptop (12GB) / Windows / ComfyUI 0.43.2，推理零训练（官方预训练 fuser）。数据在 `results/metrics/`，图在 `report/figures/`。
+> 把 Cache-to-Cache（KV-Cache 直传，arXiv:2510.03215 / ICLR'26）接进 ComfyUI 文生图prompt 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-05。环境：RTX 5070 Ti Laptop (12GB) / Windows / ComfyUI 0.43.2，推理零训练（原文预训练 fuser）。数据在 `results/metrics/`，图在 `report/figures/`。
 
 ## 1 背景与问题
 
-Cache to Cache（C2C）让两个 LLM 直接融合 KV-Cache 传递语义，替代"Sharer 解码出分析文本、Receiver 再读"的文本中转（T2T）。论文自报延迟平均快 2.5×，但仅在 text generation 域验证过；文生图管线里 prompt 生成恰是 LLM 间语义传递的位置，是 C2C 的天然候选场景。本报告只问一个问题：**把 C2C 接进文生图 prompt 生成环节，2.5× 还成不成立、值不值得为它支付图像质量代价？**顺带：意图对齐会不会因 KV 直传漂移（论文 A.4.6 提过 Sharer 语义误导）、失败模式长什么样、换 Sharer / 换 T2I 后端还成不成立。
+Cache to Cache（C2C）让两个 LLM 直接融合 KV-Cache 传递语义，替代"Sharer 解码出分析文本、Receiver 再读"的文本中转（T2T）。论文自报延迟平均快 2.5×，但仅在 text generation 域验证过；文生图管线里 prompt 生成恰是 LLM 间语义传递的位置，是 C2C 的天然候选场景。本报告希望验证把 C2C 接进文生图 prompt 生成环节，2.5× 还成不成立、值不值得为它支付图像质量代价？意图对齐会不会因 KV 直传漂移（论文 A.4.6 提过 Sharer 语义误导）、失败模式长什么样、换 Sharer / 换 T2I 后端还成不成立。
 
-实测零训练、零微调：直接用官方预训练 fuser，在 ComfyUI 工作流里对照三臂——raw（用户 idea 直接喂 T2I）、t2t（Sharer 分析 → 文本中转 → Receiver 写 prompt）、c2c（Sharer 前向一次出 KV-Cache → 预训练 fuser 融进 Receiver → 写 prompt）。
+实测零训练、零微调：直接用原文预训练 fuser，在 ComfyUI 工作流里对照三种处理——raw（用户 idea 直接喂 T2I）、t2t（Sharer 分析 → 文本中转 → Receiver 写 prompt）、c2c（Sharer 前向一次出 KV-Cache → 预训练 fuser 融进 Receiver → 写 prompt）。
 
 ## 2 实验设计
 
@@ -17,7 +17,7 @@ Cache to Cache（C2C）让两个 LLM 直接融合 KV-Cache 传递语义，替代
 | Receiver | Qwen3-0.6B | Qwen3-0.6B |
 | Sharer | Qwen2.5-0.5B-Instruct | Qwen3-4B-Base |
 | Fuser | `qwen3_0.6b+qwen2.5_0.5b_Fuser` | `qwen3_0.6b+qwen3_4b_base_Fuser` |
-| 三臂 token 预算 | 统一 256 | 同左 |
+| 三种处理的 token 预算 | 统一 256 | 同左 |
 
 **表 2 T2I 后端**
 
@@ -26,7 +26,7 @@ Cache to Cache（C2C）让两个 LLM 直接融合 KV-Cache 传递语义，替代
 | moss（主+泛化A） | moodyMossMix fp8 + Qwen3.5-9B int8 TE（**TE 须改为 CPU**，上 GPU 会 OOM 崩）+ flux2-vae；1024²，25 steps，CFG 3.0，er_sde/simple |
 | krea2（泛化B） | moodyKrea2MixUncensoredV8 nvfp4 + qwen3vl-4b-abliterated fp8 TE（CPU）+ qwen_image_vae；1024²，8 steps，CFG 1.0，euler/simple |
 
-文本/图像解耦：prompt 由 bridge 批量生成（`results/prompts_generated/pairA|B.json`，含延迟与退化统计），图像批跑把文本作字面量嵌入工作流，零 LLM 调用，三臂 prompt 完全受控。
+文本/图像解耦：prompt 由 bridge 批量生成（`results/prompts_generated/pairA|B.json`，含延迟与退化统计），图像批跑把文本作字面量嵌入工作流，零 LLM 调用，三种处理的 prompt 完全受控。
 
 **表 3 实验矩阵**
 
@@ -36,9 +36,10 @@ Cache to Cache（C2C）让两个 LLM 直接融合 KV-Cache 传递语义，替代
 | 泛化 A | pairB × moss × p01–p08 × 3 seed | 24 | 72 | 跨 Sharer 对 |
 | 泛化 B | pairA × krea2 × p01–p08 × 3 seed | 24 | 72 | 跨 T2I 后端 |
 
-28 条 prompt（中英 16/12；7 条基准 + 7 中文直译 + 7 换媒介 + 7 短句），seed 42/1042/2042，三臂同 seed 成对。132 个 run 全部完成，0 缺失，共 396 张无标签图。
+28 条 prompt（中英 16/12；7 条基准 + 7 中文直译 + 7 换媒介 + 7 短句），seed 42/1042/2042，三种处理在同一 prompt×seed 下成对。132 个 run 全部完成，0 缺失，共 396 张无标签图。
 
-指标：clip_user（图 vs 用户原始 prompt，主指标，防增强后偏离意图）、clip_enhanced（图vs 增强后 prompt，暴露长度混杂）、aesthetic（LAION V2）。文本侧：rep-4gram / distinct-1/2/3退化率、稳态/冷启动延迟、token 数。统计按 (prompt, seed) 配对，Wilcoxon signed-rank 双尾 +bootstrap 2000 次 95% CI + matched-pairs rank-biserial，α=.05。人工盲评：公开页https://repinkert.github.io/C2C-on-T2I/，详见 §3.4。
+指标：clip_user（图 vs 用户原始 prompt，主指标，防增强后偏离意图）、clip_enhanced（图vs 增强后 prompt，暴露长度混杂）、aesthetic（LAION V2）。文本侧：rep-4gram / distinct-1/2/3退化率、稳态/冷启动延迟、token 数。统计按 (prompt, seed) 配对，Wilcoxon signed-rank 双尾 +bootstrap 2000 次 95% CI + matched-pairs rank-biserial，α=.05。人工盲评：公开页https://repinkert.github.io/C2C-on-T2I/
+详见 §3.4。
 
 ## 3 调查结果
 
@@ -77,9 +78,9 @@ T2T 的成本随 prompt 难度上涨（风格化长 prompt 让分析阶段变长
 | aesthetic | raw vs c2c | +0.0846 | [-0.04, 0.22] | 0.229 | 无显著差异 |
 
 - aesthetic 三项全部不显著，观感增益为零。
-- clip_user 三个比较均为 raw ≥ 两臂、t2t ≥ c2c，但 p∈[.054, .058]、效应量小，方向一致、强度存疑。
+- clip_user 三个比较均为 raw ≥ t2t、raw ≥ c2c、t2t ≥ c2c，但 p∈[.054, .058]、效应量小，方向一致、强度存疑。
 - clip_enhanced 两行 <0.001 是预期内现象（t2t 与自身文本天然更自洽；长度混杂）。
-- 「增强即漂移」：两个增强臂都把图拉离了用户意图，与通信方式无关。
+- 「增强即漂移」：两种增强处理都把图拉离了用户意图，与通信方式无关。
 
 ### 3.3 泛化
 
@@ -96,7 +97,8 @@ pairB（4B Sharer）上 clip_enhanced 方向整体翻转：raw vs c2c -0.023（p
 
 ### 3.4 人评
 
-协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/。每位受访者打开页面时用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个prompt 互不重复，顺序与左右全随机）；作答只存标签页内存，刷新即清空；答完 21/21 点"提交结果"自动 POST 到 Google Apps Script，追加进私密 Google Sheet；网络异常时仍可"导出 CSV"兜底。每对两问（忠实度/观感）三选一。
+协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/
+。每位受访者打开页面时用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个prompt 互不重复，顺序与左右全随机）；作答只存标签页内存，刷新即清空；答完 21/21 点"提交结果"自动 POST 到 Google Apps Script，追加进私密 Google Sheet；网络异常时仍可"导出 CSV"兜底。每对两问（忠实度/观感）三选一。
 
 回收：4 份完整问卷（2026-11-05，昵称全空，42/42 × 4，合计 168 票，三种 pairwise各 56 票，结构校验通过——无重复 pair、无缺问项）。原始导出私密留存，匿名汇总见`results/metrics/votes_summary.md|csv`。
 
@@ -118,7 +120,7 @@ pairB（4B Sharer）上 clip_enhanced 方向整体翻转：raw vs c2c -0.023（p
 - Tie 率偏高：168 票中 59 票"相当"（35%）；一人 21/42 全 tie。
 - κ（跨受访者同 item 一致性）**不可评估**：每个 comparison×q 组里两两共评 item只有 0–2 个（随机重抽所致）。
 - 解读边界：n=4、匿名自选、无去重/防刷，**只能当 aggregate 趋势，不能当总体估计**；外推需更大样本复核。
-- 与自动指标的关系：clip_user 三个比较同样 raw ≥ 两臂（p 在边缘区），方向一致；aesthetic 无差异——自动指标没看出 c2c 的人眼增益，人评则给出显著的 raw 偏好，方向一致、强度不同。
+- 与自动指标的关系：clip_user 三个比较同样 raw ≥ 两种处理（p 在边缘区），方向一致；aesthetic 无差异——自动指标没看出 c2c 的人眼增益，人评则给出显著的 raw 偏好，方向一致、强度不同。
 
 ## 4 讨论：失败模式
 
@@ -152,7 +154,7 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 - 「增强即漂移」（§3.2）且与通信方式无关；塌缩集中在中文输入（§4）。
 - 换 Sharer（4B）/ 换 T2I 后端（krea2）均未改变结论（§3.3）。
 
-值不值：交互式 prompt 预览、多候选筛选、批量管线——文本环节在关键路径上，值得；一次性出图（单张 ~4min）不值得。若要用：退化检测 + T2T 回退做成混合管线，优先英文提示。
+因此在潜在的交互式 prompt 预览、多候选筛选、批量管线——文本环节在关键路径上，也许引入值得，但一次性出图（单张 ~4min）不值得。若要用：退化检测 + T2T 回退做成混合管线，优先英文提示。
 
 ## 6 局限与展望
 
@@ -162,7 +164,7 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 4. 长度混杂只用 clip_user/clip_enhanced 粗部分离，等 token 截断消融没做。
 5. 人评 n=4（匿名自选、无去重），只能当 aggregate 趋势；raw>c2c 的偏好需更大样本复核。
 6. 文本环节在扩散管线里不是瓶颈；落地场景是交互式预览 / 批量管线。
-7. 本批 prompt 整体更难，raw 臂已很强，增强臂的增量空间被压缩。
+7. 本批 prompt 整体更难，raw 处理已很强，两种增强处理的增量空间被压缩。
 
 展望：先在文生图域数据上自训（或对齐）fuser 看退化率能否压下来；工程上把退化检测 +T2T 回退做成混合管线；多 Sharer 融合（论文 A.5）做 prompt 生成的"专家委员会"；补等token 截断消融；试试 >4B Sharer 的延迟曲线；甚至把 cache 融合迁移到自回归图像生成器（文本-图像联合 KV 空间）上。
 
@@ -172,11 +174,11 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 |---|---|
 | `results/metrics/manifest.csv` | 396 图 × 路径/prompt/arm/矩阵 |
 | `results/metrics/image_metrics.csv` | clip_user / clip_enhanced / aesthetic |
-| `results/metrics/text_stats.csv` | 延迟/token/退化统计（56 行文本臂） |
+| `results/metrics/text_stats.csv` | 延迟/token/退化统计（t2t/c2c 共 56 行） |
 | `results/metrics/stats_pairs.csv` + `stats_summary.md` | 配对 Wilcoxon 全表 |
 | `results/metrics/votes_summary.md` | 人评汇总（胜率/binomial；κ 不可评估说明；不含原始票） |
 | `https://repinkert.github.io/C2C-on-T2I/` | 人评动态单页（随机重抽；数据已回收并入本报告） |
-| `results/prompts_generated/pairA|B.json` | 三臂原始 prompt + 延迟明细 |
+| `results/prompts_generated/pairA|B.json` | 三种处理的原始 prompt + 延迟明细 |
 | `results/batch_log.txt` | 132 run 批跑日志 |
 | `report/figures/gallery/` | 塌缩案例图（带标签拼接） |
 

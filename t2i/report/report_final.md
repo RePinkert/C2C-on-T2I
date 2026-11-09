@@ -1,6 +1,6 @@
 # C2C × 文生图 实验报告
 
-> 把 Cache-to-Cache（KV-Cache 直传，arXiv:2510.03215 / ICLR'26）接进 ComfyUI 文生图prompt 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-05。环境：RTX 5070 Ti Laptop (12GB) / Windows / ComfyUI 0.43.2，推理零训练（原文预训练 fuser）。数据在 `results/metrics/`，图在 `report/figures/`。
+> 把 Cache-to-Cache（KV-Cache 直传，arXiv:2510.03215 / ICLR'26）接进 ComfyUI 文生图prompt 生成环节，和文本中转（T2T）、raw 基线做对照。日期：2026-11-09（人评数据截至 2026-11-06）。环境：RTX 5070 Ti Laptop (12GB) / Windows / ComfyUI 0.43.2，推理零训练（原文预训练 fuser）。数据在 `results/metrics/`，图在 `report/figures/`。
 
 ## 1 背景与问题
 
@@ -100,33 +100,59 @@ pairB（4B Sharer）上 clip_enhanced 方向整体翻转：raw vs c2c -0.023（p
 协议：公开 Pages 单页 https://repinkert.github.io/C2C-on-T2I/
 。每位受访者打开页面时用浏览器熵**随机重抽一份** 21 对（raw_vs_c2c / raw_vs_t2t / t2t_vs_c2c 各 7 对，21 个prompt 互不重复，顺序与左右全随机）；作答只存标签页内存，刷新即清空；答完 21/21 点"提交结果"自动 POST 到 Google Apps Script，追加进私密 Google Sheet；网络异常时仍可"导出 CSV"兜底。每对两问（忠实度/观感）三选一。
 
-回收：4 份完整问卷（2026-11-05，昵称全空，42/42 × 4，合计 168 票，三种 pairwise各 56 票，结构校验通过——无重复 pair、无缺问项）。原始导出私密留存，匿名汇总见`results/metrics/votes_summary.md|csv`。
+回收：**11 份完整问卷**（2026-11-05 至 11-06；昵称 9 份留空、2 份自填，42/42 × 11），合计 **462 票**，三种 pairwise × 两问各 **77 票**；结构校验通过——无重复 pair、无缺问项、无同臂对比、无缺失行。原始导出私密留存，匿名汇总见 `results/metrics/votes_summary.md|csv`；聚类校正、分语种与重叠度见 `results/metrics/votes_robust.md|csv`。
 
-**表 7 人评汇总**（胜率排除"相当"；"相当"计半见 votes_summary.csv）
+**表 7 人评汇总**（n=11，462 票；主口径为胜率排除"相当"，并列出"相当计半"口径）
 
-| 比较 | 问题 | A 胜 | B 胜 | 相当 | 胜率A(排相当) | binomial p |
-|---|---|---|---|---|---|---|
-| raw_vs_c2c | 忠实度 | 15 | 2 | 11 | .882 | **.002** |
-| raw_vs_c2c | 观感 | 17 | 4 | 7 | .810 | **.007** |
-| raw_vs_t2t | 忠实度 | 10 | 4 | 14 | .714 | .180 |
-| raw_vs_t2t | 观感 | 11 | 8 | 9 | .579 | .648 |
-| t2t_vs_c2c | 忠实度 | 8 | 9 | 11 | .471 | 1.000 |
-| t2t_vs_c2c | 观感 | 9 | 12 | 7 | .429 | .664 |
+| 比较 | 问题 | A 胜 | B 胜 | 相当 | 胜率A(排相当) | 胜率A(相当计半) | binomial p |
+|---|---|---|---|---|---|---|---|
+| raw_vs_c2c | 忠实度 | 38 | 10 | 29 | .792 | .682 | **<.0001** |
+| raw_vs_c2c | 观感 | 38 | 13 | 26 | .745 | .662 | **.0006** |
+| raw_vs_t2t | 忠实度 | 37 | 6 | 34 | .860 | .701 | **<.0001** |
+| raw_vs_t2t | 观感 | 34 | 16 | 27 | .680 | .617 | **.015** |
+| t2t_vs_c2c | 忠实度 | 22 | 27 | 28 | .449 | .468 | .568 |
+| t2t_vs_c2c | 观感 | 22 | 32 | 23 | .407 | .435 | .220 |
 
 ![图 3 人评胜率（排除"相当"）](figures/fig_blind.png)
 
-- **raw 显著优于 c2c**：faith（p=.002）与 look（p=.007）双双 p<.01，胜率 .81–.88。任删一位受访者重算仍显著或边缘（p ≤ .057）；4 人方向一致。
-- raw vs t2t、t2t vs c2c：均无显著差异（p ≥ .18、p ≥ .66）。
-- Tie 率偏高：168 票中 59 票"相当"（35%）；一人 21/42 全 tie。
-- κ（跨受访者同 item 一致性）**不可评估**：每个 comparison×q 组里两两共评 item只有 0–2 个（随机重抽所致）。
-- 解读边界：n=4、匿名自选、无去重/防刷，**只能当 aggregate 趋势，不能当总体估计**；外推需更大样本复核。
-- 与自动指标的关系：clip_user 三个比较同样 raw ≥ 两种处理（p 在边缘区），方向一致；aesthetic 无差异——自动指标没看出 c2c 的人眼增益，人评则给出显著的 raw 偏好，方向一致、强度不同。
+- **raw 在两项比较里都领先；c2c 与 t2t 之间没有差别。** raw vs c2c：忠实度 38:10（.79，p<.0001）、观感 38:13（.75，p=.0006）；raw vs t2t：忠实度 37:6（.86，p<.0001）、观感 34:16（.68，p=.015）；t2t vs c2c 两问均不显著（.449 / .407，p=.57 / .22）。
+- **稳健性**：留一位受访者重算，raw vs c2c 的 p 始终 ≤ .0045（忠实度下限 <1e-4），不依赖任何单一受访者。
+- **聚类校正**（以 prompt 为单位，26–27 条）：同一 prompt 会被多人、多问重复评，票级 p 会高估显著性。校正后 raw vs t2t 忠实度 16:0（sign p<.0001，Wilcoxon p=.0004）、raw vs c2c 忠实度 15:5（sign p=.041，Wilcoxon p=.021）——raw 的优势仍成立，只是强度中等；t2t vs c2c 8:13（sign p=.38，Wilcoxon p=.33）维持无差异。
+- **分语种：raw 的优势集中在中文输入。** 忠实度上 raw vs c2c 在中文 prompt 为 26:4（.87，p<.0001），在英文 prompt 为 12:6（.67，p=.24，该格 42 票里 24 票"相当"）；raw vs t2t 两种语言都领先（中文 .88、英文 .82）。
+
+**表 8 分语种胜率（观感；票级与聚类级）**
+
+| 比较 | 语种 | 决定性票 | 胜率 | 票级 p | 聚类 sign | 聚类 Wilcoxon |
+|---|---|---|---|---|---|---|
+| raw_vs_c2c | 中文 | 26:5 | .839 | **.0002** | 9:0（p=.004） | .004 |
+| raw_vs_c2c | 英文 | 12:8 | .600 | .503 | 6:4（p=.754） | .200 |
+| raw_vs_t2t | 中文 | 19:6 | .760 | **.015** | 7:1（p=.070） | .016 |
+| raw_vs_t2t | 英文 | 15:10 | .600 | .424 | 7:3（p=.344） | .113 |
+| t2t_vs_c2c | 中文 | 15:11 | .577 | .557 | 5:3（p=.727） | .742 |
+| t2t_vs_c2c | 英文 | 7:21 | .250 | **.013** | 3:10（p=.092） | .092 |
+
+![图 4 分语种胜率：raw 的优势集中在中文输入](figures/fig_blind_lang.png)
+
+- **原因：英文的"增强"几乎是复述，中文是整句重写。** 英文 prompt 本身已是长风格化描述（均 77 词），t2t/c2c 输出与其词集 Jaccard 为 .66 / .70，出图自然接近，于是大量"相当"；中文 prompt 只有均 11 词，t2t/c2c 输出 76 / 127 词、Jaccard ≈0，等于把整句重写并译成英文，漂移空间最大（表 9）。
+
+**表 9 增强文本与原 prompt 的相似度（pairA，按语种）**
+
+| 语种 | prompt 数 | raw 词数 | t2t 词数 | c2c 词数 | Jaccard(raw,t2t) | Jaccard(raw,c2c) |
+|---|---|---|---|---|---|---|
+| 中文 | 12 | 11.1 | 75.7 | 127.1 | .002 | .004 |
+| 英文 | 16 | 77.4 | 73.8 | 70.9 | .656 | .698 |
+
+- **t2t vs c2c 在英文上偏向 c2c 的迹象尚不足采信**：观感 7:21（.25，票级 p=.013），但聚类后 sign p=.09、Wilcoxon p=.09，该比较的语种交互 Fisher p=.026。方向值得记，样本量不足以当结论。
+- **相当率 36%**（462 票中 167 票），但分布很不均：英文段 raw vs c2c 的 84 票里 46 票"相当"，中文段 70 票里只有 9 票——英文 prompt 下两张图常常难分高下。
+- **κ 仍不可评估**：每个比较×问题里 ≥2 人共评的 item 只有 17–20 个（随机重抽所致），其两两一致率 .31–.59；在如此稀疏的重叠上 κ 不稳定，且有 rater 对全选"相当"使 κ 无定义。
+- 解读边界：n=11、匿名自选（页面默认匿名，昵称可选）、无去重/防刷，**只能当 aggregate 趋势，不能当总体估计**。
+- 与自动指标的关系：clip_user 三个比较同样 raw ≥ 两种处理（p 在边缘区），方向一致；aesthetic 无差异——自动指标没看出 c2c 的人眼增益，人评则给出 raw 的偏好，方向一致、强度不同。
 
 ## 4 讨论：失败模式
 
 C2C 解码塌缩：pairA 5/28（p08、p10、p14、p21、p24），pairB 2/28（p09、p24），T2T 0/28。按塌缩形态归类：
 
-**表 8 塌缩案例归类**
+**表 10 塌缩案例归类**
 
 | 案例 | 类型 | distinct-2 | rep-4gram | 表现 | 跨 pair |
 |---|---|---|---|---|---|
@@ -137,7 +163,7 @@ C2C 解码塌缩：pairA 5/28（p08、p10、p14、p21、p24），pairB 2/28（p0
 | p08 夜市海报（zh） | 弱重复 | 0.271 | 0.082 | 句式高度雷同，被 distinct-2 捕获 | 仅 pairA |
 | p09 水墨梯田（zh） | 弱重复 | 0.248 | 0.032 | "hills are arranged… The hills are covered…" | 仅 pairB |
 
-![图 4 塌缩形态与退化计数](figures/fig_degenerate.png)
+![图 5 塌缩形态与退化计数](figures/fig_degenerate.png)
 
 p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Quality tags:"结构化格式泄漏，distinct-2 = 0.985、rep-4gram = 0.016，检测器完全抓不住，靠人工发现。跨 pair复现的只有 p24。
 
@@ -150,7 +176,7 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 回到开头的问题——2.5× 的收益在文生图里成立，但缩小且场景窄；图像质量的代价是真实的：
 
 - 加速是真的：文本环节快 2.2×–3.4×，C2C 的融合成本几乎不随 prompt 变长而涨，T2T 则随难度涨得很快（§3.1）。
-- 人眼不买账：盲评（n=4）八至九成偏好 raw（faith .88 / look .81，p<.01），自动指标clip_user 方向一致（§3.2、§3.4）。
+- 人眼不买账：盲评（n=11，462 票）raw 明显占优——raw>c2c 忠实度 .79 / 观感 .75（p<.0001 / .0006），raw>t2t .86 / .68（p<.0001 / .015）；而 c2c 与 t2t 之间没有差别（p ≥ .22）。raw 的优势集中在中文短 prompt 上（§3.4），自动指标 clip_user 方向一致（§3.2）。
 - 「增强即漂移」（§3.2）且与通信方式无关；塌缩集中在中文输入（§4）。
 - 换 Sharer（4B）/ 换 T2I 后端（krea2）均未改变结论（§3.3）。
 
@@ -162,7 +188,7 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 2. fuser 在 QA 数据上训练，文生图域完全 zero-shot，没做微调；中文提示没在 fuser 训练分布里。
 3. 主矩阵 n=84、泛化 n=24；本批 prompt 全部风格化/长描述，难度高于自然句。
 4. 长度混杂只用 clip_user/clip_enhanced 粗部分离，等 token 截断消融没做。
-5. 人评 n=4（匿名自选、无去重），只能当 aggregate 趋势；raw>c2c 的偏好需更大样本复核。
+5. 人评 n=11（匿名自选、页面默认匿名、无去重），只能当 aggregate 趋势；合并后 raw 的偏好在聚类校正下仍成立，但 t2t vs c2c 的语言差异只是迹象，需更大样本复核。
 6. 文本环节在扩散管线里不是瓶颈；落地场景是交互式预览 / 批量管线。
 7. 本批 prompt 整体更难，raw 处理已很强，两种增强处理的增量空间被压缩。
 
@@ -176,7 +202,9 @@ p06（pairA）出现"Subject: / Action: / Setting: / Style: / Lighting: / Qualit
 | `results/metrics/image_metrics.csv` | clip_user / clip_enhanced / aesthetic |
 | `results/metrics/text_stats.csv` | 延迟/token/退化统计（t2t/c2c 共 56 行） |
 | `results/metrics/stats_pairs.csv` + `stats_summary.md` | 配对 Wilcoxon 全表 |
-| `results/metrics/votes_summary.md` | 人评汇总（胜率/binomial；κ 不可评估说明；不含原始票） |
+| `results/metrics/votes_summary.md` | 人评汇总（n=11，462 票；胜率/binomial/分评估者明细；不含原始票） |
+| `results/metrics/votes_robust.md` | 聚类校正（prompt 级 sign/Wilcoxon）、分语种、item 重叠度、文本相似度 |
+| `report/figures/fig_blind_lang.png` | 分语种胜率图（图 4） |
 | `https://repinkert.github.io/C2C-on-T2I/` | 人评动态单页（随机重抽；数据已回收并入本报告） |
 | `results/prompts_generated/pairA|B.json` | 三种处理的原始 prompt + 延迟明细 |
 | `results/batch_log.txt` | 132 run 批跑日志 |

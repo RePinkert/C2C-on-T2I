@@ -31,9 +31,14 @@
 
 因**每位受访者看到的 21 对都是随机抽取、互不相同**：
 
-- aggregate 胜率按**汇总票数**做 binomial 检验（faith / look 分开报）
-- **κ（Cohen's kappa，跨受访者同 item 一致性）不可计算**——人均仅评 21 对且各不同
-- per-item 统计因样本稀疏也不做；只报三比较 × 两问的胜率与相当比例
+- aggregate 胜率按**汇总票数**做 binomial 检验（faith / look 分开报），并同时给"相当计半"口径
+- **聚类校正**：同一 prompt 会被多人、多问重复评，票级 p 会高估显著性。以 prompt 为单位
+  （26–27 条）补做 sign test 与 Wilcoxon signed-rank，结论以两者一致为准
+  （`eval/analyze_robust.py` → `results/metrics/votes_robust.md|csv`）
+- **分语种**（prompts_v2.json 的 lang 字段：zh 12 / en 16）单独报胜率与聚类检验，
+  并做 2×2 Fisher 交互检验；不要用小样本子集的相关差异直接下结论
+- **κ 仍不可评估**：n=11 下每个 comparison×q 组里 ≥2 人共评的 item 只有 17–20 个，
+  两两一致率 .31–.59，且存在 rater 对全选"相当"使 κ 无定义。可报一致率，不报 κ
 
 ## 回收后
 
@@ -41,6 +46,7 @@
 
 ```powershell
 python eval/analyze_votes.py --votes results/blind/votes_*.csv
+python eval/analyze_robust.py --votes results/blind/votes_*.csv   # 聚类校正/分语种/重叠度/相似度
 ```
 
 产出写入 `results/metrics/votes_summary.md|csv`；按 `report/report_final.md`「人评」一节更新结论并重新生成 `report/figures/fig_blind.png`。

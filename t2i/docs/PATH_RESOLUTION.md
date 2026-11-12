@@ -7,6 +7,61 @@ out-of-scope: 上游 script/、rosetta/、recipe/（均用 HF repo id 或包内�
 
 # 路径相对化重映射设计（PATH_RESOLUTION）
 
+## 0. 沿革：三代 runtime 设计
+
+本文档讨论的 `runtime/` 并不是上游 C2C 的概念。它是三代演进的产物，理清楚才能设计对。
+
+### 0.1 上游 thu-nics/C2C：**没有 runtime 层**
+
+| 维度 | 上游的做法 |
+|---|---|
+| Python 环境 | **机器级 conda env**：`conda create -n rosetta python=3.10` + `pip install -e .`（`environment.yml` 是作者本机导出的冻结清单，末尾还留着 `prefix: /share/minzihan/miniconda3/envs/rosetta`） |
+| 权重 | **直接走 HuggingFace**：`snapshot_download(repo_id="nics-efc/C2C_Fuser")`、`from_pretrained("Qwen/Qwen3-0.6B")` → 落在 HF 缓存，**仓库内没有 models/** |
+| fuser checkpoint | 由 `recipe/` + `bash/train/` 训练产出，落在仓库顶层 `checkpoints/`（gitignored） |
+| 产物约定 | 仓库顶层 `outputs/ results/ logs/ local/ eval_results/ checkpoints/` —— **全部在仓库内、全部 gitignored** |
+| 包结构 | `rosetta/` 是包本体（`pip install -e .` 装的就是它），`script/` 是脚本，`recipe/` 是配方 |
+
+> 上游的核心约定是：**代码进库，产物与缓存留在仓库顶层但不入库，环境与权重交给机器/HF 缓存**。
+> 这套约定已经隐含了"仓库内 gitignored 目录"这一思路。
+
+### 0.2 你的 fork 引入的：把权重和环境收进仓库
+
+- `models/`：`download_models.py` 从 HF 拉 fuser 与 Qwen 权重到本地
+- `venv/`：uv 管理的 Python 环境（替代 conda）
+- `C2C_ROOT` 机制：**一个变量同时指**"c2c_bridge.py 所在目录 + models/ + venv/"
+- ComfyUI 节点包通过 `C2C_ROOT` 找到 bridge 与 venv
+
+**但布局有两套、互相矛盾**，这正是"runtime 混淆"的根源：
+
+| 来源 | 说法 | 后果 |
+|---|---|---|
+| `nodes.py` 默认值 | `C2C_ROOT = C:\Yet\Playground\c2c`（独立 clone，权重与 venv 都在那儿） | 需要单独维护一个 c2c clone |
+| `t2i/docs/REPRODUCE.md` | "设 `C2C_ROOT` 指向仓库的 `t2i/` 目录"；而 venv 按 §1 建在**仓库根**（`python -m venv venv`） | 按文档配好，节点包仍找不到 venv（它找 `C2C_ROOT/venv`） |
+
+### 0.3 现在的形态（本设计的目标态）
+
+```
+C2C-on-T2I/
+├── runtime/          ← 显式的运行时层（gitignored）
+│   ├── models/       权重
+│   ├── venv/         Python 环境
+│   └── script/ rosetta/   junction 回仓库根（避免源码第二份）
+└── t2i/              ← 只放工具链与产物
+```
+
+### 0.4 对本设计的三条启示
+
+1. **`runtime/` 与上游惯例同构**：上游用"仓库内 gitignored 顶层目录"表达运行时产物，我们用"仓库内 gitignored 顶层目录"表达权重与环境——同一种思路，不算另起炉灶。
+2. **环境位置必须只有一处真相**：上游放机器级 conda，你的 fork 放仓库内 venv。两种都可行，但同一次运行里不能同时存在两套（venv 与 conda env、HF 缓存与本地 models/ 择一）。本设计选择：**环境在 runtime/venv，权重在 runtime/models**，其余路径（脚本、产物）全部相对化。
+3. **机器特定路径是上游也有的老问题**：`environment.yml` 里的 `prefix: /share/minzihan/...` 正是本次要消灭的那类东西——设计不假设上游是干净的。
+
+### 0.5 一个可选路线（未采纳，供讨论）
+
+沿用上游的 **HF 缓存模式**（`from_pretrained(repo_id)` + `snapshot_download`），则 `runtime/models/` 可整体取消，只保留 `runtime/venv/`：
+- 省掉 `download_models.py` 的本地目录管理与 `C2C_ROOT/models` 这一层
+- 但权重仍占约 12 GB（只是挪到 HF 缓存），且 fuser 的 24 个 `projector_*.pt` 需要逐文件定位
+- 现状是本地 `models/` 已就位且实验已跑通，改造收益不抵风险 → **本设计维持现状**
+
 ## 1. 现状盘点
 
 ### 1.1 锚点概念：三个并存，含义重叠

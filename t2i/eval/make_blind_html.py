@@ -42,6 +42,11 @@ def main():
 
     arm_a, arm_b = args.comparison.split("_vs_")
     rows = list(csv.DictReader(open(args.manifest, encoding="utf-8-sig")))
+    # image_path in the manifest is relative to the t2i/ directory.
+    t2i_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(args.manifest))))
+    for r in rows:
+        if r.get("image_path") and not os.path.isabs(r["image_path"]):
+            r["image_path"] = os.path.join(t2i_root, r["image_path"])
     by = {}
     for r in rows:
         if args.pair and r.get("pair") != args.pair:

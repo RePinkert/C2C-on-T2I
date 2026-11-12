@@ -33,3 +33,9 @@ package-lock.json
 # GitHub Pages blind-eval pool (original PNGs)
 !docs/pool/
 !docs/pool/*.png
+
+# Generated ComfyUI outputs (large, reproducible from the workflows)
+t2i/exp_v2/
+
+# Runtime assets: model weights + python env (large, rebuilt by download_models.py / uv)
+runtime/

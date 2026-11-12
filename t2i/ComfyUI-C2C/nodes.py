@@ -5,12 +5,17 @@ import subprocess
 import tempfile
 import time
 
-# Point C2C_ROOT at the directory containing c2c_bridge.py (this repo's t2i/).
-# VENV_PY must be a Python with the C2C deps installed (see t2i/docs/REPRODUCE.md).
+# Point C2C_ROOT at the runtime directory that holds c2c_bridge.py, models/ and venv/.
+# Default: a "runtime" folder sitting next to this repository (Playground/runtime).
+# Override with the C2C_ROOT environment variable.
 C2C_ROOT = os.environ.get(
     "C2C_ROOT",
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "runtime",
+    ),
 )
+T2I_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BRIDGE_PY = os.path.join(C2C_ROOT, "c2c_bridge.py")
 VENV_PY = os.path.join(C2C_ROOT, "venv", "Scripts", "python.exe")
 
@@ -89,7 +94,7 @@ class C2CCompare:
             "t2t_prompt": t2t.get("text", ""),
             "c2c_prompt": c2c.get("text", ""),
         }
-        meta_dir = os.path.join(C2C_ROOT, "..", "results", "meta")
+        meta_dir = os.path.join(T2I_DIR, "results", "meta")
         try:
             os.makedirs(meta_dir, exist_ok=True)
             stamp = time.strftime("%Y%m%d_%H%M%S")

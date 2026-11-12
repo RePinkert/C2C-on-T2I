@@ -17,7 +17,9 @@ import re
 import sys
 import time
 
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "script", "playground"))
+ROOT = os.environ.get("C2C_ROOT") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "runtime")
+sys.path.append(os.path.join(ROOT, "script", "playground"))
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -25,7 +27,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from inference_example import load_rosetta_model
 from rosetta.utils.evaluate import set_default_chat_template
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
 
 PAIRS = {
     "qwen3_0.6b+qwen2.5_0.5b": {

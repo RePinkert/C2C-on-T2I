@@ -23,10 +23,11 @@ import numpy as np
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "Arial"]
 plt.rcParams["axes.unicode_minus"] = False
 
-PLAYGROUND = r"C:\Yet\Playground"
+# All paths are resolved relative to this repository's t2i/ directory.
+PLAYGROUND = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 METRICS = os.path.join(PLAYGROUND, "results", "metrics")
 FIGS = os.path.join(PLAYGROUND, "report", "figures")
-COMFY_OUT = r"C:\Yet\Playground\exp_v2"
+COMFY_OUT = os.environ.get("EXP_OUT_DIR", os.path.join(PLAYGROUND, "exp_v2"))
 
 MATRIX_LABEL = {
     ("qwen3_0.6b+qwen2.5_0.5b", "moss"): "主矩阵 pairA@moss (n=84)",

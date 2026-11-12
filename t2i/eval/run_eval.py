@@ -46,6 +46,8 @@ def main():
     args = ap.parse_args()
 
     rows = list(csv.DictReader(open(args.manifest, encoding="utf-8-sig")))
+    # image_path in the manifest is relative to the t2i/ directory.
+    t2i_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(args.manifest))))
     clip_model, preprocess, tokenizer, device = load_clip()
     if args.no_aesthetic:
         aes_model = aes_mlp = aes_pre = None
@@ -54,10 +56,13 @@ def main():
 
     out_rows = []
     for r in rows:
-        path = r["image_path"]
+        raw_path = r["image_path"]
+        path = raw_path
+        if path and not os.path.isabs(path):
+            path = os.path.join(t2i_root, path)
         rec = {"tag": r["tag"], "arm": r["arm"], "prompt_id": r["prompt_id"],
                "seed": r["seed"], "pair": r["pair"], "backend": r.get("backend", ""),
-               "image_path": path}
+               "image_path": raw_path}
         if not path or not os.path.exists(path):
             rec["clip_user"] = rec["clip_enhanced"] = rec["aesthetic"] = ""
             out_rows.append(rec)

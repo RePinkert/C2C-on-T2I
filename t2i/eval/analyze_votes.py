@@ -75,7 +75,8 @@ def main():
     paths = [p for p in paths if os.path.exists(p)]
     assert paths, "no votes files found"
     out_dir = args.out_dir or os.path.join(
-        r"C:\Yet\Playground", "results", "metrics")
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "results", "metrics")
     os.makedirs(out_dir, exist_ok=True)
 
     rows = load_votes(paths)

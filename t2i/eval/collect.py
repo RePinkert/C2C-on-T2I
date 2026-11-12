@@ -15,7 +15,7 @@ import json
 import os
 
 PLAYGROUND = os.environ.get("PLAYGROUND", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-COMFY_OUT = os.environ.get("COMFY_OUT", os.path.join(PLAYGROUND, "results", "exp_v2"))
+COMFY_OUT = os.environ.get("COMFY_OUT", os.path.join(PLAYGROUND, "exp_v2"))
 OUT_DIR = os.path.join(PLAYGROUND, "results", "metrics")
 
 

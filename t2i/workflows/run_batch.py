@@ -12,11 +12,20 @@ import argparse
 import glob
 import json
 import os
+import sys
 import time
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from paths import T2I_ROOT
+
 BASE = "http://127.0.0.1:8188"
 LOG = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results", "batch_log.txt")
+
+
+def resolve_path(p):
+    """Stored workflow paths are relative to t2i/; absolute paths pass through."""
+    return p if os.path.isabs(p) else os.path.join(str(T2I_ROOT), p)
 
 
 def log(msg):
@@ -65,9 +74,11 @@ def main():
     args = ap.parse_args()
 
     if args.list:
-        files = [l.strip().lstrip("\ufeff") for l in open(args.list, encoding="utf-8") if l.strip()]
+        files = [resolve_path(l.strip().lstrip("\ufeff"))
+                 for l in open(args.list, encoding="utf-8") if l.strip()]
     else:
-        files = sorted(glob.glob(args.files))
+        pattern = args.files if os.path.isabs(args.files) else os.path.join(str(T2I_ROOT), args.files)
+        files = sorted(glob.glob(pattern))
     assert files, "no workflow files found"
 
     done = set()

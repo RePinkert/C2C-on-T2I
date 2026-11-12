@@ -1,0 +1,10 @@
+{
+  "load_seconds": 6.24,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "t2t_seconds": 6.25,
+  "c2c_seconds": 3.35,
+  "sharer_analysis": "Subject: 一个孤独的宇航员站在外星球的悬崖边。\nStyle: 广角镜头、电影感构图。\nComposition: 坦克式构图，以开阔视角展示外星球的悬崖和远方的星云。\nLighting: 夜晚的星光与月光投射在悬崖上，营造出一种神秘而宁静的氛围。\nMood: 悲伤、孤独、怀旧的情感基调。\nNotable Details",
+  "user_prompt": "孤独的宇航员站在外星球的悬崖边，凝视远处巨大的蓝色星云，电影感构图，广角镜头",
+  "t2t_prompt": "A lonely astronaut stands at the edge of a rocky cliff on an alien planet, looking at the distant vast blue star cloud, with a wide-angle shot and a cinematic composition. The scene is set in a dark, mysterious atmosphere with soft starlight and moonlight casting a quiet, lonely mood.",
+  "c2c_prompt": "Subject: Astronaut\nAction: Standing on the edge of a distant planet's cliff\nSetting: A vast, alien landscape with a blue, swirling starry sky\nStyle: High-quality, cinematic\nLighting: Soft, diffused lighting to emphasize the astronaut's solitude and the vastness of the starry sky\nComposition: A wide-angle shot capturing the astronaut's perspective and the vastness of the alien landscape\nQuality Tags: High-quality, cinematic, cinematic, cinematic"
+}

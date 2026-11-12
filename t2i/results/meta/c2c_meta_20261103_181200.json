@@ -1,0 +1,10 @@
+{
+  "load_seconds": 6.27,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "t2t_seconds": 5.84,
+  "c2c_seconds": 3.56,
+  "sharer_analysis": "Subject: 单身少年在夜市街头举着棉花糖。\nStyle: 时尚、浪漫、充满活力。\nComposition: 红色与白色相间的T恤，背景为霓虹灯招牌和杂货铺，突出主题。\nLighting: 背景霓虹灯光下，少年手持棉花糖显得格外亮眼。\nMood: 激烈、欢快、充满活力。\nNotable Details:\n1. 少年穿着白色",
+  "user_prompt": "夜市街头，穿白色T恤的少年举着棉花糖，背后是霓虹灯招牌的杂货铺，前景自行车经过的动态模糊",
+  "t2t_prompt": "A young man in a white shirt is holding a cotton candy in a night market street, with a neon sign招牌 and a shop in the background. The scene features dynamic blur of a bicycle passing by in the foreground.",
+  "c2c_prompt": "A vibrant night market scene with a young boy wearing a white shirt holding a bag of cotton candy, surrounded by neon-lit storefronts. The background features a dynamic blur of a bicycle passing by, while the foreground is filled with the bustling activity of the night market. The style of the image is a mix of realistic and stylized elements, with a focus on the neon-lit storefronts and the dynamic blur of the bicycle. The lighting is warm and golden, creating a"
+}

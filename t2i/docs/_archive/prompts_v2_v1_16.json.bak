@@ -1,0 +1,18 @@
+[
+  {"id": "p01", "lang": "en", "type": "simple", "prompt": "a red fox sitting in deep snow at golden hour"},
+  {"id": "p02", "lang": "en", "type": "spatial", "prompt": "an elderly woman in a yellow raincoat reading a map, a black cat sitting on her suitcase beside her, rainy train station platform at dusk"},
+  {"id": "p03", "lang": "en", "type": "abstract", "prompt": "the feeling of nostalgia: a 1990s childhood living room in late afternoon, sunlight through lace curtains, dust in the air"},
+  {"id": "p04", "lang": "en", "type": "material", "prompt": "a transparent glass teapot half filled with amber tea, steam rising, on a scarred wooden table, strong morning backlight"},
+  {"id": "p05", "lang": "zh", "type": "scene", "prompt": "一只戴红色围巾的柴犬坐在秋天的银杏树下，落叶纷飞，温暖的午后阳光"},
+  {"id": "p06", "lang": "zh", "type": "spatial", "prompt": "夜市街头，穿白色T恤的少年举着棉花糖，背后是霓虹灯招牌的杂货铺，前景自行车经过的动态模糊"},
+  {"id": "p07", "lang": "zh", "type": "abstract", "prompt": "孤独的宇航员站在外星球的悬崖边，凝视远处巨大的蓝色星云，电影感构图，广角镜头"},
+  {"id": "p08", "lang": "en", "type": "style", "prompt": "architectural watercolor of a modern library interior with curved wooden shelves, people reading, soft diffused daylight"},
+  {"id": "p09", "lang": "en", "type": "spatial", "prompt": "a black bicycle leaning against a red brick wall, a white cat sleeping in the wicker basket, long shadows of late afternoon"},
+  {"id": "p10", "lang": "en", "type": "material", "prompt": "macro photo of a dewdrop on a spider web at sunrise, refracting a tiny inverted meadow inside"},
+  {"id": "p11", "lang": "en", "type": "style", "prompt": "1960s retro travel poster style illustration of a coastal lighthouse on cliffs, bold flat colors, slight paper grain"},
+  {"id": "p12", "lang": "en", "type": "abstract", "prompt": "the quiet tension before a summer thunderstorm: dark rolling clouds over a golden wheat field, a lone oak tree"},
+  {"id": "p13", "lang": "zh", "type": "scene", "prompt": "清晨的菜市场，摊位上摆满带露水的蔬菜水果，蒸汽从包子铺的蒸笼升起，逆光"},
+  {"id": "p14", "lang": "zh", "type": "material", "prompt": "雨后的青石板小巷，地面水洼倒映着红灯笼，一滴水珠刚刚落下激起涟漪，特写"},
+  {"id": "p15", "lang": "zh", "type": "style", "prompt": "敦煌壁画风格的飞天仙女，飘带与祥云环绕，矿物颜料质感，对称构图"},
+  {"id": "p16", "lang": "zh", "type": "abstract", "prompt": "春天的傍晚，放学后空荡荡的教室，黑板上还留着半截粉笔字，夕阳把课桌染成金色"}
+]

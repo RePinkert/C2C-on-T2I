@@ -1,308 +1,596 @@
 {
   "pair": "qwen3_0.6b+qwen3_4b_base",
   "max_new_tokens": 256,
-  "load_seconds": 16.07,
+  "load_seconds": 11.15,
   "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
   "items": [
     {
-      "user_prompt": "a red fox sitting in deep snow at golden hour",
+      "user_prompt": "cinematic film-poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A red fox sitting in deep snow at golden hour, with golden lighting, a warm and cozy setting, and a soft, natural style.",
-        "sharer_analysis": "冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻",
-        "analysis_seconds": 36.37,
-        "receiver_seconds": 1.38,
-        "total_seconds": 37.76,
+        "text": "A cinematic film-poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain.",
+        "sharer_analysis": "ожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание",
+        "analysis_seconds": 26.08,
+        "receiver_seconds": 3.12,
+        "total_seconds": 29.2,
         "text_stats": {
-          "n_tokens": 23,
-          "distinct_1": 0.8261,
+          "n_tokens": 76,
+          "distinct_1": 0.8816,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.05,
+          "rep_4gram_max_ratio": 0.0137,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A red fox sitting in deep snow at golden hour, with golden hour lighting, a warm and cozy setting, a soft and gentle style, a composition that captures the essence of a cozy and warm setting, and a high-quality image.",
-        "total_seconds": 2.43,
+        "text": "A cinematic film poster still of a street-food vendor at a night-market stall, caught mid-motion over a steaming wok, an apron darkened with grease, thick cooking smoke rising through the light, low camera angle looking slightly up, the stall counter as a dark foreground bar with blurred warm and magenta lantern light dissolving into bokeh behind, anamorphic flare, teal-and-amber grade, volumetric haze, hard single-source key light raking across the face, shallow depth of field, 35mm film grain.",
+        "total_seconds": 3.83,
         "text_stats": {
-          "n_tokens": 40,
-          "distinct_1": 0.7,
+          "n_tokens": 77,
+          "distinct_1": 0.8701,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.027,
+          "rep_4gram_max_ratio": 0.0135,
           "degenerate": false
         }
       },
       "id": "p01",
-      "wall_seconds": 40.34
+      "wall_seconds": 33.07
     },
     {
-      "user_prompt": "an elderly woman in a yellow raincoat reading a map, a black cat sitting on her suitcase beside her, rainy train station platform at dusk",
+      "user_prompt": "monochrome ink wash landscape of terraced rice fields just after rain, viewed from a high overlook, the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "An elderly woman in a yellow raincoat reading a map, a black cat sitting on her suitcase beside her, a rainy train station platform at dusk.",
-        "sharer_analysis": "寒冷的雨天，一位年迈的女士穿着黄色的雨衣，手里拿着地图，旁边是一只黑色的猫坐在她的行李箱上。这是一个黄昏时分的火车站台，雨滴在灯光下闪烁，营造出一种宁静而略带忧郁的氛围。",
-        "analysis_seconds": 7.51,
-        "receiver_seconds": 1.11,
-        "total_seconds": 8.62,
+        "text": "A detailed English image generation prompt:  \n\"Monochrome ink wash landscape of terraced rice fields just after rain, viewed from a high overlook, the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition.\"",
+        "sharer_analysis": "ожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание",
+        "analysis_seconds": 9.01,
+        "receiver_seconds": 3.42,
+        "total_seconds": 12.43,
         "text_stats": {
-          "n_tokens": 26,
-          "distinct_1": 0.8846,
+          "n_tokens": 94,
+          "distinct_1": 0.8936,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0435,
+          "rep_4gram_max_ratio": 0.011,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "An elderly woman in a yellow raincoat reading a map, a black cat sitting on her suitcase beside her, in a rainy train station platform at dusk.",
-        "total_seconds": 1.67,
+        "text": "A serene and tranquil landscape of rice fields, viewed from a high overlook, with the flooded terraces mirroring a pale grey sky in long smooth bands, neat rows of young shoots drawn as fine dry-brush strokes, layered curved embankments receding into drifting mist, one tiny figure in a bamboo hat far below giving scale, wet brushwork bleeding into the paper, soft graded washes of black and faint indigo with a single muted green accent, vast empty space above, subtle rice-paper fibre texture, high vertical scroll composition.",
+        "total_seconds": 3.44,
         "text_stats": {
-          "n_tokens": 27,
-          "distinct_1": 0.8519,
-          "distinct_2": 0.9615,
+          "n_tokens": 86,
+          "distinct_1": 0.8605,
+          "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0417,
+          "rep_4gram_max_ratio": 0.012,
           "degenerate": false
         }
       },
       "id": "p02",
-      "wall_seconds": 10.33
+      "wall_seconds": 15.88
     },
     {
-      "user_prompt": "the feeling of nostalgia: a 1990s childhood living room in late afternoon, sunlight through lace curtains, dust in the air",
+      "user_prompt": "16-bit pixel art platformer level background, side-on orthographic view of an old residential apartment block facade, sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, even flat lighting. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A nostalgic 1990s childhood living room in late afternoon, with sunlight filtering through lace curtains, dust in the air, composed in a warm, intimate setting, with soft lighting and a soft, warm style.",
-        "sharer_analysis": "困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难",
-        "analysis_seconds": 34.31,
-        "receiver_seconds": 2.17,
-        "total_seconds": 36.48,
+        "text": "A detailed English image generation prompt: A side-on orthographic view of an old residential apartment block facade, with sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, and a flat, even lighting. No text, no typography, no letters, no numbers, no logos, no captions, and no watermarks.",
+        "sharer_analysis": "困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要你一步一步思考，一步一步输出，不要一次性输出所有内容。ictures\nictures\n\n困难的，需要",
+        "analysis_seconds": 9.42,
+        "receiver_seconds": 3.74,
+        "total_seconds": 13.17,
         "text_stats": {
-          "n_tokens": 33,
-          "distinct_1": 0.8485,
+          "n_tokens": 91,
+          "distinct_1": 0.8132,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0333,
+          "rep_4gram_max_ratio": 0.0114,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A nostalgic 1990s childhood living room, late afternoon, sunlight through lace curtains, dust in the air.",
-        "total_seconds": 1.56,
+        "text": "A 16-bit pixel art platformer level background, side-on orthographic view of an old residential apartment block facade, sagging clotheslines strung between balconies, shirts and trousers lifted by the wind, bamboo poles and wall-mounted air-conditioning units, cluttered window ledges, chipped tile and rust staining, muted teal, ochre, dusty pink and grey palette, clean dithered shading, limited colour ramp, crisp chunky pixels with no anti-aliasing, an empty walkway running along the foreground, even flat lighting.",
+        "total_seconds": 3.38,
         "text_stats": {
-          "n_tokens": 16,
-          "distinct_1": 1.0,
+          "n_tokens": 73,
+          "distinct_1": 0.9315,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0769,
+          "rep_4gram_max_ratio": 0.0143,
           "degenerate": false
         }
       },
       "id": "p03",
-      "wall_seconds": 38.3
+      "wall_seconds": 16.55
     },
     {
-      "user_prompt": "a transparent glass teapot half filled with amber tea, steam rising, on a scarred wooden table, strong morning backlight",
+      "user_prompt": "premium packaging design photograph of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A transparent glass teapot half filled with amber tea, steam rising, on a scarred wooden table, with a strong morning backlight, in a composition that emphasizes the tea's warmth and the steam's movement. Style: modern, natural, lighting: warm, composition: balanced, quality tags: soft, realistic, artistic.",
-        "sharer_analysis": "困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难",
-        "analysis_seconds": 34.86,
-        "receiver_seconds": 2.82,
-        "total_seconds": 37.69,
+        "text": "A detailed English image generation prompt:  \nA premium packaging design photograph of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography.",
+        "sharer_analysis": "ожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание",
+        "analysis_seconds": 9.25,
+        "receiver_seconds": 3.58,
+        "total_seconds": 12.82,
         "text_stats": {
-          "n_tokens": 45,
-          "distinct_1": 0.8889,
-          "distinct_2": 1.0,
+          "n_tokens": 94,
+          "distinct_1": 0.8617,
+          "distinct_2": 0.9785,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0238,
+          "rep_4gram_max_ratio": 0.011,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene, serene",
-        "total_seconds": 8.09,
+        "text": "A serene and elegant image of a Chinese tea set, a hammered copper teapot with deep orange-brown patina and visible hand-worked dimples resting on a dark walnut tray beside a clear glass fairness cup, thin steam rising from the spout, centred hero composition on a seamless deep-teal to charcoal gradient backdrop, large softbox key light from the upper left carving out the metal texture, crisp rim highlight along the handle, shadow pooling beneath, generous empty space around the object, warm copper against cool background, ultra-sharp commercial studio photography.",
+        "total_seconds": 3.27,
         "text_stats": {
-          "n_tokens": 129,
-          "distinct_1": 0.0233,
-          "distinct_2": 0.0234,
-          "distinct_3": 0.0236,
-          "rep_4gram_max_ratio": 0.9841,
-          "degenerate": true
+          "n_tokens": 88,
+          "distinct_1": 0.8523,
+          "distinct_2": 0.977,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0118,
+          "degenerate": false
         }
       },
       "id": "p04",
-      "wall_seconds": 46.18
+      "wall_seconds": 16.09
     },
     {
-      "user_prompt": "一只戴红色围巾的柴犬坐在秋天的银杏树下，落叶纷飞，温暖的午后阳光",
+      "user_prompt": "retro flat-vector travel poster, a lone student in a dark coat seen from behind, holding a translucent dome umbrella on a wet stone alley at night, one streetlamp reflected as a long streak across the rain-slick pavement, rain drawn as sparse diagonal lines, simplified geometric silhouette shapes, bold flat blocks of colour with no gradients, restricted palette of mustard yellow, deep teal, warm cream and charcoal, a broad flat sky band above and a narrow ground band below, screen-printed grain and slight misregistration. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A red-haired dog sitting on a golden leaf tree in autumn, with golden leaves swirling around it, under warm afternoon sunlight, in a peaceful and warm setting.",
-        "sharer_analysis": "主体：一只戴红色围巾的柴犬\n风格：写实风格\n构图：柴犬坐在银杏树下，周围是落叶纷飞的场景\n光线：温暖的午后阳光，营造出温馨的氛围\n情绪：宁静、温暖、怀旧\n显著细节：红色围巾、银杏树、落叶、温暖的阳光",
-        "analysis_seconds": 9.26,
-        "receiver_seconds": 1.06,
-        "total_seconds": 10.32,
+        "text": "A retro flat-vector travel poster featuring a lone student in a dark coat, holding a translucent dome umbrella on a wet stone alley at night. The scene is illuminated by a single streetlamp reflected as a long streak across the rain-slick pavement. The rain is drawn as sparse diagonal lines, with simplified geometric silhouette shapes and bold flat blocks of color. The palette includes mustard yellow, deep teal, warm cream, and charcoal, with a broad flat sky band above and a narrow ground band below. The image features screen-printed grain and slight misregistration, with no text, typography, letters, numbers, logos, or watermarks.",
+        "sharer_analysis": "ожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание",
+        "analysis_seconds": 8.98,
+        "receiver_seconds": 3.61,
+        "total_seconds": 12.6,
         "text_stats": {
-          "n_tokens": 27,
-          "distinct_1": 0.8148,
+          "n_tokens": 102,
+          "distinct_1": 0.7941,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0417,
+          "rep_4gram_max_ratio": 0.0101,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A red collar-coated dog sitting on a golden maple tree in autumn, leaves swirling around, warm afternoon sunlight.",
-        "total_seconds": 1.45,
+        "text": "A retro flat-vector travel poster featuring a lone student in a dark coat holding a translucent dome umbrella on a wet stone alley at night, with one streetlamp reflected as a long streak across the rain-slick pavement, rain drawn as sparse diagonal lines, simplified geometric silhouette shapes, bold flat blocks of colour with no gradients, restricted palette of mustard yellow, deep teal, warm cream and charcoal, a broad flat sky band above and a narrow ground band below, screen-printed grain and slight misregistration. No text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+        "total_seconds": 3.73,
         "text_stats": {
-          "n_tokens": 18,
-          "distinct_1": 0.9444,
+          "n_tokens": 102,
+          "distinct_1": 0.7843,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0667,
+          "rep_4gram_max_ratio": 0.0101,
           "degenerate": false
         }
       },
       "id": "p05",
-      "wall_seconds": 11.8
+      "wall_seconds": 16.32
     },
     {
-      "user_prompt": "夜市街头，穿白色T恤的少年举着棉花糖，背后是霓虹灯招牌的杂货铺，前景自行车经过的动态模糊",
+      "user_prompt": "creature concept art of a large unseen forest predator at night, only a pair of narrow reflective eyes visible in the darkness, warm amber glint with vertical needle pupils catching a sliver of moonlight, dense conifer forest drowned in cold fog, wet moss and fern fronds in the near foreground rendered in crisp detail, low camera angle looking slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light, cinematic matte painting with loose painterly brushwork in the environment and tighter detail on the eyes, volumetric shafts through the mist, unsettling stillness. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A night market street scene with a white-t-shirt boy holding a cotton candy, behind him is a neon-lit grocery store sign, and a dynamic blurred background of a bicycle passing by. The style is warm and soft lighting, with a composition that emphasizes the dynamic elements. Quality tags: style, lighting, composition, quality.",
-        "sharer_analysis": "冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻",
-        "analysis_seconds": 34.59,
-        "receiver_seconds": 2.88,
-        "total_seconds": 37.47,
+        "text": "A detailed image of a large unseen forest predator at night, with only a pair of narrow reflective eyes visible in the darkness. The creature is surrounded by dense conifer forest and cold fog, with wet moss and fern fronds rendered in crisp detail. The scene has a low camera angle, slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light. The environment features cinematic matte painting with loose painterly brushwork, and the eyes are rendered with volumetric shafts through the mist, creating an unsettling stillness. No text, typography, or other elements are included.",
+        "sharer_analysis": "ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...ожидание...",
+        "analysis_seconds": 8.94,
+        "receiver_seconds": 3.54,
+        "total_seconds": 12.48,
         "text_stats": {
-          "n_tokens": 52,
-          "distinct_1": 0.7692,
-          "distinct_2": 0.9804,
+          "n_tokens": 101,
+          "distinct_1": 0.7723,
+          "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0204,
+          "rep_4gram_max_ratio": 0.0102,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A bustling night market scene, a young man in a white shirt holding a bag of cotton candy, surrounded by neon-lit convenience stores, with a dynamic blur of a bicycle passing by.",
-        "total_seconds": 2.2,
+        "text": "A large unseen forest predator at night, only a pair of narrow reflective eyes visible in the darkness, warm amber glint with vertical needle pupils catching a sliver of moonlight, dense conifer forest drowned in cold fog, wet moss and fern fronds in the near foreground rendered in crisp detail, low camera angle looking slightly up, heavy atmospheric perspective, deep teal and near-black shadows broken by a single cold rim light, cinematic matte painting with loose painterly brushwork in the environment and tighter detail on the eyes, volumetric shafts through the mist, unsettling stillness.",
+        "total_seconds": 3.37,
         "text_stats": {
-          "n_tokens": 32,
-          "distinct_1": 0.8125,
-          "distinct_2": 1.0,
+          "n_tokens": 94,
+          "distinct_1": 0.8191,
+          "distinct_2": 0.9785,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0345,
+          "rep_4gram_max_ratio": 0.011,
           "degenerate": false
         }
       },
       "id": "p06",
-      "wall_seconds": 39.71
+      "wall_seconds": 15.86
     },
     {
-      "user_prompt": "孤独的宇航员站在外星球的悬崖边，凝视远处巨大的蓝色星云，电影感构图，广角镜头",
+      "user_prompt": "traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment colour with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A lone astronaut stands at the edge of a vast blue star system, looking out with a wide-angle view, capturing the filmic atmosphere of the scene.",
-        "sharer_analysis": "冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻user\n冻\n冻",
-        "analysis_seconds": 34.9,
-        "receiver_seconds": 1.73,
-        "total_seconds": 36.63,
+        "text": "A traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment color with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition.",
+        "sharer_analysis": "传统中国工笔细线画风格的团圆饭场景，从正上方视角观察，一张圆形桌子覆盖着竹蒸笼，蒸笼中仍冒着缕缕热气，一只完整的螃蟹放在浅盘中，小碗和茶杯，筷子放在托盘上，红色纸灯笼的暖光洒在桌布上，细腻的细笔勾勒出每一片饺子皮的褶皱，矿物颜料色彩搭配克制的金色点缀，暖红色、赭石色、翡翠绿和米色，细腻的丝绸绘画质感，和谐的圆形构图。无任何文字、无字体、无字母、无数字、无标志、无水印、无标题，纯视觉元素。",
+        "analysis_seconds": 5.34,
+        "receiver_seconds": 3.39,
+        "total_seconds": 8.72,
         "text_stats": {
-          "n_tokens": 26,
-          "distinct_1": 0.8077,
-          "distinct_2": 1.0,
+          "n_tokens": 91,
+          "distinct_1": 0.8132,
+          "distinct_2": 0.9889,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0435,
+          "rep_4gram_max_ratio": 0.0114,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A lone astronaut standing on the edge of a distant planet's cliff, looking at the vast blue starry sky, with a wide-angle shot, cinematic composition, and a high-quality image.",
-        "total_seconds": 1.85,
+        "text": "A traditional Chinese gongbi fine-line painting of a reunion dinner, seen from directly above, a round table covered with bamboo steamers of dumplings still trailing wisps of steam, a whole crab in a shallow dish, small bowls and teacups, chopsticks resting on a rest, the warm glow of a red paper lantern just off-frame spilling vermilion light across the cloth, meticulous fine brush outlining every pleat of the dumpling skins, mineral pigment colour with restrained gold accents, warm vermilion, ochre, jade green and cream, fine silk painting texture, harmonious circular composition.",
+        "total_seconds": 3.51,
         "text_stats": {
-          "n_tokens": 29,
-          "distinct_1": 0.8621,
-          "distinct_2": 1.0,
+          "n_tokens": 91,
+          "distinct_1": 0.8132,
+          "distinct_2": 0.9889,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0385,
+          "rep_4gram_max_ratio": 0.0114,
           "degenerate": false
         }
       },
       "id": "p07",
-      "wall_seconds": 38.52
+      "wall_seconds": 12.23
     },
     {
-      "user_prompt": "architectural watercolor of a modern library interior with curved wooden shelves, people reading, soft diffused daylight",
+      "user_prompt": "电影海报定格：夜市摊贩在摊前掌勺，热气蒸腾，围裙浸满油渍，浓烟穿过灯光，低角度仰拍，摊位柜台在前景形成深色压条，暖色与品红灯笼光在背景化为散景，变形镜头光晕，青橙调色，体积雾，单光源硬光扫过面部，浅景深，35mm 胶片颗粒。画面严禁出现任何文字与符号。",
       "t2t": {
-        "text": "Architectural watercolor of a modern library interior with curved wooden shelves, people reading, soft diffused daylight.",
-        "sharer_analysis": "�建筑水彩画，现代图书馆内部，弯曲的木制书架，人们阅读，柔和的散射日光。\n\n主体：现代图书馆内部，弯曲的木制书架，人们阅读。\n\n风格：水彩画，现代风格。\n\n构图：中心人物阅读，弯曲的木制书架，柔和的散射日光。\n\n照明：柔和的散射日光。\n\n氛围：宁静，舒适，现代。\n\n显著细节：弯曲的木制书架，人们阅读，柔和的散射日光。\n\n�建筑水彩画，现代图书馆内部，弯曲的木制书架，人们阅读，柔和的散射日光。\n\n主体：现代图书馆内部，弯曲的木制书架，人们阅读。\n\n风格：水彩画，现代风格。\n\n构图：中心人物阅读，弯曲的木制书架，柔和的散射日光。\n\n照明：柔和的散射日光。\n\n氛围：宁静，舒适，现代。\n\n显著细节：弯曲的木制书架，人们阅读，柔和的散射日光。\n\n�建筑水彩画，现代图书馆内部，弯曲的木制书架，人们阅读，柔和的散射日光。\n\n主体：现代图书馆内部，弯曲的木",
-        "analysis_seconds": 35.46,
-        "receiver_seconds": 1.47,
-        "total_seconds": 36.93,
+        "text": "A night market vendor is holding a booth in the foreground, with steam rising and a sauce stain on his apron, smoke curling through the lights, and a lantern light casting a warm glow. The booth's frame is deep in the foreground, creating a shadowy background. The scene features a soft, warm light from the lanterns and a sharp, hard light from a single source, creating a dramatic contrast. The composition is low-angle, with the vendor's face illuminated by the lantern light, and the scene has a shallow depth of field. The overall style combines realistic details with artistic effects, such as a soft glow and a foggy atmosphere. The quality tags include \"35mm film grain,\" \"soft light,\" and \"dramatic contrast.\"",
+        "sharer_analysis": "以下是对该电影海报定格的视觉元素分析：\n\n### 主体（Subject）\n- **夜市摊贩**：画面的主体是夜市摊贩，他正在摊前掌勺，热气蒸腾，围裙浸满油渍，浓烟穿过灯光，展现出一种忙碌而充满烟火气的氛围。\n\n### 风格（Style）\n- **写实与艺术结合**：画面既有写实的细节，如热气、油渍、浓烟等，又通过变形镜头光晕、青橙调色、体积雾等艺术手法，营造出一种梦幻而富有表现力的视觉效果。\n\n### 构图（Composition）\n- **低角度仰拍**：采用低角度仰拍，突出了摊贩的高大形象，同时也让摊位柜台在前景形成深色压条，增强了画面的层次感。\n- **单光源硬光**：单光源硬光扫过面部，形成强烈的光影对比，突出了摊贩的面部表情和轮廓。\n\n### 光线（Lighting）\n- **暖色与品红灯笼光**：背景中的暖色与品红灯笼光在散景中形成柔和的光线，与前景的硬光",
+        "analysis_seconds": 8.91,
+        "receiver_seconds": 4.28,
+        "total_seconds": 13.19,
         "text_stats": {
-          "n_tokens": 16,
-          "distinct_1": 1.0,
-          "distinct_2": 1.0,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0769,
+          "n_tokens": 121,
+          "distinct_1": 0.6612,
+          "distinct_2": 0.9333,
+          "distinct_3": 0.9916,
+          "rep_4gram_max_ratio": 0.0085,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A modern library interior, architectural watercolor style, with curved wooden shelves, people reading, soft diffused daylight, composition centered around the central desk, lighting from the ceiling, quality tags: architectural, library interior, watercolor, modern, wooden shelves, people reading, diffused daylight.",
-        "total_seconds": 2.4,
+        "text": "A night market scene with a vendor holding a cooking pot, steam rising from the pot, the vendor's apron soaking up oil, smoke curling from the pot, and the vendor's face in the low-angle shot, the background filled with warm and red lanterns, the scene rendered in a soft, warm, and dramatic lighting, the vendor's face in a shallow depth of field, the scene rendered in a 35mm film grain texture, and the scene rendered in a soft, warm, and dramatic lighting.",
+        "total_seconds": 3.06,
         "text_stats": {
-          "n_tokens": 39,
-          "distinct_1": 0.7949,
-          "distinct_2": 0.8947,
-          "distinct_3": 0.9459,
-          "rep_4gram_max_ratio": 0.0556,
+          "n_tokens": 82,
+          "distinct_1": 0.5366,
+          "distinct_2": 0.7531,
+          "distinct_3": 0.8375,
+          "rep_4gram_max_ratio": 0.038,
           "degenerate": false
         }
       },
       "id": "p08",
-      "wall_seconds": 39.36
+      "wall_seconds": 16.25
     },
     {
-      "user_prompt": "a black bicycle leaning against a red brick wall, a white cat sleeping in the wicker basket, long shadows of late afternoon",
+      "user_prompt": "单色山水：雨后梯田，从高处俯瞰，水面镜面般映着苍灰天空，一道道平滑水带；秧苗以细笔干擦排列成行；层层弯曲的田埂没入流动雾气；远处一个戴斗笠的身影给出尺度；湿润笔墨渗入纸面，黑与淡靛的渐次晕染，其间一点低饱和绿色点缀；大面积留白，宣纸纤维肌理，立轴式纵向构图。画面严禁出现任何文字与符号。",
       "t2t": {
-        "text": "A black bicycle leaning against a red brick wall, a white cat sleeping in the wicker basket, long shadows of late afternoon.",
-        "sharer_analysis": "wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrz",
-        "analysis_seconds": 35.39,
-        "receiver_seconds": 1.61,
-        "total_seconds": 37.0,
+        "text": "A landscape of pure color, with rain-soaked terraces, viewed from a high vantage point, reflecting a gray sky with mirror-like water, smooth water channels, arranged rice paddies in fine brush strokes, winding terraces hidden in flowing mist, a figure wearing a hat at the distance, ink and black and indigo tones gradually晕染, with a large white space, a paper with a soft texture, a vertical axis composition, and no text or symbols.",
+        "sharer_analysis": "以下是对您提供的图像概念的视觉元素分析：\n\n### 主题（Subject）\n- **雨后梯田**：画面主要描绘的是雨后梯田的景象，强调自然与人文景观的结合。\n\n### 风格（Style）\n- **水墨画风格**：整体采用传统的水墨画技法，通过墨色的浓淡变化来表现景物的层次感。\n\n### 构图（Composition）\n- **立轴式纵向构图**：画面采用传统的立轴式纵向构图，适合展示山水画的长卷效果。\n- **从高处俯瞰**：视角为从高处俯瞰，展现出广阔的梯田和远处的山峦。\n\n### 光线（Lighting）\n- **镜面般水面**：水面如镜，反射出苍灰的天空，营造出宁静而神秘的氛围。\n- **流动雾气**：远处的雾气流动，增加了画面的动态感和朦胧美。\n\n### 情绪（Mood）\n- **宁静与神秘**：整体氛围宁静而神秘，给人一种超脱尘世的感觉。\n- **清新与生机**：雨后的梯田和秧苗展现出清新与生机，给人以希望和活力。\n\n###",
+        "analysis_seconds": 8.77,
+        "receiver_seconds": 2.66,
+        "total_seconds": 11.42,
         "text_stats": {
-          "n_tokens": 22,
-          "distinct_1": 0.9091,
-          "distinct_2": 1.0,
+          "n_tokens": 72,
+          "distinct_1": 0.8056,
+          "distinct_2": 0.9859,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0526,
+          "rep_4gram_max_ratio": 0.0145,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A black bicycle leaning against a red brick wall, a white cat sleeping in the wicker basket, long shadows of late afternoon.",
-        "total_seconds": 1.55,
+        "text": "A serene landscape of mountainous hills, with the sky painted in a deep gray hue, reflecting off the water's mirror-like surface. The hills are arranged in a straight line, with the water flowing in a smooth, unbroken path. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly bent. The hills are covered in a dense carpet of rice, arranged in a row, with the rice grains slightly dry and the rice stalks slightly",
+        "total_seconds": 7.14,
         "text_stats": {
-          "n_tokens": 22,
-          "distinct_1": 0.9091,
-          "distinct_2": 1.0,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0526,
-          "degenerate": false
+          "n_tokens": 219,
+          "distinct_1": 0.1872,
+          "distinct_2": 0.2477,
+          "distinct_3": 0.2857,
+          "rep_4gram_max_ratio": 0.0324,
+          "degenerate": true
         }
       },
       "id": "p09",
-      "wall_seconds": 38.57
+      "wall_seconds": 18.57
     },
     {
-      "user_prompt": "macro photo of a dewdrop on a spider web at sunrise, refracting a tiny inverted meadow inside",
+      "user_prompt": "16 位像素风关卡背景图：正侧交视老居民楼外墙立面，阳台间晾衣绳下垂，衣物随风鼓起，竹竿与挂壁空调外机，窗台凌乱、瓷砖剥落锈迹，低饱和青、赭、灰粉色调，清晰抖色明暗，有限色板，粗像素、无抗锯齿，前景一条空步道，均匀平光。画面严禁出现任何文字与符号。",
       "t2t": {
-        "text": "A detailed English image generation prompt: a macro photo of a dewdrop on a spider web at sunrise, refracting a tiny inverted meadow inside, with soft lighting and a composition that captures the beauty of the scene. Style: surreal, dreamlike, vibrant. Quality tags: high detail, soft lighting, surreal atmosphere.",
-        "sharer_analysis": "困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难",
-        "analysis_seconds": 36.63,
-        "receiver_seconds": 2.98,
-        "total_seconds": 39.61,
+        "text": "16-bit pixel art-style level background: a side-look, front and side view of a residential building wall, with laundry hanging from the balcony, clothes rising with wind, bamboo poles and a wall-mounted air conditioner, a cluttered window with broken tiles and rust stains, a saturated, detailed color palette with limited color, pixelated, no anti-aliasing, a uniform, flat foreground path, and no text or symbols.",
+        "sharer_analysis": "冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻冻",
+        "analysis_seconds": 8.69,
+        "receiver_seconds": 2.42,
+        "total_seconds": 11.11,
+        "text_stats": {
+          "n_tokens": 63,
+          "distinct_1": 0.8095,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0167,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A 16-bit pixelated level background of a old residential building exterior wall, with laundry hanging from the windowsill, clothes billowing with the wind, bamboo poles and a wall-mounted air conditioner, with a disheveled window sill, peeling tiles, a saturated green, ochre, and gray tone, with a clear grainy contrast, limited color palette, pixelated, no sharpening, a front step path, uniform flatness. No text or symbols.",
+        "total_seconds": 2.77,
+        "text_stats": {
+          "n_tokens": 65,
+          "distinct_1": 0.8154,
+          "distinct_2": 0.9844,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0161,
+          "degenerate": false
+        }
+      },
+      "id": "p10",
+      "wall_seconds": 13.88
+    },
+    {
+      "user_prompt": "高级礼盒包装摄影：一只手工锤纹紫铜茶壶（橙褐色老旧包浆、可见手工窝痕）置于深胡桃木托盘，旁立一只透明公道杯，壶嘴细薄热气升腾；居中英雄位构图，深青到炭灰渐变背景，左上方大型柔光箱勾出金属质感，手柄边缘冷冽轮廓光，底部阴影沉积，主体四周大面积留白，暖铜对冷底，超锐商业静物。画面严禁出现任何文字与符号。",
+      "t2t": {
+        "text": "A detailed English image generation prompt: A high-end luxury box photography scene featuring a hand-carved copper tea pot with a deep orange-brown aged patina and visible hand-woven grooves, placed on a deep mahogany tray. A transparent porcelain cup stands beside it, with steam rising from the teapot's spout. A heroic position is centered, with a deep green to dark gray gradient background. A large metallic light box at the upper left is used to create a metallic texture, with cold edges on the handle and shadows at the bottom. The scene features a large amount of white space around the main subject, with warm copper tones contrasting with cold tones. The composition is filled with soft light, and the quality tags include \"luxury photography,\" \"handcrafted,\" \"metallic,\" and \"artistic.\"",
+        "sharer_analysis": "以下是对您提供的高级礼盒包装摄影图像概念的视觉元素分析：\n\n### 主题\n- **主题**：手工锤纹紫铜茶壶及其周边环境。\n\n### 风格\n- **风格**：超现实主义，强调质感和细节，具有强烈的视觉冲击力。\n\n### 构图\n- **构图**：居中英雄位构图，突出主体茶壶，周围留白，营造出一种宁静而庄重的氛围。\n\n### 光线\n- **光线**：左上方大型柔光箱勾出金属质感，手柄边缘冷冽轮廓光，底部阴影沉积，形成强烈的光影对比。\n\n### 情绪\n- **情绪**：温暖、高贵、神秘，通过暖铜色与冷底色的对比，营造出一种奢华而内敛的氛围。\n\n### 明细\n- **细节**：橙褐色老旧包浆、可见手工窝痕、深胡桃木托盘、透明公道杯、细薄热气升腾、深青到炭灰渐变背景、超锐商业静物。\n\n### 技术\n- **技术**：超锐商业静物摄影，画面严禁出现任何文字与符号。\n\n这些",
+        "analysis_seconds": 9.32,
+        "receiver_seconds": 4.55,
+        "total_seconds": 13.86,
+        "text_stats": {
+          "n_tokens": 128,
+          "distinct_1": 0.6953,
+          "distinct_2": 0.9528,
+          "distinct_3": 0.9921,
+          "rep_4gram_max_ratio": 0.008,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A vintage porcelain tea cup with a copper handle, aged and aged, is placed on a deep mahogany plate. A glass cup is beside it, with a narrow neck and a thin neck. The background is a deep gradient from dark green to charcoal gray, with a large, rectangular glass box at the top of the frame, with a metallic texture. The handle has a cold, angular edge, and the bottom of the cup is filled with a warm copper color. The composition is centered, with the cup at the center, and the background is filled with a warm, golden hue. The overall style is modern and sleek, with a sharp, angular edge. The lighting is soft, with a warm, golden light coming from the top of the frame. The quality tags are 'Vintage', 'Copper', 'Tea', 'Glass', 'Plate', 'Background', 'Gradient', 'Frame', 'Lighting', 'Composition', 'Style'.",
+        "total_seconds": 5.87,
+        "text_stats": {
+          "n_tokens": 144,
+          "distinct_1": 0.5694,
+          "distinct_2": 0.8462,
+          "distinct_3": 0.9507,
+          "rep_4gram_max_ratio": 0.0142,
+          "degenerate": false
+        }
+      },
+      "id": "p11",
+      "wall_seconds": 19.74
+    },
+    {
+      "user_prompt": "复古几何平涂旅行海报：孤身学生背影，暗色大衣，雨夜湿石板小巷，手持透明伞面；一盏路灯在雨滑路面拉出长光带；雨以稀疏斜线表示；几何化剪影形状，大色块无渐变；姜黄、深青、暖奶油、炭灰的受限色板；上方大色块天带、下方窄地带，丝网印刷颗粒与轻微错版。画面严禁出现任何文字与符号。",
+      "t2t": {
+        "text": "A detailed English image generation prompt: A lone student with a dark coat, holding a transparent umbrella, standing in a rainy, wet stone path with a lantern on the rain-slicked road creating a long light beam. The rain is represented in sparse, diagonal lines. The figure is geometric, with large, solid color blocks without any gradient. The color palette includes yellow, deep green, warm cream, and dark gray. The upper part has a large color block, while the lower part has a narrow band, with metallic particles and slight errors. The scene is free of any text or symbols.",
+        "sharer_analysis": "ึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก",
+        "analysis_seconds": 9.36,
+        "receiver_seconds": 3.47,
+        "total_seconds": 12.83,
+        "text_stats": {
+          "n_tokens": 99,
+          "distinct_1": 0.7273,
+          "distinct_2": 0.9694,
+          "distinct_3": 0.9897,
+          "rep_4gram_max_ratio": 0.0104,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A vintage geometric flat design travel poster featuring a lone student with a dark coat, standing in a rainy street lined with wet stone steps, holding a transparent umbrella. A streetlight is drawn out in the rain as a long beam, with sparse diagonal lines representing the rain. The geometric shape is rendered in large blocks with no gradient, using shades of yellow, deep green, warm cream, and dark gray. Above the large blocks, there is a wide band of color, and below it, a narrow band, with a grid of fine mesh and slight errors. The image is restricted to no text or symbols.",
+        "total_seconds": 3.74,
+        "text_stats": {
+          "n_tokens": 105,
+          "distinct_1": 0.7143,
+          "distinct_2": 0.9904,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0098,
+          "degenerate": false
+        }
+      },
+      "id": "p12",
+      "wall_seconds": 16.57
+    },
+    {
+      "user_prompt": "夜兽概念设定图：庞大而不可见的林中掠食者，夜色中只余一对狭长反光眼睛，竖直针状瞳孔里一丝月光折作暖琥珀色微光；密林沉没在冷雾里；前景湿苔与蕨叶精细刻画；低角度仰拍；深重氛围透视；深青与近黑阴影只被一束冷轮廓光撕开；哑光绘景风格，环境松扫、双眼收紧；雾中体积光，令人不安的静默。画面严禁出现任何文字与符号。",
+      "t2t": {
+        "text": "A detailed English image generation prompt: A large, unseen forest creature with a narrow, vertical, needle-like gaze, with a warm amber glow from a single moonlight tear, surrounded by dense, fog-covered trees. The foreground features fine, damp moss and fern leaves. The composition is low-angle, with deep shadows and a tight perspective. The dark, deep shadows are broken by a single cold outline light. The style is a哑光, loose brush style, with a soft, atmospheric lighting. The scene is filled with an eerie, silent atmosphere. No text or symbols are present.",
+        "sharer_analysis": "冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻",
+        "analysis_seconds": 9.67,
+        "receiver_seconds": 3.25,
+        "total_seconds": 12.92,
+        "text_stats": {
+          "n_tokens": 91,
+          "distinct_1": 0.7473,
+          "distinct_2": 0.9556,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0114,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A large and mysterious forest creature, with a narrow and elongated fangs, glowing with a warm amber light. The creature is surrounded by dense fog, with the forest floor covered in damp moss and fern leaves. The camera angle is low-angle, with a deep and mysterious atmosphere. The dark shadows are only pierced by a cold outline light. The style is a matte finish, with a soft and loose brushstroke. The light is a misty and ominous glow, creating an unsettling silence. The scene is a dark and mysterious forest creature, with a narrow and elongated fangs, glowing with a warm amber light. The creature is surrounded by dense fog, with the forest floor covered in damp moss and fern leaves. The camera angle is low-angle, with a deep and mysterious atmosphere. The dark shadows are only pierced by a cold outline light. The style is a matte finish, with a soft and loose brushstroke. The light is a misty and ominous glow, creating an unsettling silence.",
+        "total_seconds": 5.68,
+        "text_stats": {
+          "n_tokens": 167,
+          "distinct_1": 0.3293,
+          "distinct_2": 0.4819,
+          "distinct_3": 0.5273,
+          "rep_4gram_max_ratio": 0.0122,
+          "degenerate": false
+        }
+      },
+      "id": "p13",
+      "wall_seconds": 18.6
+    },
+    {
+      "user_prompt": "工笔重彩：年夜饭俯视圆桌，竹蒸笼盛满饺子、热气缕缕，一盘整蟹、小碗茶盏、筷子置筷架；一旁红灯笼余光洒在桌布上，暖朱砂色漫染；细笔工描每一枚饺子褶纹，矿物颜料配少量金饰，朱砂、赭黄、玉绿、米白，绢本肌理，向心环形构图。画面严禁出现任何文字与符号。",
+      "t2t": {
+        "text": "A detailed English image generation prompt: A round table with a circular arrangement, featuring a steaming pot of dumplings filled with rice, a whole crab, a tea cup, and chopsticks arranged on a bamboo tray. The scene is illuminated by the glow of hanging lanterns, casting warm red hues on the tablecloth. Each dumpling is meticulously rendered with fine brushwork, mineral pigments mixed with gold and red accents, and a vibrant color palette of jujube red, ochre, green, and white. The composition is a circular arrangement with a central focus on the table, and the quality tags include \"work painting\" and \"fine art.\"",
+        "sharer_analysis": "以下是对您提供的图像概念的视觉元素分析：\n\n### 主题（Subject）\n- **年夜饭**：描绘了一张圆桌上的丰盛年夜饭场景，包括竹蒸笼中的饺子、整只螃蟹以及茶盏等。\n\n### 风格（Style）\n- **工笔重彩**：采用精细的工笔画技法，注重细节描绘，色彩鲜艳且对比强烈。\n\n### 构图（Composition）\n- **向心环形构图**：画面以圆桌为中心，形成一个向心的环形布局，使观者仿佛置身于餐桌旁。\n\n### 光线（Lighting）\n- **红灯笼余光**：红灯笼的光线洒在桌布上，营造出温暖而祥和的氛围。\n\n### 情绪（Mood）\n- **温馨与喜庆**：整体氛围温馨、喜庆，符合年夜饭的传统节日气氛。\n\n### 明细之处（Notable Details）\n- **竹蒸笼**：蒸笼上蒸腾的热气，增加了画面的动态感。\n- **整只螃蟹**：螃蟹的完整形态，展示了年夜饭的丰盛。\n- **茶盏与筷子**：茶盏和筷子的细节",
+        "analysis_seconds": 8.95,
+        "receiver_seconds": 3.64,
+        "total_seconds": 12.59,
+        "text_stats": {
+          "n_tokens": 103,
+          "distinct_1": 0.699,
+          "distinct_2": 0.9706,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.01,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A detailed English image generation prompt for the user's idea: \"A scene of a grand Chinese New Year dinner, with a round table at the center, filled with dumplings steamed in a pot, with the heat rising from the pot. A plate of dumplings is arranged on the table, with a plate of rice dumplings on the side. A red lantern is hanging on the side of the table, casting a warm glow on the tablecloth. The scene is painted with a detailed brushstroke technique, using a soft brushstroke to create the delicate folds of the dumplings, with a mineral pigment mixed with a small amount of gold. The colors used are a warm red, yellow, and green, with a soft brushstroke technique to create a soft gradient. The composition is arranged in a circular pattern, with the center of the table being filled with the dumplings, and the red lantern casting a warm glow on the tablecloth. The quality tags are 'Chinese New Year dinner', 'dumplings steamed in a pot', 'red lantern', 'detailed brushstroke technique', 'mineral pigment mixed with a small amount of gold', 'warm red', 'yellow', 'green', 'soft brushstroke technique', 'circular pattern', 'table",
+        "total_seconds": 7.14,
+        "text_stats": {
+          "n_tokens": 195,
+          "distinct_1": 0.4974,
+          "distinct_2": 0.7784,
+          "distinct_3": 0.9275,
+          "rep_4gram_max_ratio": 0.0104,
+          "degenerate": false
+        }
+      },
+      "id": "p14",
+      "wall_seconds": 19.73
+    },
+    {
+      "user_prompt": "loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through.",
+        "sharer_analysis": "איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי",
+        "analysis_seconds": 8.84,
+        "receiver_seconds": 2.24,
+        "total_seconds": 11.08,
+        "text_stats": {
+          "n_tokens": 55,
+          "distinct_1": 0.8545,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0192,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A loose watercolor illustration of a street-food vendor at a night-market stall, wok mid-toss throwing a sheet of steam into the lamplight, apron spotted with grease, stall counter dark in the foreground, warm and magenta lanterns blooming into soft pigment washes, low angle, wet-on-wet blending with dry-brush accents on the smoke, paper white showing through.",
+        "total_seconds": 2.36,
+        "text_stats": {
+          "n_tokens": 55,
+          "distinct_1": 0.8545,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0192,
+          "degenerate": false
+        }
+      },
+      "id": "p15",
+      "wall_seconds": 13.45
+    },
+    {
+      "user_prompt": "flat vector travel poster illustration of terraced rice fields after rain seen from above, the flooded terraces as smooth bands of pale sky reflection, young shoots rows as tiny chevrons, stamp-like border, limited palette of celadon, ink blue, mist grey and one muted red accent, crisp shapes, screen-print grain. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A flat vector illustration of a serene post-rain agricultural scene, featuring flooded terraced rice fields with pale sky reflections, tiny chevrons representing young shoots, a stamp-like border, a limited palette of celadon, ink blue, mist grey, and a muted red accent. The composition features crisp, natural elements, with a minimalist, clean design. The scene is rendered in a digital flat vector format, emphasizing natural and agricultural themes.",
+        "sharer_analysis": "fertile rice fields, flat vector illustration, terraced rice fields, flooded terraces, pale sky reflection, young shoots, tiny chevrons, stamp-like border, celadon, ink blue, mist grey, muted red accent, crisp shapes, screen-print grain, no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery, flat design, minimalist, clean lines, natural elements, agricultural scene, post-rain, serene, peaceful, rural, traditional, flat vector, vector art, digital illustration, flat design, clean lines, natural elements, agricultural scene, post-rain, serene, peaceful, rural, traditional, flat vector, vector art, digital illustration, flat design, clean lines, natural elements, agricultural scene, post-rain, serene, peaceful, rural, traditional, flat vector, vector art, digital illustration, flat design, clean lines, natural elements, agricultural scene, post-rain, serene, peaceful, rural, traditional, flat vector, vector art, digital illustration, flat design, clean lines, natural elements, agricultural scene, post-rain, serene, peaceful, rural, traditional, flat vector, vector art, digital illustration, flat design, clean lines, natural elements",
+        "analysis_seconds": 8.71,
+        "receiver_seconds": 2.44,
+        "total_seconds": 11.15,
+        "text_stats": {
+          "n_tokens": 67,
+          "distinct_1": 0.791,
+          "distinct_2": 0.9848,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0156,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A flat vector travel poster illustration of terraced rice fields after rain seen from above, the flooded terraces as smooth bands of pale sky reflection, young shoots rows as tiny chevrons, stamp-like border, limited palette of celadon, ink blue, mist grey and one muted red accent, crisp shapes, screen-print grain.",
+        "total_seconds": 1.99,
+        "text_stats": {
+          "n_tokens": 50,
+          "distinct_1": 0.94,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0213,
+          "degenerate": false
+        }
+      },
+      "id": "p16",
+      "wall_seconds": 13.14
+    },
+    {
+      "user_prompt": "pencil sketch with ink hatching of an old apartment facade, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A pencil sketch of an old apartment facade with ink hatching, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper.",
+        "sharer_analysis": "ึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก",
+        "analysis_seconds": 8.8,
+        "receiver_seconds": 1.53,
+        "total_seconds": 10.33,
+        "text_stats": {
+          "n_tokens": 34,
+          "distinct_1": 1.0,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0323,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A pencil sketch of an old apartment facade, with ink hatching of the facade, clotheslines sagging between balconies, garments lifting in the wind, air-conditioning units and cluttered ledges, chipped tiles, cross-hatched shadows, single-point perspective, off-white sketchbook paper.",
+        "total_seconds": 1.77,
+        "text_stats": {
+          "n_tokens": 37,
+          "distinct_1": 0.9189,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0294,
+          "degenerate": false
+        }
+      },
+      "id": "p17",
+      "wall_seconds": 12.11
+    },
+    {
+      "user_prompt": "minimal continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A detailed English image generation prompt: a minimal continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, with thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic. No text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+        "sharer_analysis": "ึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก",
+        "analysis_seconds": 8.76,
+        "receiver_seconds": 2.26,
+        "total_seconds": 11.02,
+        "text_stats": {
+          "n_tokens": 63,
+          "distinct_1": 0.7937,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0167,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A minimalist continuous line drawing of a copper teapot and a glass fairness cup on a walnut tray, with thin steam curling, single line weight, lots of white space, subtle gold ink accent, modern packaging concept sketch aesthetic.",
+        "total_seconds": 1.41,
+        "text_stats": {
+          "n_tokens": 38,
+          "distinct_1": 0.8684,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0286,
+          "degenerate": false
+        }
+      },
+      "id": "p18",
+      "wall_seconds": 12.43
+    },
+    {
+      "user_prompt": "impressionist oil painting of a student seen from behind under a translucent umbrella on a rain-slick stone alley at night, one streetlamp dissolving into broken brushwork, reflections in wet stone, rain suggested by flickering vertical strokes, thick impasto highlights, moody blues with a single warm yellow lamp. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A student is seen from behind under a translucent umbrella on a rain-slick stone alley at night, with one streetlamp dissolving into broken brushwork, reflections in wet stone, rain suggested by flickering vertical strokes, thick impasto highlights, moody blues with a single warm yellow lamp, all in pure imagery.",
+        "sharer_analysis": "ожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание\n\nожидание",
+        "analysis_seconds": 8.84,
+        "receiver_seconds": 1.76,
+        "total_seconds": 10.6,
         "text_stats": {
           "n_tokens": 49,
-          "distinct_1": 0.8367,
+          "distinct_1": 0.898,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
           "rep_4gram_max_ratio": 0.0217,
@@ -310,211 +598,307 @@
         }
       },
       "c2c": {
-        "text": "A detailed image of a dewdrop on a spider web at sunrise, refracting a tiny inverted meadow inside the dewdrop. The setting is a serene and peaceful environment, with soft lighting and a warm, inviting atmosphere. The style of the image is nature-inspired, with a focus on the delicate and intricate details of the dewdrop and spider web. The composition of the image is balanced and symmetrical, with the dewdrop at the center and the spider web surrounding it. The quality tags are 'nature', 'dewdrop', 'spider web', 'refracting', 'inverted meadow', 'sunrise', 'peaceful', 'serene', 'inviting', 'nature-inspired', 'delicate', 'intricate', 'tiny', 'inverted', 'meadow'.",
-        "total_seconds": 5.71,
+        "text": "A student is seen from behind under a translucent umbrella on a rain-slick stone alley at night. The setting is a rainy street, with one streetlamp dissolving into broken brushwork. The reflections in wet stone are suggested by flickering vertical strokes. The rain is thick and impasto highlights are present. The moody blues are suggested by the single warm yellow lamp. The composition is a single streetlamp, with the student seen from behind. The quality tags are 'Impressionist Oil Painting' and 'Rainy Street'.",
+        "total_seconds": 3.09,
         "text_stats": {
-          "n_tokens": 100,
-          "distinct_1": 0.62,
-          "distinct_2": 0.9394,
-          "distinct_3": 0.9796,
-          "rep_4gram_max_ratio": 0.0206,
+          "n_tokens": 83,
+          "distinct_1": 0.6867,
+          "distinct_2": 0.9512,
+          "distinct_3": 0.9877,
+          "rep_4gram_max_ratio": 0.0125,
           "degenerate": false
         }
       },
-      "id": "p10",
-      "wall_seconds": 45.35
+      "id": "p19",
+      "wall_seconds": 13.7
     },
     {
-      "user_prompt": "1960s retro travel poster style illustration of a coastal lighthouse on cliffs, bold flat colors, slight paper grain",
+      "user_prompt": "minimalist sumi-e ink scene, in near-total darkness a pair of narrow amber eyes glinting, concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
       "t2t": {
-        "text": "A retro travel poster style illustration of a coastal lighthouse on cliffs, featuring bold flat colors with slight paper grain. The composition should be centered around the lighthouse, with the cliffs and sea setting, and the lighting should be warm and golden to enhance the retro aesthetic. The style should be clean and modern, with a high-quality image.",
-        "sharer_analysis": "困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难的\n\n困难",
-        "analysis_seconds": 35.28,
-        "receiver_seconds": 3.15,
-        "total_seconds": 38.43,
+        "text": "Minimalist sumi-e ink scene in near-total darkness, with narrow amber eyes glowing in concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast, no text, no typography, no letters, no numbers, no logos, no watermark, no captions, pure imagery only.",
+        "sharer_analysis": "ึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก\n\nึก",
+        "analysis_seconds": 10.28,
+        "receiver_seconds": 2.4,
+        "total_seconds": 12.68,
+        "text_stats": {
+          "n_tokens": 49,
+          "distinct_1": 0.8163,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0217,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A minimalist sumi-e ink scene, in near-total darkness, a pair of narrow amber eyes glinting, concentric brush circles of fog, a single branch with two leaves suggested in one stroke, vast emptiness, high contrast.",
+        "total_seconds": 1.82,
+        "text_stats": {
+          "n_tokens": 34,
+          "distinct_1": 0.8824,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0323,
+          "degenerate": false
+        }
+      },
+      "id": "p20",
+      "wall_seconds": 14.5
+    },
+    {
+      "user_prompt": "children's picture book illustration of a reunion dinner seen from above a round table, bamboo steamers with dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner. Absolutely no text, no typography, no letters, no words, no numbers, no logos, no watermark, no captions, pure imagery only.",
+      "t2t": {
+        "text": "A round table with children's picture book illustration of a reunion dinner, bamboo steamers with dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner, all in pure imagery.",
+        "sharer_analysis": "איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי\n\n איכותי\n איכותי",
+        "analysis_seconds": 10.44,
+        "receiver_seconds": 1.85,
+        "total_seconds": 12.29,
+        "text_stats": {
+          "n_tokens": 41,
+          "distinct_1": 0.878,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0263,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A serene and warm picture book illustration of a reunion dinner, seen from above a round table, with bamboo steamers and dumplings, a crab, teacups and bowls, warm gouache colours, wobbly friendly outlines, soft crayon texture, a red lantern glowing in the corner.",
+        "total_seconds": 1.79,
+        "text_stats": {
+          "n_tokens": 43,
+          "distinct_1": 0.8372,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.025,
+          "degenerate": false
+        }
+      },
+      "id": "p21",
+      "wall_seconds": 14.08
+    },
+    {
+      "user_prompt": "夜市摊贩在摊前掌勺，热气升腾，油烟里灯笼晃，围裙浸透油渍",
+      "t2t": {
+        "text": "A night market vendor is cooking at the market stand, with steam rising and smoke in the background, lanterns flickering in the oil-stained apron, and the scene is lit with warm lighting. The composition features a bustling market scene, with the vendor at the center, surrounded by the din of the market. The style is warm and vibrant, with a high-quality tag.",
+        "sharer_analysis": "wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrz",
+        "analysis_seconds": 8.73,
+        "receiver_seconds": 2.12,
+        "total_seconds": 10.85,
+        "text_stats": {
+          "n_tokens": 62,
+          "distinct_1": 0.6129,
+          "distinct_2": 0.9672,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0169,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A bustling night market scene with a vendor holding a cooking pot, the heat rising from the cooking surface, the smoke curling up, the lanterns flickering in the shadows, the apron soaked in oil, the lighting dimming as the vendor's hands move with practiced precision, the composition of the scene capturing the essence of a busy night market.",
+        "total_seconds": 2.08,
         "text_stats": {
           "n_tokens": 58,
-          "distinct_1": 0.6897,
-          "distinct_2": 0.9649,
+          "distinct_1": 0.6724,
+          "distinct_2": 1.0,
           "distinct_3": 1.0,
           "rep_4gram_max_ratio": 0.0182,
           "degenerate": false
         }
       },
-      "c2c": {
-        "text": "A retro travel poster style illustration of a coastal lighthouse on cliffs, bold flat colors, slight paper grain, with a dramatic lighting effect, composed in a way that emphasizes the lighthouse's prominence, and rendered in a high-quality, detailed manner.",
-        "total_seconds": 2.31,
-        "text_stats": {
-          "n_tokens": 39,
-          "distinct_1": 0.8718,
-          "distinct_2": 0.9737,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0278,
-          "degenerate": false
-        }
-      },
-      "id": "p11",
-      "wall_seconds": 40.77
+      "id": "p22",
+      "wall_seconds": 12.93
     },
     {
-      "user_prompt": "the quiet tension before a summer thunderstorm: dark rolling clouds over a golden wheat field, a lone oak tree",
+      "user_prompt": "雨后梯田从高处俯瞰，水面倒映灰白天空，秧苗排成细线，远处一个戴斗笠的身影",
       "t2t": {
-        "text": "The quiet tension before a summer thunderstorm: dark rolling clouds over a golden wheat field, a lone oak tree, with golden lighting, composition centered on the oak tree, style of nature, quality tags: nature, storm, field, oak, golden.",
-        "sharer_analysis": "wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrz",
-        "analysis_seconds": 35.47,
-        "receiver_seconds": 2.46,
-        "total_seconds": 37.93,
+        "text": "A rain-soaked mountain range from above, with water reflecting a gray sky, rice arranged in a line, and a figure wearing a hat at the distance. The setting is rural, the style is nature-inspired, lighting is soft, composition is balanced, and the quality is high.",
+        "sharer_analysis": "חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות\n\n חוות",
+        "analysis_seconds": 8.8,
+        "receiver_seconds": 1.57,
+        "total_seconds": 10.37,
         "text_stats": {
-          "n_tokens": 38,
-          "distinct_1": 0.7895,
-          "distinct_2": 0.973,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0286,
-          "degenerate": false
-        }
-      },
-      "c2c": {
-        "text": "A serene and contemplative scene of a summer thunderstorm, with dark rolling clouds over a golden wheat field, a lone oak tree, and a quiet tension before the storm. The setting is peaceful and serene, with golden wheat fields and a lone oak tree. The style is nature-inspired, with soft lighting and a calm composition. The quality tags are 'nature-inspired', 'serene and contemplative', 'peaceful and serene', 'quiet tension before a summer thunderstorm'.",
-        "total_seconds": 3.49,
-        "text_stats": {
-          "n_tokens": 72,
-          "distinct_1": 0.6389,
-          "distinct_2": 0.9014,
-          "distinct_3": 0.9857,
-          "rep_4gram_max_ratio": 0.0145,
-          "degenerate": false
-        }
-      },
-      "id": "p12",
-      "wall_seconds": 41.44
-    },
-    {
-      "user_prompt": "清晨的菜市场，摊位上摆满带露水的蔬菜水果，蒸汽从包子铺的蒸笼升起，逆光",
-      "t2t": {
-        "text": "A morning market scene with dewy vegetables and fruits on the market stalls, steam rising from the baozi in the kitchen, with a warm, low-angle lighting and a composition that captures the essence of a bustling, fresh morning.",
-        "sharer_analysis": "冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻user\n冻",
-        "analysis_seconds": 36.07,
-        "receiver_seconds": 2.4,
-        "total_seconds": 38.47,
-        "text_stats": {
-          "n_tokens": 38,
-          "distinct_1": 0.7632,
+          "n_tokens": 45,
+          "distinct_1": 0.7333,
           "distinct_2": 1.0,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0286,
+          "rep_4gram_max_ratio": 0.0238,
           "degenerate": false
         }
       },
       "c2c": {
-        "text": "A morning scene of a bustling market, with vendors selling fresh produce and vegetables, their hands stained with dew, as steam rises from the steaming buns in the stalls. The setting is warm and inviting, with soft lighting and a warm, inviting atmosphere. The composition is balanced, with the market at the center, and the vendors and their produce arranged in a natural, orderly fashion. The quality tags are 'nature', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market', 'market',",
-        "total_seconds": 8.75,
+        "text": "A serene landscape of a rain-soaked mountainous region, with the sky painted in a deep blue hue, the water reflecting the grayish white clouds above, the rice paddies arranged in a straight line, and a figure wearing a hat standing at the edge of the rice field, the setting sun casting a warm glow on the rice paddies. The style of the image is nature-inspired, with soft lighting and a gentle composition. The quality tags are 'nature', 'landscape', 'water', 'rice', 'sunlight'.",
+        "total_seconds": 3.02,
         "text_stats": {
-          "n_tokens": 127,
-          "distinct_1": 0.3858,
-          "distinct_2": 0.5635,
-          "distinct_3": 0.568,
-          "rep_4gram_max_ratio": 0.4355,
-          "degenerate": true
+          "n_tokens": 81,
+          "distinct_1": 0.7037,
+          "distinct_2": 0.9375,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0128,
+          "degenerate": false
         }
       },
-      "id": "p13",
-      "wall_seconds": 47.25
+      "id": "p23",
+      "wall_seconds": 13.39
     },
     {
-      "user_prompt": "雨后的青石板小巷，地面水洼倒映着红灯笼，一滴水珠刚刚落下激起涟漪，特写",
+      "user_prompt": "老居民楼外墙的晾衣场，晾衣绳垂弯，衣物被风鼓起，窗台凌乱，挂壁空调结着锈",
       "t2t": {
-        "text": "A rainy stone-paved alley with water lapping against red lanterns, a single drop of water creating ripples, in a detailed, high-quality image.",
-        "sharer_analysis": "wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrz",
-        "analysis_seconds": 35.25,
-        "receiver_seconds": 1.79,
-        "total_seconds": 37.04,
+        "text": "A detailed English image generation prompt: A elderly building with a laundry shed on its exterior, with clothes hanging up from the shed's rope, the shed being wind-swept and the laundry being blown around, the shed's windows are cluttered, and the wall-mounted air conditioner is rusted.",
+        "sharer_analysis": "老居民楼外墙的晾衣场，晾衣绳垂弯，衣物被风鼓起，窗台凌乱，挂壁空调结着锈迹。",
+        "analysis_seconds": 1.19,
+        "receiver_seconds": 1.66,
+        "total_seconds": 2.86,
         "text_stats": {
-          "n_tokens": 22,
-          "distinct_1": 0.8636,
-          "distinct_2": 1.0,
+          "n_tokens": 46,
+          "distinct_1": 0.7391,
+          "distinct_2": 0.9556,
           "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0526,
-          "degenerate": false
-        }
-      },
-      "c2c": {
-        "text": "A serene scene of a rainy street, with the soft glow of lanterns casting a warm light on the damp stone path. The water droplets on the tiles reflect the vibrant red lanterns, creating a striking visual contrast. The scene is set in a quiet, peaceful atmosphere, with the gentle rustle of leaves and the soft rustle of leaves adding to the atmosphere. The composition is balanced, with the lanterns positioned along the path, and the water droplets on the tiles creating a perfect balance of light and shadow. The quality tags are 'low' for the lighting, 'medium' for the composition, and 'medium' for the style.",
-        "total_seconds": 4.69,
-        "text_stats": {
-          "n_tokens": 106,
-          "distinct_1": 0.5566,
-          "distinct_2": 0.8476,
-          "distinct_3": 0.9423,
-          "rep_4gram_max_ratio": 0.0194,
-          "degenerate": false
-        }
-      },
-      "id": "p14",
-      "wall_seconds": 41.77
-    },
-    {
-      "user_prompt": "敦煌壁画风格的飞天仙女，飘带与祥云环绕，矿物颜料质感，对称构图",
-      "t2t": {
-        "text": "A detailed English image generation prompt: A敦煌壁画风格的飞天仙女, with flowing silk robes and swirling clouds, rendered in mineral pigments with a symmetrical composition, capturing the essence of traditional Chinese art. The setting is a classical Chinese courtyard, and the lighting is warm and golden. The quality tags include \"detailed painting,\" \"traditional Chinese art,\" \"symmetrical composition,\" \"mineral pigments,\" and \"detailed style.\"",
-        "sharer_analysis": "wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrz",
-        "analysis_seconds": 34.77,
-        "receiver_seconds": 3.69,
-        "total_seconds": 38.46,
-        "text_stats": {
-          "n_tokens": 59,
-          "distinct_1": 0.7797,
-          "distinct_2": 1.0,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0179,
-          "degenerate": false
-        }
-      },
-      "c2c": {
-        "text": "A detailed English image generation prompt for the user's idea: \"A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user's idea: 'A detailed English image generation prompt for the user",
-        "total_seconds": 7.98,
-        "text_stats": {
-          "n_tokens": 199,
-          "distinct_1": 0.0653,
-          "distinct_2": 0.0707,
-          "distinct_3": 0.0761,
-          "rep_4gram_max_ratio": 0.102,
-          "degenerate": true
-        }
-      },
-      "id": "p15",
-      "wall_seconds": 46.46
-    },
-    {
-      "user_prompt": "春天的傍晚，放学后空荡荡的教室，黑板上还留着半截粉笔字，夕阳把课桌染成金色",
-      "t2t": {
-        "text": "A serene autumn afternoon in a quiet classroom, with students leaving, the blackboard still bearing a half-burnt chalkboard, the sun casting golden hues on the desks. The scene is set in a dimly lit, empty classroom, with soft lighting and a warm, intimate composition. Style: warm, natural, realistic. Quality tags: realistic, soft lighting, golden hour.",
-        "sharer_analysis": "wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrzności\n\n wnętrz",
-        "analysis_seconds": 34.81,
-        "receiver_seconds": 3.4,
-        "total_seconds": 38.21,
-        "text_stats": {
-          "n_tokens": 55,
-          "distinct_1": 0.7636,
-          "distinct_2": 0.963,
-          "distinct_3": 1.0,
-          "rep_4gram_max_ratio": 0.0192,
-          "degenerate": false
-        }
-      },
-      "c2c": {
-        "text": "A serene and picturesque scene of a spring afternoon, where the empty classroom is bathed in the golden light of sunset, with the chalkboard still bearing a half-finished chalkboard writing. The setting is a quiet and peaceful environment, with the atmosphere of a peaceful and contemplative mood. The style of the image is soft and romantic, with a warm and inviting lighting. The composition of the image is balanced and harmonious, with the subject at the center of the scene. The quality tags are 'soft', 'romantic', 'serene', 'peaceful', 'contemplative'.",
-        "total_seconds": 4.35,
-        "text_stats": {
-          "n_tokens": 89,
-          "distinct_1": 0.5955,
-          "distinct_2": 0.9205,
-          "distinct_3": 0.977,
           "rep_4gram_max_ratio": 0.0233,
           "degenerate": false
         }
       },
-      "id": "p16",
-      "wall_seconds": 42.58
+      "c2c": {
+        "text": "A lonely old building with a long, winding street leading to the street, the building's exterior is covered in a thick layer of dust and grime, the building's windows are open, and the windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer of dust and grime, the building's windows are covered in a layer",
+        "total_seconds": 7.53,
+        "text_stats": {
+          "n_tokens": 207,
+          "distinct_1": 0.1256,
+          "distinct_2": 0.165,
+          "distinct_3": 0.1805,
+          "rep_4gram_max_ratio": 0.0735,
+          "degenerate": true
+        }
+      },
+      "id": "p24",
+      "wall_seconds": 10.4
+    },
+    {
+      "user_prompt": "锤纹紫铜茶壶与透明公道杯摆在深胡桃木托盘上，暖铜对冷底，礼盒包装摄影",
+      "t2t": {
+        "text": "A detailed English image generation prompt: A warm copper tea kettle with a pattern of engraved copper, a transparent porcelain cup, and a deep red wooden tray, all arranged in a box-like packaging, with warm lighting and a soft composition, quality tags.",
+        "sharer_analysis": "wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrzności\n wnętrz",
+        "analysis_seconds": 9.36,
+        "receiver_seconds": 1.53,
+        "total_seconds": 10.88,
+        "text_stats": {
+          "n_tokens": 42,
+          "distinct_1": 0.7857,
+          "distinct_2": 0.9756,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0256,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A warm copper tea kettle with a purple copper patina, paired with a glass teacup, sitting on a deep red wooden tray, with a glass lid, and a warm, golden light source, creating a harmonious and elegant composition. The overall style is classic and refined, with a touch of modernity.",
+        "total_seconds": 1.96,
+        "text_stats": {
+          "n_tokens": 50,
+          "distinct_1": 0.72,
+          "distinct_2": 0.9184,
+          "distinct_3": 0.9792,
+          "rep_4gram_max_ratio": 0.0213,
+          "degenerate": false
+        }
+      },
+      "id": "p25",
+      "wall_seconds": 12.84
+    },
+    {
+      "user_prompt": "a lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight",
+      "t2t": {
+        "text": "A lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight, in a minimalist and moody style, with the student positioned in the center of the frame, the umbrella and the wet stone alley creating a sense of isolation and introspection, and the lamplight casting a warm, inviting glow while the rain and wet stone alley create a cool, damp atmosphere, with a mood of solitude, introspection, and melancholy.",
+        "sharer_analysis": "[\".subject\": A lone student under a translucent umbrella on a wet stone alley at night, rain and lamplight.\n[\".style\": A minimalist and moody style with a focus on the interplay of light and shadow.\n[\".composition\": The student is positioned in the center of the frame, with the umbrella and the wet stone alley creating a sense of isolation and introspection.\n[\".lighting\": The lamplight creates a warm, inviting glow, while the rain and wet stone alley create a cool, damp atmosphere.\n[\".mood\": A sense of solitude, introspection, and melancholy.\n[\".notable details\": The translucent umbrella, the wet stone alley, the lamplight, and the rain.",
+        "analysis_seconds": 5.39,
+        "receiver_seconds": 2.76,
+        "total_seconds": 8.14,
+        "text_stats": {
+          "n_tokens": 75,
+          "distinct_1": 0.56,
+          "distinct_2": 0.9054,
+          "distinct_3": 0.9726,
+          "rep_4gram_max_ratio": 0.0139,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A lone student, wearing a raincoat, stands under a translucent umbrella on a wet stone alley at night. The setting is a rainy afternoon, with the sun casting a warm glow on the stone. The style of the image is realistic, with soft lighting and a warm, inviting atmosphere. The composition is balanced, with the student at the center of the scene, surrounded by the rain and lamplight. The quality tags are 'realistic' and 'nightly'.",
+        "total_seconds": 3.04,
+        "text_stats": {
+          "n_tokens": 75,
+          "distinct_1": 0.6667,
+          "distinct_2": 0.973,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0139,
+          "degenerate": false
+        }
+      },
+      "id": "p26",
+      "wall_seconds": 11.2
+    },
+    {
+      "user_prompt": "浓雾的夜林深处，一对狭长的琥珀色眼睛在黑暗里微微发光",
+      "t2t": {
+        "text": "A dark forest with thick fog, two large, amber eyes glowing faintly in the night, in a composition that captures the essence of the scene.",
+        "sharer_analysis": "冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻\n\n冻",
+        "analysis_seconds": 9.23,
+        "receiver_seconds": 0.87,
+        "total_seconds": 10.09,
+        "text_stats": {
+          "n_tokens": 25,
+          "distinct_1": 0.84,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0455,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A dark forest night with thick fog, two elongated amber eyes glowing faintly in the shadows, a soft glow from the eyes, a soft light from the forest floor, a soft, warm, and gentle lighting, a composition of the forest floor with the glowing eyes, a soft, warm, and gentle quality.",
+        "total_seconds": 1.93,
+        "text_stats": {
+          "n_tokens": 51,
+          "distinct_1": 0.6078,
+          "distinct_2": 0.84,
+          "distinct_3": 0.9388,
+          "rep_4gram_max_ratio": 0.0417,
+          "degenerate": false
+        }
+      },
+      "id": "p27",
+      "wall_seconds": 12.03
+    },
+    {
+      "user_prompt": "a family reunion dinner seen directly from above, bamboo dumpling steamers and teacups on a round table",
+      "t2t": {
+        "text": "A family reunion dinner seen directly from above, with bamboo dumplings steaming on a round table, teacups arranged around the table, and a warm, inviting atmosphere. Style: traditional Chinese, lighting: warm and natural, composition: centered around the table, quality tags: detailed, realistic, and elegant.",
+        "sharer_analysis": "Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм\n Дм",
+        "analysis_seconds": 9.33,
+        "receiver_seconds": 1.98,
+        "total_seconds": 11.3,
+        "text_stats": {
+          "n_tokens": 44,
+          "distinct_1": 0.8182,
+          "distinct_2": 0.9535,
+          "distinct_3": 0.9762,
+          "rep_4gram_max_ratio": 0.0244,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A family reunion dinner, seated at a round table, with bamboo dumplings steaming on a table, teacups on the side, and a warm, inviting atmosphere. The setting is cozy and warm, with soft lighting and a soft, warm color palette. The composition is balanced and symmetrical, with the family members sitting around the table, and the teacups and dumplings arranged in a thoughtful manner. The quality tags are warm and inviting, with a soft, warm color palette and a soft, warm lighting.",
+        "total_seconds": 3.05,
+        "text_stats": {
+          "n_tokens": 82,
+          "distinct_1": 0.5488,
+          "distinct_2": 0.9136,
+          "distinct_3": 0.95,
+          "rep_4gram_max_ratio": 0.0253,
+          "degenerate": false
+        }
+      },
+      "id": "p28",
+      "wall_seconds": 14.37
     }
   ]
 }

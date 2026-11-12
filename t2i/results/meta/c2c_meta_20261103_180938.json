@@ -1,0 +1,10 @@
+{
+  "load_seconds": 6.07,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "t2t_seconds": 5.33,
+  "c2c_seconds": 2.05,
+  "sharer_analysis": "好的，根据您提供的图像描述，以下是列出的视觉元素及其分析：\n\n1. **Subject**: 头部和四肢（柴犬） - 这是主要的主体，展示了狗的形象。\n2. **Style**: 现代简约风格 - 使用了简洁、现代的设计语言，突出了狗的线条感和质感。\n3. **Composition**: 前景与背景对比强烈 - 在前景中可以看到一个黑色的银杏树，",
+  "user_prompt": "一只戴红色围巾的柴犬坐在秋天的银杏树下，落叶纷飞，温暖的午后阳光",
+  "t2t_prompt": "A red scarf-wearing dog sitting on a golden maple tree in autumn, with golden leaves swirling and warm afternoon sunlight.",
+  "c2c_prompt": "A red-haired dog sitting on a silver maple tree in autumn, with leaves swirling around, warm afternoon sunlight filtering through the leaves, a warm and cozy setting, soft and gentle lighting, a composition that captures the essence of a cozy and warm afternoon, with a high-quality tag."
+}

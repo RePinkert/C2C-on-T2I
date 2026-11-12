@@ -1,0 +1,40 @@
+{
+  "pair": "qwen3_0.6b+qwen2.5_0.5b",
+  "max_new_tokens": 64,
+  "load_seconds": 5.86,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "items": [
+    {
+      "user_prompt": "a paper boat on a calm pond",
+      "t2t": {
+        "text": "A paper boat floating gently on a calm pond.",
+        "sharer_analysis": "Sure! Here's a detailed analysis of the key visual elements in the image you provided:\n\n### Subject:\n- **Subject:** A paper boat floating gently on a calm pond.\n  - **Description:** The primary focus is on the paper boat itself, which appears to be made of some type of lightweight material like paper or",
+        "analysis_seconds": 3.64,
+        "receiver_seconds": 0.3,
+        "total_seconds": 3.94,
+        "text_stats": {
+          "n_tokens": 9,
+          "distinct_1": 0.8889,
+          "distinct_2": 1.0,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.1667,
+          "degenerate": false
+        }
+      },
+      "c2c": {
+        "text": "A paper boat on a calm pond, with a soft, diffused lighting, composed in a landscape of greenery and water, with a soft, diffused lighting, composed in a landscape of greenery and water, with a soft, diffused lighting, composed in a landscape of greenery and water, with a",
+        "total_seconds": 1.97,
+        "text_stats": {
+          "n_tokens": 48,
+          "distinct_1": 0.3542,
+          "distinct_2": 0.4255,
+          "distinct_3": 0.4348,
+          "rep_4gram_max_ratio": 0.0667,
+          "degenerate": false
+        }
+      },
+      "id": "item0",
+      "wall_seconds": 5.95
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "pair": "qwen3_0.6b+qwen3_4b_base",
+  "max_new_tokens": 32,
+  "load_seconds": 14.72,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "items": [
+    {
+      "user_prompt": "a paper boat on a pond",
+      "c2c": {
+        "text": "A paper boat on a pond, with a clear blue sky, a white sun, and a golden sunflower in the background, with a soft golden light,",
+        "total_seconds": 3.44,
+        "text_stats": {
+          "n_tokens": 26,
+          "distinct_1": 0.7308,
+          "distinct_2": 0.96,
+          "distinct_3": 1.0,
+          "rep_4gram_max_ratio": 0.0435,
+          "degenerate": false
+        }
+      },
+      "id": "item0",
+      "wall_seconds": 3.55
+    }
+  ]
+}

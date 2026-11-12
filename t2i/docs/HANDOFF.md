@@ -41,8 +41,9 @@ arXiv 2510.03215《Cache-to-Cache: Direct Semantic Communication Between LLMs》
 | ComfyUI | `C:\cc\ComfyUI_windows_portable\ComfyUI`，端口 8188，comfy-cli 1.18.0 |
 | C2C 源码 | `C:\Yet\C2C-on-T2I`（上游 thu-nics/C2C 已并入本仓库；`upstream/main` + `upstream/context` 两个远程引用保留上游历史） |
 | 运行时 | `C:\Yet\C2C-on-T2I\runtime`（权重 models + venv；`script`/`rosetta` 是指向仓库的 junction） |
-| 节点包 | `C:\Yet\C2C-on-T2I\t2i\ComfyUI-C2C`（custom_nodes 里是 junction 指向它，改代码即生效但需重启 ComfyUI） |
+| 节点包 | `C:\Yet\C2C-on-T2I\t2i\ComfyUI-C2C`（**不再装进用户 ComfyUI 目录**；由 `runtime\comfy_extra_paths.yaml` 注入，启动器 `t2i\scripts\run_comfyui.py` 探测本机 ComfyUI 后带 `--extra-model-paths-config` 启动） |
 | 工作区 | `C:\Yet`（`C2C-on-T2I` 项目已移出 Playground；`Playground\` 下只剩 `bench` 基准） |
+| 路径解析 | `t2i\paths.py` 是唯一事实来源（PROJECT_ROOT / T2I_ROOT / RUNTIME_ROOT）；校验用 `t2i\eval\check_paths.py`（当前 0 问题） |
 
 **已知坑（血泪清单）**
 1. **transformers 必须钉 4.52.4**：rosetta 依赖旧版 `DynamicCache.key_cache` API；
@@ -72,12 +73,16 @@ C:\Yet\
 │   │   ├── models\           # Qwen3-0.6B / Qwen2.5-0.5B-Instruct / Qwen3-4B-Base / c2c_fuser
 │   │   ├── venv\             # Python 环境（uv 管理，无 pip）
 │   │   ├── script\  rosetta\ # junction → 仓库根
+│   │   ├── comfy_nodes\        # ComfyUI 注入暂存（junction → t2i\ComfyUI-C2C）
+│   │   ├── comfy_extra_paths.yaml  # 注入用 extra-paths 配置（custom_nodes 键）
 │   │   └── c2c_bridge.py smoke_test.py download_models.py  # hardlink → t2i\
 │   └── t2i\                  # ★ 本实验的全部产物都在这里
 │       ├── c2c_bridge.py      # ★ 双模式（t2t/c2c）prompt 生成 bridge（ROOT 走 C2C_ROOT）
 │       ├── smoke_test.py      # fuser 冒烟
 │       ├── download_models.py # 权重下载（可重跑，增量）
-│       ├── ComfyUI-C2C\       # 节点包（nodes.py: C2CCompare）→ custom_nodes junction 指向这里
+│       ├── ComfyUI-C2C\       # 节点包（nodes.py: C2CCompare）★ 唯一副本，不装进用户 ComfyUI 目录
+│       ├── paths.py            # ★ 路径唯一事实来源（锚点/resolve/relative/ComfyUI 探测）
+│       ├── scripts\run_comfyui.py  # ★ 探测本机 ComfyUI 并注入节点包后启动（不改用户目录）
 │       ├── workflows\
 │       │   ├── build_workflow.py     # ★ 工作流生成器（3 处理×2 后端×双输出；--matrix/--prompt-ids）
 │       │   ├── run_batch.py          # ★ 批跑器（断点续跑，DONE 行带耗时后缀会跳过）
@@ -233,9 +238,11 @@ venv\Scripts\python.exe c2c_bridge.py --user-prompt "..." --max-new-tokens 256 -
 cd C:\Yet\C2C-on-T2I\t2i\workflows
 & 'C:\Yet\C2C-on-T2I\runtime\venv\Scripts\python.exe' build_workflow.py
 
-# ComfyUI：启动（超时正常，等 20-30s）
-# 用 MCP launch_comfyui / restart_comfyui；或手动：
-# & "C:\cc\ComfyUI_windows_portable\python_embeded\python.exe" "C:\cc\ComfyUI_windows_portable\ComfyUI\main.py" --enable-manager
+# ComfyUI：启动（注入节点包，不修改用户 ComfyUI 目录；超时正常，等 20-30s）
+& 'C:\Yet\C2C-on-T2I\runtime\venv\Scripts\python.exe' C:\Yet\C2C-on-T2I\t2i\scripts\run_comfyui.py
+#   探测本机 ComfyUI → 生成 runtime\comfy_extra_paths.yaml → 带 --extra-model-paths-config 启动
+#   只看要执行什么（不启动）：加 --dry-run
+# 用 MCP 时需先跑一次上面的脚本生成 YAML，再把 --extra-model-paths-config 传给 launch_comfyui 的 extra_args
 
 # 任务轮询（MCP job action=queue / status）
 # 产物回收（MCP fetch_outputs prompt_id=... out_dir=...）

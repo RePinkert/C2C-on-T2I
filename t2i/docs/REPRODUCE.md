@@ -30,25 +30,34 @@ venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorc
 
 ```powershell
 cd t2i
-..\venv\Scripts\python.exe download_models.py
+..\runtime\venv\Scripts\python.exe download_models.py
 ```
 
 依次下载：`nics-efc/C2C_Fuser`（pairA 与 pairB 两个 fuser）+ `Qwen/Qwen3-0.6B`、
 `Qwen/Qwen2.5-0.5B-Instruct`、`Qwen/Qwen3-4B-Base`（HF 公开仓库）。直连失败会自动回退
-`hf-mirror.com`。权重落在 `t2i/models/`（已在 .gitignore，勿提交）。
+`hf-mirror.com`。权重落在 `runtime/models/`（已在 .gitignore，勿提交）。
 
 冒烟测试（约 15s，GPU）：
 
 ```powershell
-..\venv\Scripts\python.exe smoke_test.py
+..\runtime\venv\Scripts\python.exe smoke_test.py
 ```
 
 ## 3. ComfyUI + 节点
 
-1. 把 `t2i/ComfyUI-C2C` 复制（或 junction）到 ComfyUI 的 `custom_nodes/` 目录；
-2. 重启 ComfyUI（新节点注册需要重启）；
-3. 若节点报 `c2c_bridge.py not found`，设置环境变量 `C2C_ROOT` 指向本仓库 `t2i/` 目录；
-   节点内 `VENV_PY` 指向装好依赖的 venv（见 nodes.py 顶部注释）。
+节点包**不装进用户 ComfyUI 目录**。用仓库自带的启动器，它会探测本机 ComfyUI 的绝对路径、
+生成注入配置并带参数启动：
+
+```powershell
+..\runtime\venv\Scripts\python.exe t2i\scripts\run_comfyui.py
+```
+
+- 探测顺序：`COMFYUI_HOME` 环境变量 → comfy-cli 的 `config.ini` → 常见安装位置
+- 注入方式：生成 `runtime/comfy_extra_paths.yaml`（`custom_nodes` 键）+ `runtime/comfy_nodes/` 暂存目录，
+  以 `--extra-model-paths-config` 传给 ComfyUI
+- 用户安装目录全程只读：不建 junction、不复制文件、不写 `extra_model_paths.yaml`
+- 加 `--dry-run` 只打印将要执行的命令，不启动
+- 节点改动后需重启 ComfyUI 才会重新注册
 
 ## 4. 后端配置（已固化，复现实验用这个）
 
@@ -63,7 +72,7 @@ MOSS 架构是 `layers.*`（不是 Krea2 的 `blocks.*`），CLIPLoader type 用
 
 ```powershell
 cd t2i
-..\venv\Scripts\python.exe workflows\build_workflow.py   # 生成 workflows/runs_v2/*.json（3 种处理 × 2 后端 × 双输出）
+..\runtime\venv\Scripts\python.exe workflows\build_workflow.py   # 生成 workflows/runs_v2/*.json（3 种处理 × 2 后端 × 双输出）
 ```
 
 - **文本/图像已解耦**：`runs_v2/*.json` 把 t2t/c2c 文本作为**字面量**嵌入，图像批跑零 LLM；

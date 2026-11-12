@@ -361,16 +361,81 @@ options:
 
 ---
 
+## 12. ComfyUI 节点包：探测本机路径后注入，不改用户目录
+
+### 12.1 问题
+
+节点包（`t2i/ComfyUI-C2C/`）必须出现在 ComfyUI 的节点搜索路径里。ComfyUI 只扫描
+`custom_nodes/` 目录，常见做法是往用户安装目录里塞 junction 或副本：
+
+| 旧做法 | 副作用 |
+|---|---|
+| 在 `custom_nodes/` 建 junction 指向仓库 | **修改用户 ComfyUI 安装目录**；删仓库会让用户的 ComfyUI 出现坏链 |
+| 复制节点包到 `custom_nodes/` | 修改用户目录，且产生第二份副本（会与仓库版本分叉） |
+
+### 12.2 机制依据（ComfyUI 0.43.2 实测）
+
+```
+folder_paths.py:45   folder_names_and_paths["custom_nodes"] = ([<base>/custom_nodes], set())
+utils/extra_config.py load_extra_path_config(): 对 YAML 每个键调用 add_model_folder_path(key, abs_path)
+main.py:139-144       自动加载 <ComfyUI>/extra_model_paths.yaml，并接受 --extra-model-paths-config
+main.py:200           node_paths = folder_paths.get_folder_paths("custom_nodes")  → 遍历所有注册路径
+extra_model_paths.yaml.example:71   custom_nodes 是受支持的键
+```
+
+结论：**`custom_nodes` 是一个可从外部配置注册的路径列表**，不必物理存在于安装目录里。
+
+### 12.3 设计
+
+```
+C2C-on-T2I/
+├── t2i/ComfyUI-C2C/            节点包本体（唯一副本）
+└── runtime/                    注入用暂存区（gitignored）
+    ├── comfy_nodes/ComfyUI-C2C  → junction 指向 ../../t2i/ComfyUI-C2C
+    └── comfy_extra_paths.yaml  → custom_nodes: <runtime/comfy_nodes>
+```
+
+启动器 `t2i/scripts/run_comfyui.py`：
+
+1. **探测本机 ComfyUI 绝对路径**（`paths.detect_comfyui()`），顺序：
+   `COMFYUI_HOME`/`COMFYUI_PATH`/`COMFYUI_ROOT` 环境变量 →
+   comfy-cli 自身的 `config.ini`（`default_workspace`/`recent_workspace`）→
+   常见安装位置扫描 → 失败时列出全部探测位置并报错
+   解释器取同目录的 `python_embeded/python.exe`
+2. **生成注入产物**：`runtime/comfy_nodes/ComfyUI-C2C`（junction，免管理员）+ `runtime/comfy_extra_paths.yaml`
+3. **启动**：`<python_embeded>/python.exe <ComfyUI>/main.py --extra-model-paths-config <yaml> --enable-manager`
+
+**用户的 ComfyUI 安装目录全程只读** —— 不建 junction、不复制文件、不写 `extra_model_paths.yaml`。
+
+### 12.4 实测验证
+
+| 项 | 结果 |
+|---|---|
+| ComfyUI 日志 | `Adding extra search path custom_nodes C:\Yet\C2C-on-T2I\runtime\comfy_nodes` |
+| 实时 `/object_info/C2CCompare` | HTTP 200，节点已注册（category `C2C`，输出 `STRING,STRING,STRING`） |
+| `custom_nodes\ComfyUI-C2C` | **不存在** |
+| `custom_nodes` 中含 `C2C` 的条目 | **0** |
+| `<ComfyUI>/extra_model_paths.yaml` | **不存在** |
+| 用户目录 10 分钟内改动 | 仅 ComfyUI 自身的 `user/comfyui.log` 与 Manager 缓存 |
+
+### 12.5 与 MCP 的配合
+
+MCP 的 `launch_comfyui` 支持 `extra_args`，因此也可以：
+```
+launch_comfyui(extra_args=["--extra-model-paths-config", "C:\\Yet\\C2C-on-T2I\\runtime\\comfy_extra_paths.yaml"])
+```
+前提是先用启动器（或 `paths.write_comfy_extra_paths()`）生成该 YAML。
+
 ## 10. 迁移步骤
 
 每步可独立回滚，前一步不改变行为。
 
 | 步 | 内容 | 验收 |
 |---|---|---|
-| **M1** | 新增 `t2i/paths.py`（只新增，不改调用方） | `import paths` 成功，锚点与现状一致 |
-| **M2** | 新增 `relocate_paths.py` 与 `check_paths.py`，跑基线报告 | 报告复现 §1.4 的 3 处泄漏 |
+| **M1** | 新增 `t2i/paths.py`（只新增，不改调用方） ✅已完成 | `import paths` 成功，锚点与现状一致 |
+| **M2** | 新增 `relocate_paths.py` 与 `check_paths.py` ✅已完成 | 报告复现 §1.4 的 3 处泄漏 |
 | **M3** | 调用方切到 `paths.py`（bridge、smoke_test、nodes、collect、run_eval、make_figs、make_blind_html、analyze_votes、analyze_robust、stats、sheet_to_votes、build_workflow、run_batch） | 输出逐字节不变（同输入重跑比对） |
-| **M4** | 数据重映射：`batch_list.txt` 相对化；legacy 脚本去硬编码；`run_batch.py` 支持相对列表 | `check_paths.py` 全绿 |
+| **M4** | 数据重映射：`batch_list.txt` 相对化 ✅已完成（96 条）；legacy 脚本去硬编码；`run_batch.py` 支持相对列表 ✅已完成 | `check_paths.py` 全绿 ✅当前 0 问题 |
 | **M5** | 文档：HANDOFF 文件地图与命令块改为相对表述；新增"路径约定"小节 | 人工复核 |
 
 ---
